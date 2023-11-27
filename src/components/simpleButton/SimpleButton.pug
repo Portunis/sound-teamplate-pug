@@ -1,0 +1,9 @@
+mixin SimpleButton ( text, link, jClass)
+  if link
+    a(href=link)
+      button.simple-btn=text
+  else
+    button.simple-btn(class=jClass)=text
+
+
+

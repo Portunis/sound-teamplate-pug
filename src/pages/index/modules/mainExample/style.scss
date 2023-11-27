@@ -1,0 +1,25 @@
+@import "components/index";
+
+.main-example {
+  padding-bottom: 3.2rem;
+  &__body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+  }
+  &__item{
+    width: 100%;
+  }
+  @include minMediaTablet{
+    &__item{
+      width: 48%;
+    }
+  }
+  @include minMediaDesktop{
+    &__item{
+      width: 25%;
+    }
+  }
+}

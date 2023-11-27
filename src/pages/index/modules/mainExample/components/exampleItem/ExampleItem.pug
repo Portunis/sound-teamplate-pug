@@ -1,0 +1,8 @@
+mixin ExampleItem(obj)
+    article.main-example-item.j-example-item
+        h5.main-example-item__title=obj.title
+        if obj.button
+            .main-example-item__button(class=obj.button.jClass)
+                +SimpleButton(obj.button.label, obj.button.href)
+        if obj.img
+            img.main-example-item__paint.j-example-picture(src=obj.img.src alt=obj.img.alt)

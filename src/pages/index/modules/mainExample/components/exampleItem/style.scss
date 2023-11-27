@@ -1,0 +1,23 @@
+.main-example-item {
+  border: 0.2rem solid $primary;
+  padding: 1.6rem;
+  height: 100%;
+  &__image {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 30rem;
+    margin: 1.6rem 0;
+  }
+
+  &__paint {
+    margin: 1.6rem auto;
+    width: 20rem;
+    height: 20rem;
+    border: 2rem solid $cRed;
+    transition: border-color .15s ease;
+  }
+}

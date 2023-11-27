@@ -1,0 +1,44 @@
+.popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparentize(black, 0.7);
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s linear, visibility 0s linear .3s;
+  padding: calc($headerHeight + 3.2rem) 3.2rem 3.2rem ;
+  overflow-y: auto;
+  &._open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .3s linear;
+  }
+
+  &__content {
+    min-width: 30rem;
+    margin: auto;
+    background: white;
+    padding: 1.6rem;
+    border-radius: 1.6rem;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1.6rem;
+    margin-bottom: 1.6rem;
+    align-items: flex-start;
+  }
+  &__title{
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  &__close{
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+}

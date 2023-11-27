@@ -1,0 +1,9 @@
+extends constants
+include components/index
+block content
+    section.main-example.j-main-example
+        h1.main-example__title=mainTitle
+        .main-example__body
+            each item in exampleItems
+                .main-example__item
+                    +ExampleItem(item)

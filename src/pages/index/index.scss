@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+@import '../../styles/fonts';
+@import '../../styles/mixns';
+@import '../../styles/scaffolding';
+@import '../../styles/animations';
+@import "../../components/index";
+@import "../../layout/style";
+@import "src/modules/index";
+@import "modules/index";
+
+.main-content {
+  padding: 1.6rem;
+}
+
+
