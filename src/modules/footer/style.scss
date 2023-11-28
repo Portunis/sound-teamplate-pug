@@ -1,7 +1,26 @@
 .footer {
-  height: $footerHeight;
+  background-color: $cBlueDark;
+  padding: 5rem 10rem;
+  width: 100vw;
   display: flex;
   align-items: center;
-  background-color: $cRed;
-  padding: 0.8rem ;
+  justify-content: space-between;
+  &__menu {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+}
+.info {
+  &__text {
+    color: $cWhite;
+  }
+}
+.menu {
+  &__title {
+    color: $cWhite;
+  }
+  &__url {
+    color: $cGray;
+  }
 }

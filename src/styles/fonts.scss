@@ -27,3 +27,26 @@
   font-style: normal;
   font-weight: 300;
 }
+
+
+
+//poppins
+
+@font-face {
+  font-family: 'Poppins';
+  src:url('/src/fonts/Poppins/Poppins-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Poppins';
+  src:url('/src/fonts/Poppins/Poppins-SemiBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Poppins';
+  src:url('/src/fonts/Poppins/Poppins-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}

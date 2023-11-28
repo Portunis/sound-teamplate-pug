@@ -1,16 +1,17 @@
 .simple-btn {
   width: 100%;
-  padding: 2rem 2.8rem;
+  padding: 1rem 2rem;
   color: $cWhite;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1.8rem;
   line-height: 2rem;
-  background: $cRed;
+  background: $cBlue;
+  border-radius: 0.8rem;
   position: relative;
   @media (hover: hover) {
     &:hover {
-      background-color: $cBlue;
+      background-color: $cBlueLight;
       transition: background-color .15s ease;
     }
   }

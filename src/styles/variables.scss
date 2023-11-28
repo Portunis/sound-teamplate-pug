@@ -1,6 +1,11 @@
 // ----------FONTS
-$primaryFont: 'Roboto', sans-serif;
-
+$primaryFont: 'Poppins', sans-serif;
+// ----------FONTS-SIZES
+$smallSizeFont: 1.4rem;
+$regularSizeFont: 1.6rem;
+$mediumSizeFont: 2rem;
+$xlSizeFont: 2.8rem;
+$xxlSizeFont: 3.6rem;
 // ----------BREAKPOINTS
 $mobileBreakpoint: 360;
 $tabletBreakpoint: 768;
@@ -14,8 +19,12 @@ $mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
 // ----------COLORS
 $cWhite: #ffffff;
 $cRed: #DE3163;
-$cBlue: #31bade;
-$primary: #00b1a5;
+$cBlue: #0432DF;
+$cBlueLight: #CDD6F9;
+$cBlueDark: #020D37;
+$cYellow: #F59E00;
+$cGray: #ACAFB8;
+
 
 // ----------SIZES
 $headerHeight: 6.5rem;
