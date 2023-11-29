@@ -1,0 +1,22 @@
+@import "components/index";
+
+.trusted-block {
+  padding: 5rem 10rem;
+  background: #FAFAFA;
+  &__title {
+    font-size: $mediumSizeFont;
+    color: $cBlueDark;
+    font-weight: 600;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.4px;
+    text-align: center;
+    font-feature-settings: 'salt' on, 'liga' off;
+    margin-bottom: 3.5rem;
+  }
+  &__images {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 8.9rem;
+  }
+}
