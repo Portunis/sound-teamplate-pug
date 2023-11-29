@@ -9,6 +9,10 @@
   background: $cBlue;
   border-radius: 0.8rem;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   @media (hover: hover) {
     &:hover {
       background-color: $cBlueLight;

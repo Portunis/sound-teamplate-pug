@@ -50,3 +50,24 @@
   font-style: normal;
   font-weight: 400;
 }
+
+//inter
+
+@font-face {
+  font-family: 'Poppins';
+  src:url('/src/fonts/Inter/Inter-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Poppins';
+  src:url('/src/fonts/Inter/Inter-SemiBold.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Poppins';
+  src:url('/src/fonts/Inter/Inter-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+}

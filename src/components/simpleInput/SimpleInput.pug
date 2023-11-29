@@ -1,0 +1,12 @@
+mixin SimpleInput ( label, text,type, iconName, jClass, error)
+  div.simple-input
+    if label
+      label.simple-input__label=label
+    div.simple-input__container
+      if iconName
+        img.simple-input__icon(src=`/src/images/icon/${iconName}.png`)
+        input.simple-input__input.simple-input--icon(placeholder=text, class=error, type=type)
+      else
+        input.simple-input__input.simple-input--default(placeholder=text, class=error, type=type)
+
+

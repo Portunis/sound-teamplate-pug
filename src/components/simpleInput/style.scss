@@ -1,0 +1,45 @@
+.simple-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: $primaryFont;
+  &__label {
+    font-size: $regularSizeFont;
+    font-weight: 500;
+    color: $cDark;
+  }
+  &__container {
+    margin-top: 0.8rem;
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+    color: black;
+    background: $cGrayLight;
+    font-size: $regularSizeFont;
+    margin-bottom: 1rem;
+    &::placeholder {
+      color: $cGray;
+      font-size: $regularSizeFont;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.6rem;
+  }
+  &--icon {
+    padding: 1.6rem 2rem 1.6rem 5.4rem;
+  }
+  &--default {
+    padding: 1.6rem 2rem;
+  }
+}
+.error {
+  border: 0.1rem solid $cRed;
+  color: black;
+  &::placeholder {
+    color: $cRed;
+  }
+}
