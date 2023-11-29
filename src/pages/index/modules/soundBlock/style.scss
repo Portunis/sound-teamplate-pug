@@ -1,0 +1,107 @@
+@import "components/index";
+
+.sound-block {
+  padding: 8rem 10rem;
+  &__title {
+    padding: 0;
+    font-size: $xlSizeFont;
+    font-family: $primaryFont;
+    font-weight: 600;
+    line-height: 45px; /* 160.714% */
+    letter-spacing: -0.56px;
+    margin-bottom: 1.4rem;
+  }
+  &__sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__sort-names {
+    font-family: $interFont;
+    font-feature-settings: 'salt' on, 'liga' off;
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+    cursor: pointer;
+  }
+  &__filter {
+    position: relative;
+  }
+  &__sounds {
+    margin-top: 2rem;
+  }
+  &__sound {
+    display: flex;
+    align-items: center;
+    gap: 4.7rem;
+    justify-content: space-between;
+    border-bottom: 0.1rem solid $cGrayLight;
+    &:not(:first-child) {
+      margin-top: 1.2rem;
+    }
+  }
+  &__slider {
+    position: relative;
+  }
+  &__button {
+    background: $cGrayLight;
+    font-family: $interFont;
+    font-size: $regularSizeFont;
+    font-weight: 500;
+    line-height: 138%; /* 22.08px */
+    letter-spacing: -0.8px;
+    color: $cDark;
+    padding: 0.2rem 1.4rem 0.2rem 2rem;
+  }
+  &__all-sound {
+    margin-top: 2rem;
+  }
+}
+.sound {
+  font-family: $interFont;
+  &__play {
+    cursor: pointer;
+  }
+  &__name {
+    color: $cBlueDark;
+    font-family: $interFont;
+    font-size: $regularSizeFont;
+    font-weight: 500;
+    line-height: 138%; /* 22.08px */
+    letter-spacing: -0.8px;
+    margin-bottom: 0.2rem;
+    font-feature-settings: 'salt' on, 'liga' off;
+  }
+  &__time,&__desctiprion {
+    margin-bottom: 0;
+  }
+  &__time{
+    font-size: 1.2rem;
+    color: $cDark;
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-family: $interFont;
+    font-weight: 400;
+    line-height: 172%; /* 20.64px */
+    letter-spacing: -0.6px;
+  }
+  &__description,
+  &__author {
+    color: $cDark;
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-family: $interFont;
+    width: 25rem;
+    font-size: $regularSizeFont;
+    font-weight: 500;
+    line-height: 138%; /* 22.08px */
+    letter-spacing: -0.8px;
+  }
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+.active {
+  border-bottom: 0.1rem solid $cBlueDark;
+  padding: 0.5rem;
+}

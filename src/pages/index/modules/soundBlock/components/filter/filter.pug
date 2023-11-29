@@ -1,0 +1,14 @@
+div.filter
+    div.filter__header
+        h3.filter__header-title Filter
+        p X
+    div.filter__wrapper
+        div.filter__slider
+            p Duration
+            include ../duration/duration
+        div.filter__select
+            +SimpleSelect('All Categories', [{option: '1', value: 1},{option: '2', value: 2}])
+        +SimpleCheckbox('Only free sounds ')
+        +SimpleCheckbox('Only my favorite sounds')
+        div.filter__button
+            +SimpleButton('Apply', 'filter__button-custom')

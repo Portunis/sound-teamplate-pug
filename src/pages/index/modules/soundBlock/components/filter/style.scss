@@ -1,0 +1,50 @@
+.filter {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $cGrayLight;
+  border-radius: 0.8rem;
+  width: 28.8rem;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 2rem;
+  }
+  &__header-title {
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: $cDark;
+    font-family: $interFont;
+    font-size: $regularSizeFont;
+    font-weight: 600;
+    line-height: 138%;
+    margin-bottom: 0;
+  }
+  &__wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.7rem 2rem 2rem 2rem;
+  }
+  &__slider {
+    font-family: $interFont;
+    font-size: $smallSizeFont;
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-weight: 400;
+    line-height: 172%;
+    color: $cDark;
+  }
+  &__select {
+    margin-bottom: 2.4rem;
+  }
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 4.8rem;
+  }
+  &__button-custom {
+    font-size: $smallSizeFont;
+    width: 8rem;
+  }
+}
