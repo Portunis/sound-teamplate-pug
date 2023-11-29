@@ -1,0 +1,29 @@
+@import "components/index";
+
+.category-block {
+  padding: 6rem 10rem;
+  &__images-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1.6rem;
+  }
+}
+.images-list {
+  &__item {
+    position: relative;
+  }
+}
+.item {
+  &__image {
+    width: 15.7rem;
+    border-radius: 0.8rem;
+  }
+  &__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $cWhite;
+  }
+}
