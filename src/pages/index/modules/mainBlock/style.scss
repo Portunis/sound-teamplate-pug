@@ -1,0 +1,73 @@
+@import "components/index";
+
+.main-block {
+  position: relative;
+  &__image {
+    width: 100vw;
+    z-index: 1;
+  }
+  &__information {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    font-family: $primaryFont;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5.1rem;
+  }
+}
+.information {
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    font-size: $xxlSizeFont;
+    color: $cWhite;
+    font-weight: 700;
+    line-height: 146.5%;
+    margin-bottom: 1.6rem;
+  }
+  &__subtitle {
+    font-size: $mediumSizeFont;
+    color: $cGray;
+  }
+  &__form {
+    width: 60rem;
+  }
+  &__form-input {
+    position: relative;
+    input {
+      padding: 1.6rem 2rem 1.6rem 5.4rem;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 0.8rem;
+      color: $cGray;
+      font-size: $regularSizeFont;
+      margin-bottom: 1rem;
+      &::placeholder {
+        color: $cGray;
+        font-size: $regularSizeFont;
+      }
+    }
+  }
+  &__form-span {
+    font-size: $smallSizeFont;
+    color: $cWhite;
+  }
+  &__subtext {
+    font-size: $smallSizeFont;
+    color: $cWhite;
+  }
+}
+.form-input {
+  &__icon {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.6rem;
+  }
+}
