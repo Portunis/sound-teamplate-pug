@@ -1,7 +1,9 @@
 import MainExamplesController from './mainExample/controller'
-import { PopupBlockController } from './popupBlock/controller';
+import { PopupBlockController } from './popupBlock/controller'
+import useReviewsController from './ReviewsBlock/controller';
 
 (() => {
+  useReviewsController()
   document.querySelectorAll('.j-main-example')
     .forEach(block => {
       new MainExamplesController(block as HTMLSelectElement)
