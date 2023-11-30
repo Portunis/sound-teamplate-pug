@@ -35,6 +35,11 @@
   &--default {
     padding: 1.6rem 2rem;
   }
+  &__error-text {
+    color: $cRed;
+    font-size: $smallSizeFont;
+    text-align: left;
+  }
 }
 .error {
   border: 0.1rem solid $cRed;

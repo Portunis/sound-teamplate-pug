@@ -8,6 +8,15 @@
     grid-column-gap: 2rem;
     grid-row-gap: 1.6rem;
   }
+  &__subtext {
+    color: $cBlue;
+    font-size: $smallSizeFont;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.14px;
+    text-decoration-line: underline;
+    margin-top: 2rem;
+  }
 }
 .images-list {
   &__item {
@@ -16,6 +25,7 @@
 }
 .item {
   &__image {
+    height: 11.7rem;
     width: 15.7rem;
     border-radius: 0.8rem;
   }
@@ -25,5 +35,8 @@
     top: 50%;
     transform: translate(-50%, -50%);
     color: $cWhite;
+    margin-bottom: 0;
+    width: 11.9rem;
+    text-align: center;
   }
 }

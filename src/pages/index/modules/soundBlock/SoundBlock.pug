@@ -1,6 +1,51 @@
 include components/index
 block content
-    div.sound-block.container
+    -
+        var sounds = [
+            {
+                sound: 'audio',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                sound: 'audio',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                sound: 'audio',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                sound: 'audio',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                sound: 'audio',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                sound: 'audio',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            }
+        ]
+    div.sound-block.container.j-sound-block
         h3.sound-block__title Best sound effects for youtube videos
         div.sound-block__sort
             div.sound-block__sort-names
@@ -10,36 +55,24 @@ block content
                 p.sort-name Happiness
                 p.sort-name Ambience
                 p.sort-name Zonk
-            div.sound-block__filter
-                +SimpleButton('Filter','sound-block__button','setting-icon',false,false)
+            div.sound-block__filter.j-filter-block
+                +SimpleButton('Filter','sound-block__button j-filter-button','setting-icon',false,false)
                 include components/filter/filter
         div.sound-block__sounds
-            div.sound-block__sound
-                div.sound__play
-                    audio
-                        source(src='/src/sound/angry-monkey-sound-effect.mp3', type='audio/mp3')
-                    img(src='/src/images/icon/soud-controls/play-icon.svg', alt='play')
-                div.sound__info
-                    p.sound__name Sound name
-                    p.sound__time 00:12
-                p.sound__description Confused excited crowd slight panic and distress
-                div.sound__author Shocking, jumpscare
-                div.sound__controls
-                    img.sound__controls-icon(src='/src/images/icon/soud-controls/like.svg')
-                    img.sound__controls-icon(src='/src/images/icon/soud-controls/content-loading.svg')
-                    img.sound__controls-icon(src='/src/images/icon/soud-controls/dots.svg')
-            div.sound-block__sound
-                div.sound__play
-                    audio
-                        source(src='/src/sound/angry-monkey-sound-effect.mp3', type='audio/mp3')
-                    img(src='/src/images/icon/soud-controls/play-icon.svg', alt='play')
-                div.sound__info
-                    p.sound__name Sound name
-                    p.sound__time 00:12
-                p.sound__description Confused excited crowd slight panic and distress
-                div.sound__author Shocking, jumpscare
-                div.sound__controls
-                    img.sound__controls-icon(src='/src/images/icon/soud-controls/like.svg')
-                    img.sound__controls-icon(src='/src/images/icon/soud-controls/content-loading.svg')
-                    img.sound__controls-icon(src='/src/images/icon/soud-controls/dots.svg')
+            each item in sounds
+                div.sound-block__sound.j-example-sound
+                    div.sound__play
+                        audio(id="sound__audio")
+                            source(src=`/src/sound/${item.sound}.mp3`, type='audio/mp3')
+                        div.sound__play-button.j-sound-play
+                    div.sound__info
+                        p.sound__name #{item.name}
+                        p.sound__time #{item.time}
+                    p.sound__description #{item.description}
+                    div.sound__author #{item.author}
+                    div.sound__controls
+                        div.sound__controls-icon.j-like-sound.j-control-button
+                            include ../../../../images/icon/soud-controls/like.svg
+                        img.sound__controls-icon(src='/src/images/icon/soud-controls/content-loading.svg')
+                        img.sound__controls-icon(src='/src/images/icon/soud-controls/dots.svg')
         p.sound-block__all-sound See all sound effects

@@ -1,0 +1,35 @@
+#j-duration {
+
+  margin-bottom: 4.2rem;
+  position: relative;
+}
+
+
+/**** Custom styles for noUiSlider ****/
+.noUi-connect {
+  background: purple;
+}
+.noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
+  background: purple;
+}
+.noUi-target.noUi-horizontal .noUi-tooltip {
+  background-color: purple;
+}
+
+/**** Custom styles for Range ****/
+input[type=range]::-webkit-slider-thumb {
+  background-color: skyblue;
+}
+input[type=range]::-moz-range-thumb {
+  background-color: skyblue;
+}
+input[type=range]::-ms-thumb {
+  background-color: skyblue;
+}
+/* For the globe and the text inside */
+input[type=range] + .thumb {
+  background-color: blue;
+}
+input[type=range] + .thumb.active .value {
+  color: #fff;
+}

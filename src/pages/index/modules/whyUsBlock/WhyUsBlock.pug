@@ -1,21 +1,33 @@
+-
+    var advantages = [
+        {
+            title: '1.203.322 Customer satisfied',
+            description: 'We\'ve helped more than 1 million customers find best sound effects',
+            icon: 'icon-primary'
+        },
+        {
+            title: '650.654 Sounds',
+            description: 'More than 600 thousand high quality to download. Still counting',
+            icon: 'icon-cloud'
+        },
+        {
+            title: 'Royalty-free',
+            description: 'Just download and use the sound for your videos without royalty',
+            icon: 'icon-free'
+        },
+        {
+            title: 'Provide proper sounds',
+            description: 'We just provide sounds with the best quality  for customers',
+            icon: 'icon-customer'
+        },
+    ]
 div.container.why-us-block
     div.why-us-block__information
         p.why-us-block__title WHY uS?
         p.why-us-block__description We are provide the best quality sound effects without copyright.
     div.why-us-block__advantages
-        div.advantages__item
-            img.advantages__image(src='/src/images/icon/advantages/icon-primary.svg')
-            p.advantages__title 1.203.322 Customer satisfied
-            p.advantages__description We've helped more than 1 million customers find best sound effects
-        div.advantages__item
-            img.advantages__image(src='/src/images/icon/advantages/icon-primary.svg')
-            p.advantages__title 1.203.322 Customer satisfied
-            p.advantages__description We've helped more than 1 million customers find best sound effects
-        div.advantages__item
-            img.advantages__image(src='/src/images/icon/advantages/icon-primary.svg')
-            p.advantages__title 1.203.322 Customer satisfied
-            p.advantages__description We've helped more than 1 million customers find best sound effects
-        div.advantages__item
-            img.advantages__image(src='/src/images/icon/advantages/icon-primary.svg')
-            p.advantages__title 1.203.322 Customer satisfied
-            p.advantages__description We've helped more than 1 million customers find best sound effects
+        each item in advantages
+            div.advantages__item
+                img.advantages__image(src=`/src/images/icon/advantages/${item.icon}.svg`)
+                p.advantages__title #{item.title}
+                p.advantages__description #{item.description}

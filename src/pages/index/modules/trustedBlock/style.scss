@@ -1,8 +1,10 @@
 @import "components/index";
 
 .trusted-block {
-  padding: 5rem 10rem;
   background: #FAFAFA;
+  &__wrapper {
+    padding: 5rem 10rem;
+  }
   &__title {
     font-size: $mediumSizeFont;
     color: $cBlueDark;
@@ -14,7 +16,7 @@
     margin-bottom: 3.5rem;
   }
   &__images {
-    justify-content: center;
+    justify-content: space-between;
     display: flex;
     align-items: center;
     gap: 8.9rem;

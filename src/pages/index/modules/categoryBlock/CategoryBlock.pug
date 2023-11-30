@@ -1,37 +1,60 @@
+-
+    var images = [
+        {
+            image: 'category1.jpg',
+            text: 'Musical'
+        },
+        {
+            image: 'category2.jpg',
+            text: 'Industrial'
+        },
+        {
+            image: 'move-category.jpg',
+            text: 'Move Sound'
+        },
+        {
+            image: 'animal.jpg',
+            text: 'Animal'
+        },
+        {
+            image: 'people-category.jpg',
+            text: 'People'
+        },
+        {
+            image: 'car-category.jpg',
+            text: 'Vehicles'
+        },
+        {
+            image: 'sound-category.jpg',
+            text: 'Sound Design'
+        },
+        {
+            image: 'emergancy-category.jpg',
+            text: 'Emergency'
+        },
+        {
+            image: 'bell-category.jpg',
+            text: 'Bell'
+        },
+        {
+            image: 'nature-category.jpg',
+            text: 'Nature'
+        },
+        {
+            image: 'carton-category.jpg',
+            text: 'Cartoon'
+        },
+        {
+            image: 'horror-category.jpg',
+            text: 'Horror'
+        },
+
+    ]
 div.category-block.container
     h3.category-block__title Browse by category
     div.category-block__images-list
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-        div.images-list__item
-            img.item__image(src='/src/images/category/category1.jpg')
-            p.item__text Text
-    p See all category
+        each item in images
+            div.images-list__item
+                img.item__image(src=`/src/images/category/${item.image}`)
+                p.item__text #{item.text}
+    p.category-block__subtext See all category

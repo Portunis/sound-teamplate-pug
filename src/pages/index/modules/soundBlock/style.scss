@@ -52,6 +52,7 @@
     letter-spacing: -0.8px;
     color: $cDark;
     padding: 0.2rem 1.4rem 0.2rem 2rem;
+
   }
   &__all-sound {
     margin-top: 2rem;
@@ -61,6 +62,11 @@
   font-family: $interFont;
   &__play {
     cursor: pointer;
+  }
+  &__play-button {
+    background-image: url("/src/images/icon/soud-controls/play-icon.svg");
+    width: 3.4rem;
+    height: 3.4rem;
   }
   &__name {
     color: $cBlueDark;
@@ -100,8 +106,26 @@
     align-items: center;
     gap: 2rem;
   }
+  &__controls-icon {
+    cursor: pointer;
+  }
 }
 .active {
   border-bottom: 0.1rem solid $cBlueDark;
   padding: 0.5rem;
+}
+._selected {
+  svg {
+    fill: $cBlue;
+    path {
+      stroke: $cBlue;
+    }
+  }
+}
+.pause-active {
+  background-image: url("/src/images/icon/soud-controls/pause-icon.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 3.4rem;
+  height: 3.4rem;
 }

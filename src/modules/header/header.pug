@@ -1,14 +1,15 @@
 include  ../../components/index
 
 header.header
-  .header__wrapper
-    img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
-    div.header__navigation
-      nav.header__menu
-        p.menu__item.menu__item--active Home
-        p.menu__item Best for Youtube
-        p.menu__item Category
-        p.menu__item Upgrade
-        p.menu__item FAQ
-      .header__button
-        include ../../pages/index/modules/popupBlock/PopupBlock
+  div.container
+    div.header__wrapper
+      img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
+      div.header__navigation
+        nav.header__menu
+          p.menu__item.menu__item--active Home
+          p.menu__item Best for Youtube
+          p.menu__item Category
+          p.menu__item Upgrade
+          p.menu__item FAQ
+        .header__button
+          include ../../pages/index/modules/popupBlock/PopupBlock
