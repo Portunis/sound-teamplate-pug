@@ -13,6 +13,7 @@
     font-size: $xxlSizeFont;
     font-weight: 700;
     line-height: 146.5%;
+    margin-bottom: 1.5rem;
   }
   &__subtitle,&__text {
     color: $cWhite;
@@ -20,7 +21,7 @@
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 189%;
-    margin-bottom: 4.3rem;
+    margin-bottom: 1.3rem;
   }
   &__cards {
     display: grid;
@@ -40,6 +41,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 0.4em;
   }
   &__card--border {
     border: 0.1rem solid $cWhite;
@@ -48,6 +50,7 @@
     background: #1B4BFF;
   }
   &__button--border {
+    font-feature-settings: 'salt' on, 'liga' off;
     border: 0.2rem solid $cWhite;
     background: none;
     color: $cWhite;
@@ -57,6 +60,7 @@
     padding: 1.4rem 2.4rem;
   }
   &__button--filled {
+    font-feature-settings: 'salt' on, 'liga' off;
     width: 13.8rem;
     font-size: $regularSizeFont;
     background: $cWhite;
@@ -80,6 +84,12 @@
     width: 25.6rem;
   }
   &__tariff {
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-family: $interFont;
+    font-size: $mediumSizeFont;
+    font-weight: 600;
+    line-height: 170%; /* 34px */
+    letter-spacing: -1px;
     margin-bottom: 1.7rem;
   }
 }

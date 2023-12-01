@@ -33,6 +33,9 @@ html {
   @include minMediaDesktop {
     font-size: calc(100vw / $desktopBreakpoint * 10);
   }
+  @include minMediumMaxDesktop {
+    font-size: calc(100vw / $mediumDesktopBreakpoint * 10);
+  }
   @include minMediaMaxDesktop {
     font-size: calc(100vw / $wideDesktopBreakpoint * 10);
   }

@@ -1,7 +1,7 @@
 @import "components/index";
 
 .sound-block {
-  padding: 8rem 10rem;
+  padding: 9.9rem 10rem;
   &__title {
     padding: 0;
     font-size: $xlSizeFont;
@@ -13,7 +13,7 @@
   }
   &__sort {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   }
   &__sort-names {
@@ -23,6 +23,7 @@
     align-items: center;
     gap: 2.8rem;
     cursor: pointer;
+    margin: 1rem 0.35rem;
   }
   &__filter {
     position: relative;
@@ -32,10 +33,11 @@
   }
   &__sound {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 4.7rem;
     justify-content: space-between;
     border-bottom: 0.1rem solid $cGrayLight;
+    padding: 0 2rem 1rem;
     &:not(:first-child) {
       margin-top: 1.2rem;
     }
@@ -44,6 +46,7 @@
     position: relative;
   }
   &__button {
+    font-feature-settings: 'salt' on, 'liga' off;
     background: $cGrayLight;
     font-family: $interFont;
     font-size: $regularSizeFont;
@@ -69,16 +72,18 @@
     height: 3.4rem;
   }
   &__name {
+    width: 18.9rem;
     color: $cBlueDark;
     font-family: $interFont;
     font-size: $regularSizeFont;
     font-weight: 500;
     line-height: 138%; /* 22.08px */
     letter-spacing: -0.8px;
-    margin-bottom: 0.2rem;
     font-feature-settings: 'salt' on, 'liga' off;
+    margin: 0;
   }
-  &__time,&__desctiprion {
+  &__time,
+  &__description {
     margin-bottom: 0;
   }
   &__time{

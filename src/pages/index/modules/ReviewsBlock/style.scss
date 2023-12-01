@@ -8,6 +8,7 @@
     font-weight: 600;
     line-height: 14px; /* 100% */
     text-transform: uppercase;
+    margin-bottom: 2rem;
   }
   &__subtitle {
     color: $cBlueDark;
@@ -19,7 +20,7 @@
     margin-bottom: 5rem;
   }
   &__wrapper {
-    padding: 6rem 13.5rem 14rem;
+    padding: 5rem 13.5rem 14rem;
   }
   &__slide {
     border-radius: 0.8rem;
@@ -40,20 +41,24 @@
    height: 7rem;
    border-radius: 50%;
  }
+  &__author {
+    text-align: center;
+  }
   &__text {
     font-size: $smallSizeFont;
     font-family: $interFont;
     font-weight: 500;
     line-height: 172%;
     text-align: center;
-    width: 26.5rem;
+    width: 25.5rem;
   }
   &__username {
     font-family: $interFont;
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 172%;
-    color: $cBlueDark
+    color: $cBlueDark;
+    margin-bottom: 0;
   }
   &__editor {
     font-family: $interFont;
@@ -61,5 +66,6 @@
     font-weight: 500;
     line-height: 172%;
     color: $cGray;
+    margin-bottom: 0;
   }
 }

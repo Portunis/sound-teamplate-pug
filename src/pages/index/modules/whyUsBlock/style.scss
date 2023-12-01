@@ -1,7 +1,7 @@
 @import "components/index";
 
 .why-us-block {
-  padding: 6rem 10rem;
+  padding: 4rem 10rem 8.4rem;
   display: flex;
   gap: 10.5rem;
   &__information {
@@ -29,7 +29,7 @@
   &__advantages {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 5.3rem;
+    grid-row-gap: 3.5rem;
     grid-column-gap: 11rem;
 
   }

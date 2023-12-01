@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5.1rem;
   }
 }
 .information {
@@ -26,6 +25,7 @@
     align-items: center;
   }
   &__title {
+    font-feature-settings: 'salt' on, 'liga' off;
     font-size: $xxlSizeFont;
     color: $cWhite;
     font-weight: 700;
@@ -33,11 +33,16 @@
     margin-bottom: 1.6rem;
   }
   &__subtitle {
+    font-feature-settings: 'salt' on, 'liga' off;
     font-size: $mediumSizeFont;
     color: $cGray;
+    font-weight: 500;
+    line-height: 170%; /* 34px */
+    letter-spacing: -1px;
   }
   &__form {
     width: 60rem;
+    margin-top: 5.1rem;
   }
   &__form-input {
     position: relative;

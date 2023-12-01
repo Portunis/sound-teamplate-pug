@@ -1,7 +1,17 @@
 @import "components/index";
 
 .category-block {
-  padding: 6rem 10rem;
+  padding: 0.6rem 10rem 6rem;
+  &__title {
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 45px; /* 160.714% */
+    letter-spacing: -0.56px;
+    font-size: $xlSizeFont;
+    font-family: $primaryFont;
+    margin-bottom: 2.2rem;
+  }
   &__images-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);

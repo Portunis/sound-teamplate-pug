@@ -9,7 +9,13 @@ export class FilterController {
       this.button = this.container.querySelector('.j-filter-button')
       this.popup = this.container.querySelector('.j-example-filter')
       this.closeButton = this.container.querySelector('.j-filter-close')
+      this.init()
+    }
+
+    init () {
       this.initButton()
+      this.closeFilter()
+      this.container.onclick = this.handleContainerClose
     }
 
     initButton () {
@@ -19,6 +25,16 @@ export class FilterController {
           this.popup?.classList.add(ClassesEnums.OPEN)
         }
       }
+    }
+
+    handleContainerClose = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (target !== this.container) {
+        this.closeFilter()
+      }
+    }
+
+    closeFilter () {
       if (this.closeButton) {
         this.closeButton.onclick = () => {
           this.popup?.classList.remove(ClassesEnums.OPEN)

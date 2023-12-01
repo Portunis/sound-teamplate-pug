@@ -74,7 +74,7 @@ footer.footer
             .footer__navigation
                 .footer__menu
                     each item in menu
-                        .menu__item
-                            h3.menu__title #{item.title}
+                        .footer-menu__item
+                            h3.footer-menu__title #{item.title}
                             each submenu in item.submenu
-                                a.menu__url(href=submenu.url) #{submenu.name}
+                                a.footer-menu__url(href=submenu.url) #{submenu.name}

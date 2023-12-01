@@ -11,9 +11,13 @@ export class SoundController {
       this.audioFile = document.getElementById('sound__audio') as HTMLMediaElement
       this.playButton = this.container.querySelectorAll('.j-sound-play')
       this.pauseButton = this.container.querySelectorAll('.j-sound-pause')
+      this.init()
+    }
+
+    init () {
       this.initButton()
-      this.togglePlayAudio()
       this.checkEndAudio()
+      this.togglePlayAudio()
     }
 
     initButton () {

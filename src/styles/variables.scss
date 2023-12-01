@@ -11,10 +11,12 @@ $xxlSizeFont: 3.6rem;
 $mobileBreakpoint: 360;
 $tabletBreakpoint: 768;
 $desktopBreakpoint: 1024;
+$mediumDesktopBreakpoint: 1244;
 $wideDesktopBreakpoint: 1920;
 
 $mediaTablet: '(min-width: #{ $tabletBreakpoint })';
 $mediaDesktop: '(min-width: #{ $desktopBreakpoint })';
+$mediaMediumDesktop: '(min-width: #{ $mediumDesktopBreakpoint}';
 $mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
 
 // ----------COLORS

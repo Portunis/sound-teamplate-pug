@@ -51,8 +51,9 @@ div.reviews-block
                                     img(src='/src/images/icon/double-quotes.svg')
                                     p.slide__text #{item.text}
                                     img.slide__image(src=`/src/images/reviews/${item.image}.jpg`)
-                                    p.slide__username #{item.username}
-                                    p.slide__editor #{item.editor}
+                                    div.slide__author
+                                        p.slide__username #{item.username}
+                                        p.slide__editor #{item.editor}
                     div.swiper-pagination
 
 
