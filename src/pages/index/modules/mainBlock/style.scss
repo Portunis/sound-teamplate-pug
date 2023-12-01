@@ -9,7 +9,7 @@
   &__information {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 54%;
     transform: translate(-50%, -50%);
     width: 100vw;
     font-family: $primaryFont;
@@ -43,6 +43,7 @@
   &__form {
     width: 60rem;
     margin-top: 5.1rem;
+    margin-bottom: 5.1rem;
   }
   &__form-input {
     position: relative;

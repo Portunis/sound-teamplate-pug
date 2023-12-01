@@ -59,3 +59,8 @@
   display: block;
   transition: 0.3s ease-in-out;
 }
+.filter-slider{
+  &__title {
+    margin-bottom: 3rem;
+  }
+}

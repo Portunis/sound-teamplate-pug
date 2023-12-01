@@ -59,6 +59,14 @@
   }
   &__all-sound {
     margin-top: 2rem;
+    color: $cBlue;
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-size: $regularSizeFont;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.4rem;
+    letter-spacing: -0.14px;
+    text-decoration-line: underline;
   }
 }
 .sound {

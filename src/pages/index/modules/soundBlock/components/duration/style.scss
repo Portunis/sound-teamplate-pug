@@ -5,31 +5,108 @@
 }
 
 
-/**** Custom styles for noUiSlider ****/
-.noUi-connect {
-  background: purple;
-}
-.noUi-horizontal .noUi-handle, .noUi-vertical .noUi-handle {
-  background: purple;
-}
-.noUi-target.noUi-horizontal .noUi-tooltip {
-  background-color: purple;
-}
+/// Height of the slider's handle
+/// @type String
+$control-height: 40px;
+/// Width of the slider's handle
+/// @type String
+$control-width: 80px;
+/// Color of the slider's handle
+/// @type Color
+$control-color: rgb(94,55,142);
+/// Size of the slider handle's text
+/// @type String
+$control-font-size: 18px;
+/// Font Weight of the slider handle's text
+/// @type String
+$control-font-weight: 100;
+/// Color of the slider's "fill" when connected
+/// @type Color
+$fill-color: darken($cBlue, 10%);
+/// Height of the slider's gutter
+/// @type String
+$gutter-height: 2px;
 
-/**** Custom styles for Range ****/
-input[type=range]::-webkit-slider-thumb {
-  background-color: skyblue;
+
+/// noUiSlider Gutter
+.noUi-background {
+  height: 0.4rem!important;
+  &.noUi-vertical {
+    height: 4px;
+    width: $gutter-height;
+    margin: 0 auto 30px;
+  }
 }
-input[type=range]::-moz-range-thumb {
-  background-color: skyblue;
+.noUi-base {
+  .noUi-connects {
+    height: 0.4rem!important;
+  }
+  .noUi-connect {
+    background-color: $fill-color;
+    height: 0.4rem;
+  }
+  /// noUiSlider Handle
+  .noUi-handle {
+    background-color: $cBlue;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    color: #FFFFFF;
+    display: table;
+    font-size: 15px;
+    height: 0.8rem;
+    width: 0.8rem;
+    .noUi-horizontal & {
+      cursor: ew-resize;
+      width: 0.8rem;
+      height: 0.8rem;
+      right: -0.2rem;
+      top: -0.2rem;
+    }
+    .noUi-vertical & {
+      cursor: ns-resize;
+      margin-left: 1px;
+
+    }
+
+    &:hover {
+      background-color: lighten($cBlue, 10%);
+    }
+
+    &.noUi-active {
+      background-color: darken($cBlue, 10%);
+      z-index: 3;
+    }
+
+    &::before {
+      background: transparent;
+      display: table-cell;
+      font-size: $control-font-size;
+      font-weight: $control-font-weight;
+      position: static;
+      width: 100%;
+      vertical-align: middle;
+      height: 0.8rem;
+    }
+    &::after {
+      content: attr(data-value);
+      position: absolute;
+      top: -2.4rem;
+      display: flex;
+      font-size: 1.2rem;
+      width: 3.1rem;
+      left: -1.3rem;
+      color: black;
+      background: none;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
-input[type=range]::-ms-thumb {
-  background-color: skyblue;
-}
-/* For the globe and the text inside */
-input[type=range] + .thumb {
-  background-color: blue;
-}
-input[type=range] + .thumb.active .value {
-  color: #fff;
+.noUi-horizontal {
+  height: 0.4rem!important;
+  border-radius: 0.2rem !important;
+  background: $cWhite !important;
+  border: none !important;
 }
