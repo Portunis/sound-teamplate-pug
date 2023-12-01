@@ -11,27 +11,28 @@ const useDuration = () => {
     }
   })
   const updateSliderValue = (slider: Element | null, handle: number | null | undefined) => {
-    let children, i, results, val, values
     if (handle == null) {
       handle = 0
     }
-    // eslint-disable-next-line prefer-const,@typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    // eslint-disable-next-line prefer-const
-    children = slider.getElementsByClassName('noUi-handle')
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    // eslint-disable-next-line prefer-const
-    values = slider.noUiSlider.get()
-    i = 0
-    // eslint-disable-next-line prefer-const
-    results = []
+    const children = slider.getElementsByClassName('noUi-handle')
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const values = slider.noUiSlider.get()
+    let i = 0
+
+    const results = []
+    let val
     while (i < children.length) {
       if (children.length === 1) {
         val = parseInt(values)
       } else {
         val = parseInt(values[i])
       }
+
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       children[i].dataset.value = val
