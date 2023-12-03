@@ -6,7 +6,7 @@
   right: 0;
   background: $cGrayLight;
   border-radius: 0.8rem;
-  width: 28.8rem;
+  width: 32.8rem;
   &__header {
     display: flex;
     align-items: center;
@@ -63,5 +63,10 @@
 .filter-slider{
   &__title {
     margin-bottom: 3rem;
+  }
+}
+@include minMediaTablet {
+  .filter {
+    width: 28.8rem;
   }
 }

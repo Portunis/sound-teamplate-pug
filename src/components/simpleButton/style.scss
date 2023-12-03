@@ -3,9 +3,6 @@
   padding: 1rem 2rem;
   color: $cWhite;
   font-style: normal;
-  font-weight: 500;
-  font-size: 1.8rem;
-  line-height: 2rem;
   background: $cBlue;
   border-radius: 0.8rem;
   position: relative;
@@ -13,6 +10,14 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin: 0;
+    padding: 0;
+  }
   @media (hover: hover) {
     &:hover {
       background-color: $cBlueLight;
@@ -20,4 +25,14 @@
     }
   }
 }
-
+.button--large {
+  width: 100%;
+  padding: 1rem 2.4rem;
+  font-family: $primaryFont;
+  font-size: $regularSizeFont;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.16px;
+}
+@include minMediaTablet {}

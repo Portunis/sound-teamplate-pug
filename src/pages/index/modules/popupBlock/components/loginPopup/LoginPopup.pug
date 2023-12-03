@@ -3,18 +3,4 @@ block variables
     -
         var JClass= 'j-example-popup'
 block content
-    div.login
-        h3.login__title Login
-        div.login__social
-            img(src='/src/images/icon/google-icon.svg')
-            img(src='/src/images/icon/facebook-icon.svg')
-            img(src='/src/images/icon/twitter-icon.svg')
-        form.login__form
-            div.form__input
-                +SimpleInput('Email','Email', 'text', false,false, 'error', 'Incorrect E-Mail Address')
-                +SimpleInput('Password','Password','password')
-            div.form__checkbox
-                +SimpleCheckbox('Remember Me')
-        +SimpleButton('Login')
-        a.login__sign Or Sign Up
-        a.login__reset-password Forgot password?
+   +Auth

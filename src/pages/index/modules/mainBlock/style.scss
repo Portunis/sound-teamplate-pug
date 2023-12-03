@@ -92,7 +92,6 @@
   }
 }
 @include minMediaTablet {
-  .main-block {
     .information {
       &__title {
         font-size: $xxlSizeFont;
@@ -110,14 +109,15 @@
       }
       &__form {
         width: 60rem;
+        margin-top: 6.3rem;
       }
       &__subtext {
         font-size: $smallSizeFont;
         color: $cWhite;
         width: 100%;
+        margin-top: 7.1rem;
       }
     }
-  }
 }
 @include minMediaDesktop {
   .main-block {

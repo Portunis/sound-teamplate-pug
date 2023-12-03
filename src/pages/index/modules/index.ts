@@ -1,15 +1,21 @@
 import MainExamplesController from './mainExample/controller'
 import { PopupBlockController } from './popupBlock/controller'
-import useReviewsController from './ReviewsBlock/controller'
-import useDuration from './soundBlock/components/duration/controller'
 import { FilterController } from './soundBlock/components/filter/controller'
 import { SoundController } from './soundBlock/controller'
-import useHeaderController from '../../../modules/header/controller'
+import CheckboxController from '../../../components/simpleCheckbox/controller'
+import HeaderController from '../../../modules/header/controller'
+import ReviewsController from './ReviewsBlock/controller'
+import useDuration from './soundBlock/components/duration/controller';
 
 (() => {
-  useReviewsController()
   useDuration()
-  useHeaderController()
+  document.querySelectorAll('.j-swiper-block').forEach((block) => {
+    new ReviewsController(block as HTMLSelectElement)
+  })
+  document.querySelectorAll('.j-header-block')
+    .forEach((block) => {
+      new HeaderController(block as HTMLSelectElement)
+    })
   document.querySelectorAll('.j-main-example')
     .forEach(block => {
       new MainExamplesController(block as HTMLSelectElement)
@@ -26,4 +32,7 @@ import useHeaderController from '../../../modules/header/controller'
     .forEach(block => {
       new SoundController(block as HTMLSelectElement)
     })
+  document.querySelectorAll('.j-checkbox-block').forEach(block => {
+    new CheckboxController(block as HTMLSelectElement)
+  })
 })()

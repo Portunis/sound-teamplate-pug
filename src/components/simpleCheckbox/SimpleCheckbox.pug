@@ -1,8 +1,8 @@
 mixin SimpleCheckbox ( text)
-  div.simple-checkbox
-      input.simple-checkbox__input(type='checkbox')
-      if text
-        p.simple-checkbox__text=text
+    label.checkbox.simple-checkbox
+        input(type='checkbox')
+        .checkbox__checkmark
+        .checkbox__body #{text}
 
 
 

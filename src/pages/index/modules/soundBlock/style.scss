@@ -12,12 +12,12 @@
   }
   &__sort {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
+    align-items: center
   }
   &__sort-names {
-    width: 17.6rem;
-    overflow: hidden;
+    width: 19.6rem;
+    align-items: center;
     font-family: $interFont;
     font-size: $smallSizeFont;
     font-weight: 500;
@@ -25,6 +25,8 @@
     letter-spacing: -0.7px;
     font-feature-settings: 'salt' on, 'liga' off;
     cursor: pointer;
+    display: flex;
+    gap: 1.2rem;
   }
   &__filter {
     position: relative;
@@ -56,7 +58,14 @@
     letter-spacing: -0.8px;
     color: $cDark;
     padding: 0.2rem;
-
+  }
+  &__button-text {
+    font-family: $interFont;
+    font-size: $regularSizeFont;
+    font-weight: 500;
+    line-height: 138%; /* 22.08px */
+    letter-spacing: -0.8px;
+    color: $cDark;
   }
   &__button-mobile {
     display: block;
@@ -157,16 +166,53 @@
 .swiper-slide{
   width: auto;
 }
-
+.sort-name {
+  margin-bottom: 0;
+  font-weight: 500;
+  line-height: 138%; /* 19.32px */
+  letter-spacing: -0.7px;
+  font-family: $interFont;
+  font-size: $smallSizeFont;
+  &:nth-child(n + 4) {
+    display: none;
+  }
+}
 @include minMediaTablet {
  .sound-block {
    padding: 9.9rem 6.7rem;
+   &__button {
+     padding: 0.2rem 0.6rem 0.2rem 1.2rem;
+   }
+   &__sort {
+     align-items: flex-start;
+   }
+   &__sort-names {
+     font-family: $interFont;
+     font-feature-settings: 'salt' on, 'liga' off;
+     display: flex;
+     align-items: center;
+     gap: 2.8rem;
+     cursor: pointer;
+     margin: 1rem 0.35rem;
+     width: 45.3rem;
+   }
  }
   .sound {
     &__author {
       display: block;
     }
     &__controls-icon-like {
+      display: block;
+    }
+  }
+  .sort-name {
+    margin-bottom: 0;
+    font-weight: 500;
+    line-height: 138%; /* 19.32px */
+    letter-spacing: -0.7px;
+    font-family: $interFont;
+    font-size: $smallSizeFont;
+    &:nth-child(n) {
       display: block;
     }
   }
@@ -228,7 +274,7 @@
       letter-spacing: -0.8px;
       color: $cDark;
       padding: 0.2rem 1.4rem 0.2rem 2rem;
-
+      width: 13.2rem;
     }
     &__button-mobile {
       display: none;

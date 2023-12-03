@@ -38,9 +38,9 @@
     margin: 0;
     box-sizing: border-box;
     width: 100vw;
-    background-color: $cBlueDark;
+    background-color: #030B26;
     height: 100%;
-    top: -100%;
+    top: -200%;
     left: 0;
     transition: top .7s;
     z-index: 2;
@@ -48,15 +48,34 @@
     -webkit-backface-visibility: hidden;
   }
   &__menu-mobile {
-    padding: 2.4rem 1.6rem;
+    padding: 2.4rem 1.6rem 0;
+    display: flex;
+    flex-direction: column;
   }
   &__button-mobile {
     display: flex;
-    padding: 0 1.6rem;
+    padding: 1rem 2rem;
+    width: 8.8rem;
+    font-size: $smallSizeFont;
+    font-weight: 600;
+    line-height: 24px;
   }
   &__wrapper-mobile {
-    padding: 1rem 1.6rem;
-    border-bottom: 0.2rem solid $cWhite;
+    margin: 1.7rem;
+  }
+  &__line-mobile {
+    width: 100vw;
+    height: 0.2rem;
+    background: $cDark;
+  }
+  &__mobile-auth {
+    position: fixed;
+    top: -200%;
+    transition: top .3s;
+    width: 100vw;
+    height: 100vh;
+    background: $cWhite;
+
   }
 }
 .menu {
@@ -70,6 +89,8 @@
     padding: 0;
     margin-bottom: 0;
     opacity: 0.6;
+    text-decoration: none;
+    color: $cWhite;
     &:hover {
       cursor: pointer;
       color: $cWhite;
@@ -84,13 +105,20 @@
   &__item {
     font-feature-settings: 'salt' on, 'liga' off;
     font-family: $primaryFont;
-    font-size: $smallSizeFont;
-    font-weight: 500;
-    line-height: 2.4rem; /* 171.429% */
-    letter-spacing: -0.1px;
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 2.9rem; /* 171.429% */
+    letter-spacing: -0.14px;
     padding: 0;
     margin-bottom: 1.6rem;
     color: $cWhite;
+  }
+}
+.mobile-auth {
+  &__header {
+    margin: 1rem 1.6rem;
+    display: flex;
+    justify-content: right;
   }
 }
 .header._scroll {
@@ -99,6 +127,9 @@
   top: 0;
 }
 .header__navigation-mobile._open{
+  top: 0;
+}
+.header__mobile-auth._open {
   top: 0;
 }
 @include minMediaTablet {

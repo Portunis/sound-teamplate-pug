@@ -1,28 +1,49 @@
 include  ../../components/index
-
-header.header
+-
+  const navigation = [
+    {
+      name: 'Home',
+      url: '#'
+    },
+    {
+      name: 'Best for Youtube',
+      url: '#'
+    },
+    {
+      name: 'Category',
+      url: '#'
+    },
+    {
+      name: 'Upgrade',
+      url: '#'
+    },
+    {
+      name: 'FAQ',
+      url: '#'
+    },
+  ]
+header.header.j-header-block
   div.container
     div.header__wrapper
       img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
       div.header__navigation
         nav.header__menu
-          p.menu__item.menu__item--active Home
-          p.menu__item Best for Youtube
-          p.menu__item Category
-          p.menu__item Upgrade
-          p.menu__item FAQ
+          each item in navigation
+            a.menu__item(href=item.url) #{item.name}
         .header__button
           include ../../pages/index/modules/popupBlock/PopupBlock
       img.header__menu-burger.j-open-menu(src='/src/images/icon/burger.svg')
       div.header__navigation-mobile
         div.header__wrapper.header__wrapper-mobile
           img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
-          img.j-close-menu(src='/src/images/icon/icon-close.svg')
+          div.j-close-menu
+            include ../../images/icon/icon-close.svg
+        div.header__line-mobile
         nav.header__menu-mobile
-          p.menu-mobile__item.menu__item--active Home
-          p.menu-mobile__item Best for Youtube
-          p.menu-mobile__item Category
-          p.menu-mobile__item Upgrade
-          p.menu-mobile__item FAQ
-        .header__button-mobile
-          include ../../pages/index/modules/popupBlock/PopupBlock
+          each item in navigation
+            a.menu-mobile__item.j-close-menu(href=item.url) #{item.name}
+          +SimpleButton('Login', 'j-open header__button-mobile')
+        div.header__mobile-auth.j-login-block
+          div.j-close-menu.mobile-auth__header
+            include ../../images/icon/icon-close.svg
+          +Auth('button--large')

@@ -1,7 +1,8 @@
 mixin SimpleSelect ( optionDefault, options)
-  select.simple-select
-    if optionDefault
-      option.simple-select__option(value=optionDefault)=optionDefault
-    each item in options
-      option.simple-select__option(value=item.value)=item.option
+  div.form-select
+    select.simple-select
+      if optionDefault
+        option.simple-select__option(value=optionDefault)=optionDefault
+      each item in options
+        option.simple-select__option(value=item.value)=item.option
 
