@@ -9,8 +9,8 @@
   &__information {
     position: absolute;
     left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
+    top: 15rem;
+    transform: translate(-50%);
     width: 100vw;
     font-family: $primaryFont;
   }
@@ -20,7 +20,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap:5rem;
   }
   &__text {
     display: flex;
@@ -49,13 +49,21 @@
     width: 29.4rem;
     margin-bottom: 0;
   }
+  &__url {
+    text-decoration: underline;
+    color: $cWhite;
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-size: $smallSizeFont;
+
+  }
   &__form {
     width: 32.1rem;
+    margin-top: 3.3rem;
   }
   &__form-input {
     position: relative;
     input {
-      padding: 1.6rem 2rem 1.6rem 5.4rem;
+      padding: 1rem 2rem 1rem 5.4rem;
       width: 100%;
       box-sizing: border-box;
       border-radius: 0.8rem;
@@ -84,14 +92,12 @@
     text-align: center;
   }
 }
-.form-input {
-  &__icon {
-    position: absolute;
-    top: 1.2rem;
-    left: 1.6rem;
-  }
-}
 @include minMediaTablet {
+  .main-block {
+    &__information {
+      transform: translate(-50%, -50%);
+    }
+  }
     .information {
       &__title {
         font-size: $xxlSizeFont;
@@ -99,6 +105,11 @@
         line-height: 146.5%; /* 52.74px */
         letter-spacing: -0.72px;
         width: 52rem;
+      }
+      &__form-input {
+        input {
+          padding: 1.6rem 2rem 1.6rem 5.4rem;
+        }
       }
       &__subtitle {
         width: 100%;

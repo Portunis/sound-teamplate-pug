@@ -4,6 +4,9 @@
   flex-direction: column;
   align-items: center;
   gap: 2.4rem;
+  &__header {
+    display: none;
+  }
   &__title {
     margin-bottom: 0;
     font-family: $primaryFont;
@@ -37,5 +40,8 @@
 @include minMediaTablet {
   .login {
     width: 40rem;
+    &__header {
+      display: flex;
+    }
   }
 }

@@ -1,4 +1,4 @@
-mixin SimpleButton ( text, jClass,iconLeft, iconRight, link )
+mixin SimpleButton ( text, jClass,iconLeft, iconRight, link, isVisibleText )
   if link
     a(href=link)
       button.simple-btn=text
@@ -6,7 +6,7 @@ mixin SimpleButton ( text, jClass,iconLeft, iconRight, link )
     button.simple-btn(class=jClass)
       if iconRight
         img(src=`/src/images/icon/${iconRight}.svg`, alt='setting-icon')
-      if text
+      if isVisibleText || text
         =text
       if iconLeft
         img(src=`/src/images/icon/${iconLeft}.svg`, alt='setting-icon')

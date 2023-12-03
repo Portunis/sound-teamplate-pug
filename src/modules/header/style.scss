@@ -40,7 +40,7 @@
     width: 100vw;
     background-color: #030B26;
     height: 100%;
-    top: -200%;
+    top: -100%;
     left: 0;
     transition: top .7s;
     z-index: 2;
@@ -133,8 +133,22 @@
   top: 0;
 }
 @include minMediaTablet {
-
+  .login-tablet {
+    background: $cWhite;
+    border-radius: 2.4rem;
+    margin: 16.7rem auto;
+  }
+  .mobile-auth {
+    &__header {
+      display: none;
+    }
+  }
   .header {
+    &__mobile-auth {
+      top: -300%;
+      margin: 0 auto;
+      background: #030B26;
+    }
     &__navigation-mobile {
       height: 37.7rem;
     }

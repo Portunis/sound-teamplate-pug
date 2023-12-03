@@ -26,7 +26,7 @@
   }
   &__icon {
     position: absolute;
-    top: 1.2rem;
+    top: 0.7rem;
     left: 1.6rem;
   }
   &--icon {
@@ -46,5 +46,14 @@
   color: black;
   &::placeholder {
     color: $cRed;
+  }
+}
+@include minMediaTablet {
+  .simple-input {
+    &__icon {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.6rem;
+    }
   }
 }

@@ -1,5 +1,7 @@
-mixin Auth(buttonClass)
-    div.login
+mixin Auth(buttonClass, cClass)
+    div.login(class=cClass)
+        div.login__header.j-popup-close.j-close-menu
+            include ../../images/icon/icon-close.svg
         h3.login__title Login
         div.login__social
             img(src='/src/images/icon/google-icon.svg')
