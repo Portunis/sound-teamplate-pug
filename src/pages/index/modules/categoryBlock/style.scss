@@ -50,6 +50,16 @@
     text-align: center;
   }
 }
+@include minMediaTablet {
+ .category-block {
+   padding: 0.6rem 6.7rem;
+   &__images-list {
+     grid-template-columns: repeat(4, 1fr);
+     grid-column-gap: 1.6rem;
+     grid-row-gap: 1.2rem;
+   }
+ }
+}
 @include minMediaDesktop {
   .category-block {
     padding: 0.6rem 10rem 6rem;
@@ -65,7 +75,7 @@
     }
     &__images-list {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       grid-column-gap: 2rem;
       grid-row-gap: 1.6rem;
     }
@@ -99,6 +109,16 @@
       margin-bottom: 0;
       width: 11.9rem;
       text-align: center;
+    }
+  }
+}
+@include minMediumMaxDesktop {
+  .category-block {
+    &__images-list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 1.6rem;
     }
   }
 }

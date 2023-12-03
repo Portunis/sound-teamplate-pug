@@ -85,6 +85,7 @@
     background-image: url("/src/images/icon/soud-controls/play-icon.svg");
     width: 3.8rem;
     height: 3.9rem;
+    background-repeat: no-repeat;
   }
   &__name {
     width: 12.9rem;
@@ -155,6 +156,20 @@
 }
 .swiper-slide{
   width: auto;
+}
+
+@include minMediaTablet {
+ .sound-block {
+   padding: 9.9rem 6.7rem;
+ }
+  .sound {
+    &__author {
+      display: block;
+    }
+    &__controls-icon-like {
+      display: block;
+    }
+  }
 }
 @include minMediaDesktop {
   .sound-block {
@@ -242,6 +257,7 @@
       background-image: url("/src/images/icon/soud-controls/play-icon.svg");
       width: 3.4rem;
       height: 3.4rem;
+      background-repeat: no-repeat;
     }
     &__name {
       width: 18.9rem;

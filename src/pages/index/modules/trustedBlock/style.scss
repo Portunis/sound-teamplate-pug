@@ -24,6 +24,16 @@
     gap: 3.4rem;
   }
 }
+@include minMediaTablet {
+  .trusted-block {
+    &__wrapper {
+      padding: 5rem 6.7rem;
+    }
+    &__title {
+      width: 100%;
+    }
+  }
+}
 @include minMediaDesktop {
   .trusted-block {
     background: #FAFAFA;

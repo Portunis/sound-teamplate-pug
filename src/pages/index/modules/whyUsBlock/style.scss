@@ -62,11 +62,28 @@
     line-height: 172%;
   }
 }
+@include  minMediaTablet {
+  .why-us-block {
+    padding: 4rem 1.6rem;
+    &__description {
+      font-weight: 600;
+      line-height: 160%; /* 38.4px */
+      letter-spacing: -0.48px;
+      font-size: 2.4rem;
+      width: 46.6rem;
+    }
+    &__advantages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 11rem;
+    }
+  }
+}
 @include minMediaDesktop {
   .why-us-block {
     padding: 4rem 10rem 8.4rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10.5rem;
     align-items: flex-start;
     &__information {
@@ -123,5 +140,10 @@
       font-weight: 500;
       line-height: 172%;
     }
+  }
+}
+@include minMediumMaxDesktop {
+  .why-us-block {
+    flex-direction: row;
   }
 }

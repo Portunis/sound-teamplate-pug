@@ -18,7 +18,7 @@
   }
 };
 @mixin minMediumMaxDesktop {
-  @media (min-width: $desktopBreakpoint + px) {
+  @media (min-width: $mediumDesktopBreakpoint + px) {
     @content
   }
 };

@@ -29,6 +29,7 @@
     height: 2.5rem;
   }
   &__text {
+
     color: $cGray;
     font-family: $interFont;
     font-size: $regularSizeFont;
@@ -43,6 +44,7 @@
 
   .footer-menu {
     &__title {
+      font-feature-settings: 'salt' on, 'liga' off;
       color: $cWhite;
       font-family: $interFont;
       font-size: 1.8rem;
@@ -53,6 +55,7 @@
       margin-bottom: 0;
     }
     &__url {
+      font-feature-settings: 'salt' on, 'liga' off;
       color: $cGray;
       font-family: $interFont;
       font-size: $regularSizeFont;
@@ -72,7 +75,14 @@
       gap: 1.2rem
     }
   }
-
+@include minMediaTablet {
+  .footer {
+    padding: 4rem 6.7rem;
+    &__menu {
+      gap: 15.2rem;
+    }
+  }
+}
 @include minMediaDesktop {
   .footer {
     &__wrapper {

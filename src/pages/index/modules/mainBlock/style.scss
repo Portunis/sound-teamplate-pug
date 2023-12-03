@@ -91,6 +91,34 @@
     left: 1.6rem;
   }
 }
+@include minMediaTablet {
+  .main-block {
+    .information {
+      &__title {
+        font-size: $xxlSizeFont;
+        font-weight: 700;
+        line-height: 146.5%; /* 52.74px */
+        letter-spacing: -0.72px;
+        width: 52rem;
+      }
+      &__subtitle {
+        width: 100%;
+        font-weight: 500;
+        line-height: 172%; /* 30.96px */
+        letter-spacing: -0.9px;
+        font-size: 1.8rem;
+      }
+      &__form {
+        width: 60rem;
+      }
+      &__subtext {
+        font-size: $smallSizeFont;
+        color: $cWhite;
+        width: 100%;
+      }
+    }
+  }
+}
 @include minMediaDesktop {
   .main-block {
     &__information {

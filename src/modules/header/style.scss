@@ -101,16 +101,15 @@
 .header__navigation-mobile._open{
   top: 0;
 }
-@include minMediaDesktop {
-  .header {
-    &__navigation {
-      display: flex;
-    }
+@include minMediaTablet {
 
-  &__menu-burger {
-    display: none;
+  .header {
+    &__navigation-mobile {
+      height: 37.7rem;
+    }
   }
-  }
+}
+@include minMediaDesktop {
   .menu {
     &__item {
       font-feature-settings: 'salt' on, 'liga' off;
@@ -130,6 +129,17 @@
     }
     &__item--active {
       opacity: 1;
+    }
+  }
+}
+@include minMediumMaxDesktop {
+  .header {
+    padding: 2rem 10rem;
+    &__navigation {
+      display: flex;
+    }
+    &__menu-burger {
+      display: none;
     }
   }
 }
