@@ -1,49 +1,56 @@
 @import "components/index";
-
 .main-block {
   position: relative;
   &__image {
     width: 100vw;
     z-index: 1;
+    height: 100vh;
   }
   &__information {
     position: absolute;
     left: 50%;
-    top: 54%;
+    top: 55%;
     transform: translate(-50%, -50%);
     width: 100vw;
     font-family: $primaryFont;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }
 .information {
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   &__text {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.6rem;
   }
   &__title {
     font-feature-settings: 'salt' on, 'liga' off;
-    font-size: $xxlSizeFont;
+    font-size: $mediumSizeFont;
     color: $cWhite;
-    font-weight: 700;
-    line-height: 146.5%;
-    margin-bottom: 1.6rem;
+    font-weight: 600;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.4px;
+    text-align: center;
+    width: 28.9rem;
+    margin-bottom: 0;
   }
   &__subtitle {
     font-feature-settings: 'salt' on, 'liga' off;
-    font-size: $mediumSizeFont;
+    font-size: $regularSizeFont;
     color: $cGray;
-    font-weight: 500;
-    line-height: 170%; /* 34px */
-    letter-spacing: -1px;
+    font-weight: 600;
+    line-height: 138%;
+    text-align: center;
+    width: 29.4rem;
+    margin-bottom: 0;
   }
   &__form {
-    width: 60rem;
-    margin-top: 5.1rem;
-    margin-bottom: 5.1rem;
+    width: 32.1rem;
   }
   &__form-input {
     position: relative;
@@ -64,10 +71,17 @@
   &__form-span {
     font-size: $smallSizeFont;
     color: $cWhite;
+    font-weight: 400;
+    line-height: 172%; /* 24.08px */
+    letter-spacing: -0.7px;
   }
   &__subtext {
     font-size: $smallSizeFont;
     color: $cWhite;
+    font-weight: 500;
+    line-height: 172%;
+    width: 28.9rem;
+    text-align: center;
   }
 }
 .form-input {
@@ -75,5 +89,65 @@
     position: absolute;
     top: 1.2rem;
     left: 1.6rem;
+  }
+}
+@include minMediaDesktop {
+  .main-block {
+    &__information {
+      top: 54%;
+    }
+  }
+  .information {
+    &__title {
+      font-size: $xxlSizeFont;
+      font-weight: 700;
+      line-height: 146.5%;
+      margin-bottom: 1.6rem;
+      width: 100%;
+    }
+    &__subtitle {
+      font-size: $mediumSizeFont;
+      font-weight: 500;
+      line-height: 170%; /* 34px */
+      letter-spacing: -1px;
+      width: 100%;
+    }
+    &__form {
+      width: 60rem;
+      margin-top: 5.1rem;
+      margin-bottom: 5.1rem;
+    }
+    &__form-input {
+      position: relative;
+      input {
+        padding: 1.6rem 2rem 1.6rem 5.4rem;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0.8rem;
+        color: $cGray;
+        font-size: $regularSizeFont;
+        margin-bottom: 1rem;
+        &::placeholder {
+          color: $cGray;
+          font-size: $regularSizeFont;
+        }
+      }
+    }
+    &__form-span {
+      font-size: $smallSizeFont;
+      color: $cWhite;
+    }
+    &__subtext {
+      font-size: $smallSizeFont;
+      color: $cWhite;
+      width: 100%;
+    }
+  }
+  .form-input {
+    &__icon {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.6rem;
+    }
   }
 }

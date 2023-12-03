@@ -1,19 +1,22 @@
 .footer {
   background-color: $cBlueDark;
   width: 100vw;
+  padding: 5rem 1.6rem;
   &__wrapper {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 5rem 10rem;
+    flex-direction: column;
   }
   &__menu {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     flex-shrink: 0;
-    gap: 15.2rem;
+    gap: 6.6rem;
   }
   &__info {
+    margin-bottom: 3.4rem;
     width: 29.8rem;
     display: flex;
     flex-direction: column;
@@ -70,3 +73,11 @@
     }
   }
 
+@include minMediaDesktop {
+  .footer {
+    &__wrapper {
+      padding: 5rem 10rem;
+      flex-direction: row;
+    }
+  }
+}

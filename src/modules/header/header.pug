@@ -13,3 +13,16 @@ header.header
           p.menu__item FAQ
         .header__button
           include ../../pages/index/modules/popupBlock/PopupBlock
+      img.header__menu-burger.j-open-menu(src='/src/images/icon/burger.svg')
+      div.header__navigation-mobile
+        div.header__wrapper.header__wrapper-mobile
+          img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
+          img.j-close-menu(src='/src/images/icon/icon-close.svg')
+        nav.header__menu-mobile
+          p.menu-mobile__item.menu__item--active Home
+          p.menu-mobile__item Best for Youtube
+          p.menu-mobile__item Category
+          p.menu-mobile__item Upgrade
+          p.menu-mobile__item FAQ
+        .header__button-mobile
+          include ../../pages/index/modules/popupBlock/PopupBlock

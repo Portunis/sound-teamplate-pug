@@ -1,7 +1,7 @@
 include components/index
 block content
     -
-        var sounds = [
+        const sounds = [
             {
                 sound: 'audio',
                 name: 'Sound Name',
@@ -45,16 +45,41 @@ block content
                 author: 'Shocking, jumpscare',
             }
         ]
+        const category = [
+            {
+                name: 'All',
+                active: 'active'
+            },
+            {
+                name: 'Jumpscare',
+                active: ''
+            },
+            {
+                name: 'Mellow',
+                active: ''
+            },
+            {
+                name: 'Happiness',
+                active: ''
+            },
+            {
+                name: 'Ambience',
+                active: ''
+            },
+            {
+                name: 'Zonk',
+                active: ''
+            },
+        ]
     div.sound-block.container.j-sound-block
         h3.sound-block__title Best sound effects for youtube videos
         div.sound-block__sort
             div.sound-block__sort-names
-                p.sort-name.active All
-                p.sort-name Jumpscare
-                p.sort-name Mellow
-                p.sort-name Happiness
-                p.sort-name Ambience
-                p.sort-name Zonk
+                div.swiper.sound-block__filter-swiper
+                    div.swiper-wrapper
+                        each item in category
+                            div.swiper-slide
+                                p.sort-name(class=item.active) #{item.name}
             div.sound-block__filter.j-filter-block
                 +SimpleButton('Filter','sound-block__button j-filter-button','setting-icon',false,false)
                 include components/filter/filter
@@ -71,7 +96,7 @@ block content
                     p.sound__description #{item.description}
                     div.sound__author #{item.author}
                     div.sound__controls
-                        div.sound__controls-icon.j-like-sound.j-control-button
+                        div.sound__controls-icon.sound__controls-icon-like.j-like-sound.j-control-button
                             include ../../../../images/icon/soud-controls/like.svg
                         img.sound__controls-icon(src='/src/images/icon/soud-controls/content-loading.svg')
                         img.sound__controls-icon(src='/src/images/icon/soud-controls/dots.svg')

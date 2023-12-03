@@ -6,7 +6,8 @@ mixin SimpleButton ( text, jClass,iconLeft, iconRight, link )
     button.simple-btn(class=jClass)
       if iconRight
         img(src=`/src/images/icon/${iconRight}.svg`, alt='setting-icon')
-      =text
+      if text
+        =text
       if iconLeft
         img(src=`/src/images/icon/${iconLeft}.svg`, alt='setting-icon')
 

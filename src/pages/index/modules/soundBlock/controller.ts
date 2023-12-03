@@ -1,5 +1,7 @@
 import { ClassesEnums } from '../../../../utils/enums/classesEnums'
-
+import Swiper from 'swiper'
+// import Swiper styles
+import 'swiper/css'
 export class SoundController {
     private readonly buttons: NodeListOf<Element>;
     private readonly audioFile: HTMLAudioElement;
@@ -18,6 +20,19 @@ export class SoundController {
       this.initButton()
       this.checkEndAudio()
       this.togglePlayAudio()
+      this.sliderFilter()
+    }
+
+    sliderFilter () {
+      new Swiper('.sound-block__filter-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+          type: 'bullets'
+        }
+      })
     }
 
     initButton () {

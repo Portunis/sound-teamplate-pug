@@ -6,7 +6,7 @@ import 'swiper/css'
 
 const useReviewsController = () => {
   new Swiper('.reviews-block__my-swiper', {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
       el: '.swiper-pagination',
