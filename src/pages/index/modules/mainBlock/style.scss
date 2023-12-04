@@ -95,6 +95,7 @@
 @include minMediaTablet {
   .main-block {
     &__information {
+      top: 50%;
       transform: translate(-50%, -50%);
     }
   }
