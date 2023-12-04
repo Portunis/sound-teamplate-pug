@@ -144,13 +144,28 @@
     }
   }
   .header {
+    &__wrapper {
+      margin: 0.5rem 6rem;
+    }
+    &__wrapper-mobile {
+      margin: 1rem 6rem;
+    }
     &__mobile-auth {
       top: -300%;
       margin: 0 auto;
       background: #030B26;
     }
+    &__menu-mobile {
+      margin-left: 6.8rem;
+    }
     &__navigation-mobile {
-      height: 37.7rem;
+      height: auto;
+      padding-bottom: 4rem;
+    }
+  }
+  .menu-mobile {
+    &__item {
+      font-size: $smallSizeFont;
     }
   }
 }

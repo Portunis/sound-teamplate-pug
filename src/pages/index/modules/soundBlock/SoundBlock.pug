@@ -78,7 +78,10 @@ block content
                 each item in category
                     p.sort-name(class=item.active) #{item.name}
             div.sound-block__filter.j-filter-block
-                +SimpleButton('Filter','sound-block__button j-filter-button','setting-icon',false,false)
+                div.sound-block-filter__button--desktop
+                    +SimpleButton('Filter','sound-block__button j-filter-button','setting-icon',false,false)
+                div.sound-block-filter__button--mobile
+                    +SimpleButton('','sound-block__button j-filter-button','setting-icon',false,false)
                 include components/filter/filter
         div.sound-block__sounds
             each item in sounds

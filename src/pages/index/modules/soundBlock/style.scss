@@ -177,6 +177,14 @@
     display: none;
   }
 }
+.sound-block-filter {
+  &__button--desktop {
+    display: none;
+  }
+  &__button--mobile {
+    display: block;
+  }
+}
 @include minMediaTablet {
  .sound-block {
    padding: 9.9rem 6.7rem;
@@ -214,6 +222,14 @@
     font-size: $smallSizeFont;
     &:nth-child(n) {
       display: block;
+    }
+  }
+  .sound-block-filter {
+    &__button--desktop {
+      display: block;
+    }
+    &__button--mobile {
+      display: none;
     }
   }
 }
