@@ -77,7 +77,7 @@
     width: 100vw;
     height: 100vh;
     background: $cWhite;
-
+    z-index: 999;
   }
 }
 .menu {
@@ -163,6 +163,7 @@
       opacity: 0;
       transition: ease-in-out .7s;
       display: flex;
+
     }
     &__wrapper {
       position: relative;
