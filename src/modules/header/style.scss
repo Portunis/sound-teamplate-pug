@@ -51,6 +51,8 @@
     padding: 2.4rem 1.6rem 0;
     display: flex;
     flex-direction: column;
+    z-index: 2;
+    position: relative;
   }
   &__button-mobile {
     display: flex;
@@ -128,6 +130,11 @@
 }
 .header__navigation-mobile._open{
   top: 0;
+  .header {
+    &__navigation-mobile-background {
+    opacity: 1
+    }
+  }
 }
 .header__mobile-auth._open {
   top: 0;
@@ -144,8 +151,23 @@
     }
   }
   .header {
+    &__navigation-mobile-background {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100%;
+      background: rgba(2, 13, 55, 0.50);
+      position: fixed;
+      opacity: 0;
+      transition: ease-in-out .7s;
+      display: flex;
+    }
     &__wrapper {
+      position: relative;
       margin: 0.5rem 6rem;
+      z-index: 3;
     }
     &__wrapper-mobile {
       margin: 1rem 6rem;
@@ -154,16 +176,6 @@
       top: -300%;
       margin: 0 auto;
       background: #030B26;
-      &:before {
-        position:fixed;
-        display:flex;
-        width:100%;
-        height:100%;
-        justify-content:center;
-        align-items:center;
-        background:rgba(0,0,0,.7);
-        z-index:100;
-      }
     }
     &__menu-mobile {
       margin-left: 6.8rem;
@@ -204,7 +216,10 @@
 }
 @include minMediumMaxDesktop {
   .header {
-    padding: 2rem 10rem;
+     &__wrapper {
+       padding: 2rem 10rem;
+       margin: 0;
+     }
     &__navigation {
       display: flex;
     }
