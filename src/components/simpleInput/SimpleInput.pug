@@ -4,7 +4,7 @@ mixin SimpleInput ( label, text,type, iconName, jClass, error,errorText)
       label.simple-input__label=label
     div.simple-input__container
       if iconName
-        img.simple-input__icon(src=`/src/images/icon/${iconName}.png`)
+        img.simple-input__icon(src=`/src/images/icon/${iconName}.png`, alt='icon-input')
         input.simple-input__input.simple-input--icon(placeholder=text, class=error, type=type)
         if error && errorText
           p.simple-input__error-text #{errorText}

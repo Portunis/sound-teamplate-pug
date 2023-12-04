@@ -48,9 +48,9 @@ div.reviews-block.j-swiper-block
                         each item in reviews
                             div.swiper-slide
                                 div.reviews-block__slide
-                                    img(src='/src/images/icon/double-quotes.svg')
+                                    img(src='/src/images/icon/double-quotes.svg', alt='icon')
                                     p.slide__text #{item.text}
-                                    img.slide__image(src=`/src/images/reviews/${item.image}.jpg`)
+                                    img.slide__image(src=`/src/images/reviews/${item.image}.jpg`, alt=item.image)
                                     div.slide__author
                                         p.slide__username #{item.username}
                                         p.slide__editor #{item.editor}

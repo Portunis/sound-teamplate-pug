@@ -28,6 +28,6 @@ div.container.why-us-block
     div.why-us-block__advantages
         each item in advantages
             div.advantages__item
-                img.advantages__image(src=`/src/images/icon/advantages/${item.icon}.svg`)
+                img.advantages__image(src=`/src/images/icon/advantages/${item.icon}.svg`, alt=item.icon)
                 p.advantages__title #{item.title}
                 p.advantages__description #{item.description}
