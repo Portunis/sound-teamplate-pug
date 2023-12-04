@@ -1,4 +1,5 @@
 .login {
+  position: relative;
   padding: 0 2.4rem;
   display: flex;
   flex-direction: column;
@@ -41,7 +42,14 @@
   .login {
     width: 40rem;
     &__header {
-      display: flex;
+      position: absolute;
+      right: 1.6rem;
+      top: 1.6rem;
+      display: block;
+      cursor: pointer;
+    }
+    &__title {
+      margin-top: 4rem;
     }
   }
 }

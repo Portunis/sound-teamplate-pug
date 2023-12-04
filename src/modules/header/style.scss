@@ -136,7 +136,7 @@
   .login-tablet {
     background: $cWhite;
     border-radius: 2.4rem;
-    margin: 16.7rem auto;
+    margin: 25% auto;
   }
   .mobile-auth {
     &__header {
@@ -154,6 +154,16 @@
       top: -300%;
       margin: 0 auto;
       background: #030B26;
+      &:before {
+        position:fixed;
+        display:flex;
+        width:100%;
+        height:100%;
+        justify-content:center;
+        align-items:center;
+        background:rgba(0,0,0,.7);
+        z-index:100;
+      }
     }
     &__menu-mobile {
       margin-left: 6.8rem;
