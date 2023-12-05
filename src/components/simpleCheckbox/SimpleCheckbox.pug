@@ -1,7 +1,7 @@
-mixin SimpleCheckbox ( text)
+mixin SimpleCheckbox ( text, cClass)
     label.checkbox.simple-checkbox
         input(type='checkbox')
-        .checkbox__checkmark
+        div(class=`checkbox__checkmark ${cClass}`)
         .checkbox__body #{text}
 
 

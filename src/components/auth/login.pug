@@ -14,7 +14,7 @@ mixin Auth(buttonClass, cClass)
                     +SimpleInput('Email','Email', 'text', false,false, 'error', 'Incorrect E-Mail Address')
                     +SimpleInput('Password','Password','password')
                 div.form__checkbox
-                    +SimpleCheckbox('Remember Me')
+                    +SimpleCheckbox('Remember Me', 'checkbox--bg')
         +SimpleButton('Login', buttonClass)
         a.login__sign Or Sign Up
         a.login__reset-password Forgot password?

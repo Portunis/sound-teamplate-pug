@@ -48,6 +48,18 @@
 
   }
 }
+.checkbox.simple-checkbox input:checked ~ .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
+.checkbox.simple-checkbox:hover input ~ .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
+.checkbox.simple-checkbox:hover input:checked ~ .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
+.checkbox.simple-checkbox .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
 @include minMediaTablet {
   .login {
     width: 40rem;
