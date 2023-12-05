@@ -43,13 +43,11 @@ export class SoundController {
     }
 
     initAudio () {
-      this.audioFile?.addEventListener(
-        'loadeddata',
-        () => {
-          this.getTimeAudio()
-        },
-        false
-      )
+      // eslint-disable-next-line no-unused-expressions
+      this.audioFile.onloadeddata
+      this.audioFile?.addEventListener('timeupdate', () => {
+        this.getTimeAudio()
+      })
     }
 
     initButton () {
