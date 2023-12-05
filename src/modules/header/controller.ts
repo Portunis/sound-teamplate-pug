@@ -6,12 +6,14 @@ export default class HeaderController {
   private buttonBurger: Element | null;
   private loginButton: Element | null;
   private loginForm: Element | null;
+  private readonly scrollHeight: number;
   constructor (private container: HTMLSelectElement) {
     this.buttonClose = container.querySelectorAll('.j-close-menu')
     this.mobileMenu = container.querySelector('.header__navigation-mobile')
     this.buttonBurger = container.querySelector('.j-open-menu')
     this.loginButton = container.querySelector('.j-open')
     this.loginForm = container.querySelector('.j-login-block')
+    this.scrollHeight = 20
     this.init()
   }
 
@@ -28,7 +30,7 @@ export default class HeaderController {
       const scrollTop = window.scrollY
       const headerWrapper: Element | null = document.querySelector('.header')
 
-      if (scrollTop >= 100) {
+      if (scrollTop >= this.scrollHeight) {
         headerWrapper?.classList.add(ClassesEnums.SCROLL)
       } else {
         headerWrapper?.classList.remove(ClassesEnums.SCROLL)

@@ -155,7 +155,6 @@
     &__form {
       width: 60rem;
       margin-top: 5.1rem;
-      margin-bottom: 5.1rem;
     }
     &__form-input {
       position: relative;
@@ -181,6 +180,7 @@
       font-size: $smallSizeFont;
       color: $cWhite;
       width: 100%;
+      margin-top: 0;
     }
   }
   .form-input {

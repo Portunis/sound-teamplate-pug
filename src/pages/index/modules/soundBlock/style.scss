@@ -24,7 +24,6 @@
     line-height: 138%; /* 19.32px */
     letter-spacing: -0.7px;
     font-feature-settings: 'salt' on, 'liga' off;
-    cursor: pointer;
     display: flex;
     gap: 1.2rem;
   }
@@ -86,7 +85,6 @@
   }
 }
 .sound {
-  font-family: $interFont;
   &__play {
     cursor: pointer;
   }
@@ -160,8 +158,8 @@
   background-image: url("/src/images/icon/soud-controls/pause-icon.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 3.4rem;
-  height: 3.4rem;
+  width: 3.9rem;
+  height: 3.9rem;
 }
 .swiper-slide{
   width: auto;
@@ -173,6 +171,7 @@
   letter-spacing: -0.7px;
   font-family: $interFont;
   font-size: $smallSizeFont;
+  cursor: pointer;
   &:nth-child(n + 4) {
     display: none;
   }
@@ -195,12 +194,7 @@
      align-items: flex-start;
    }
    &__sort-names {
-     font-family: $interFont;
-     font-feature-settings: 'salt' on, 'liga' off;
-     display: flex;
-     align-items: center;
      gap: 2.8rem;
-     cursor: pointer;
      margin: 1rem 0.35rem;
      width: 45.3rem;
    }
@@ -216,9 +210,8 @@
   .sort-name {
     margin-bottom: 0;
     font-weight: 500;
-    line-height: 138%; /* 19.32px */
+    line-height: 138%;
     letter-spacing: -0.7px;
-    font-family: $interFont;
     font-size: $smallSizeFont;
     &:nth-child(n) {
       display: block;
@@ -239,36 +232,24 @@
     &__title {
       padding: 0;
       font-size: $xlSizeFont;
-      font-family: $primaryFont;
       font-weight: 600;
       line-height: 45px; /* 160.714% */
       letter-spacing: -0.56px;
       margin-bottom: 1.4rem;
     }
     &__sort {
-      display: flex;
-      align-items: flex-start;
       justify-content: space-between;
     }
     &__sort-names {
-      font-family: $interFont;
-      font-feature-settings: 'salt' on, 'liga' off;
-      display: flex;
-      align-items: center;
-      gap: 2.8rem;
-      cursor: pointer;
       margin: 1rem 0.35rem;
       width: 100%;
-    }
-    &__filter {
-      position: relative;
     }
     &__sounds {
       margin-top: 2rem;
     }
     &__sound {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 4.7rem;
       justify-content: space-between;
       border-bottom: 0.1rem solid $cGrayLight;
@@ -277,18 +258,11 @@
         margin-top: 1.2rem;
       }
     }
-    &__slider {
-      position: relative;
-    }
     &__button {
-      font-feature-settings: 'salt' on, 'liga' off;
-      background: $cGrayLight;
-      font-family: $interFont;
       font-size: $regularSizeFont;
       font-weight: 500;
-      line-height: 138%; /* 22.08px */
+      line-height: 138%;
       letter-spacing: -0.8px;
-      color: $cDark;
       padding: 0.2rem 1.4rem 0.2rem 2rem;
       width: 13.2rem;
     }
@@ -300,36 +274,23 @@
     }
     &__all-sound {
       margin-top: 2rem;
-      color: $cBlue;
-      font-feature-settings: 'salt' on, 'liga' off;
-      font-size: $regularSizeFont;
-      font-style: normal;
+      font-size: $smallSizeFont;
       font-weight: 600;
       line-height: 2.4rem;
       letter-spacing: -0.14px;
-      text-decoration-line: underline;
     }
   }
   .sound {
-    font-family: $interFont;
-    &__play {
-      cursor: pointer;
-    }
     &__play-button {
-      background-image: url("/src/images/icon/soud-controls/play-icon.svg");
       width: 3.4rem;
       height: 3.4rem;
-      background-repeat: no-repeat;
     }
     &__name {
       width: 18.9rem;
-      color: $cBlueDark;
-      font-family: $interFont;
       font-size: $regularSizeFont;
       font-weight: 500;
       line-height: 138%; /* 22.08px */
       letter-spacing: -0.8px;
-      font-feature-settings: 'salt' on, 'liga' off;
       margin: 0;
     }
     &__time,
@@ -338,9 +299,6 @@
     }
     &__time{
       font-size: 1.2rem;
-      color: $cDark;
-      font-feature-settings: 'salt' on, 'liga' off;
-      font-family: $interFont;
       font-weight: 400;
       line-height: 172%; /* 20.64px */
       letter-spacing: -0.6px;
@@ -348,9 +306,6 @@
     &__description,
     &__author {
       display: block;
-      color: $cDark;
-      font-feature-settings: 'salt' on, 'liga' off;
-      font-family: $interFont;
       width: 25rem;
       font-size: $regularSizeFont;
       font-weight: 500;
@@ -358,12 +313,7 @@
       letter-spacing: -0.8px;
     }
     &__controls {
-      display: flex;
-      align-items: center;
       gap: 2rem;
-    }
-    &__controls-icon {
-      cursor: pointer;
     }
     &__controls-icon-like {
       display: block;
@@ -373,18 +323,7 @@
     border-bottom: 0.1rem solid $cBlueDark;
     padding: 0.5rem;
   }
-  ._selected {
-    svg {
-      fill: $cBlue;
-      path {
-        stroke: $cBlue;
-      }
-    }
-  }
   .pause-active {
-    background-image: url("/src/images/icon/soud-controls/pause-icon.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 3.4rem;
     height: 3.4rem;
   }

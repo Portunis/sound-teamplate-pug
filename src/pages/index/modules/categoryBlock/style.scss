@@ -64,13 +64,9 @@
   .category-block {
     padding: 0.6rem 10rem 6rem;
     &__title {
-      font-feature-settings: 'salt' on, 'liga' off;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 45px; /* 160.714% */
+      line-height: 45px;
       letter-spacing: -0.56px;
       font-size: $xlSizeFont;
-      font-family: $primaryFont;
       margin-bottom: 2.2rem;
     }
     &__images-list {
@@ -82,10 +78,8 @@
     &__subtext {
       color: $cBlue;
       font-size: $smallSizeFont;
-      font-weight: 600;
       line-height: 24px;
       letter-spacing: -0.14px;
-      text-decoration-line: underline;
       margin-top: 2rem;
     }
   }
