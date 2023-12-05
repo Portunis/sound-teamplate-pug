@@ -11,7 +11,39 @@ block content
                 author: 'Shocking, jumpscare',
             },
             {
-                id: 1,
+                id: 2,
+                sound: 'audio2',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                id: 3,
+                sound: 'audio2',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                id: 4,
+                sound: 'audio2',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                id: 5,
+                sound: 'audio2',
+                name: 'Sound Name',
+                time: '00:12',
+                description: 'Confused excited crowd slight panic and distress',
+                author: 'Shocking, jumpscare',
+            },
+            {
+                id: 6,
                 sound: 'audio2',
                 name: 'Sound Name',
                 time: '00:12',
@@ -58,16 +90,16 @@ block content
                 div.sound-block-filter__button--mobile
                     +SimpleButton('','sound-block__button j-filter-button','setting-icon',false,false)
                 include components/filter/filter
-        div.sound-block__sounds
+        div.sound-block__sounds.j-sound-playlist
             each item in sounds
                 div.sound-block__sound
                     div.sound__play
-                        audio(preload='metadata').sound__audio
-                            source(src=`/src/sound/${item.sound}.mp3`, type='audio/mp3')
                         div.sound__play-button.j-sound-play
+                            audio(preload='metadata').sound__audio
+                                source(src=`/src/sound/${item.sound}.mp3`, type='audio/mp3')
                     div.sound__info
                         p.sound__name #{item.name}
-                        p.sound__time #{item.time}
+                        p.sound__time
                         p.sound__time.sound__time-play.j-sound-time
                     p.sound__description #{item.description}
                     div.sound__author #{item.author}
