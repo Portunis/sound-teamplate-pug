@@ -1,4 +1,5 @@
 import { ClassesEnums } from '../../utils/enums/classesEnums'
+import { BodyOverflow } from '../../helpers/bodyOverflow'
 
 export default class HeaderController {
   private buttonClose: NodeListOf<Element>;
@@ -41,6 +42,7 @@ export default class HeaderController {
   openMenu () {
     this.buttonBurger?.addEventListener('click', () => {
       this.mobileMenu?.classList.add(ClassesEnums.OPEN)
+      BodyOverflow.block(this.container)
     })
   }
 
@@ -48,6 +50,7 @@ export default class HeaderController {
     this.buttonClose.forEach((item) => {
       item.addEventListener('click', () => {
         this.mobileMenu?.classList.remove(ClassesEnums.OPEN)
+        BodyOverflow.unBlock(this.container)
       })
     })
   }

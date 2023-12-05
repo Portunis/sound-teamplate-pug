@@ -137,6 +137,7 @@
   }
 }
 .header__mobile-auth._open {
+  overflow-y: scroll;
   top: 0;
 }
 @include minMediaTablet {

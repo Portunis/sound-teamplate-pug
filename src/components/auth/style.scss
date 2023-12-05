@@ -23,6 +23,15 @@
     gap: 2.5rem;
     cursor: pointer;
   }
+  &__text {
+    color: $cGray;
+    font-family: $interFont;
+    font-size: $regularSizeFont;
+    font-weight: 500;
+    line-height: 180%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
   &__form {
     width: 100%;
   }
