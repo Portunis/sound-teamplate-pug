@@ -3,6 +3,7 @@ block content
     -
         const sounds = [
             {
+                id: 1,
                 sound: 'audio',
                 name: 'Sound Name',
                 time: '00:12',
@@ -10,40 +11,14 @@ block content
                 author: 'Shocking, jumpscare',
             },
             {
-                sound: 'audio',
+                id: 1,
+                sound: 'audio2',
                 name: 'Sound Name',
                 time: '00:12',
                 description: 'Confused excited crowd slight panic and distress',
                 author: 'Shocking, jumpscare',
             },
-            {
-                sound: 'audio',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                sound: 'audio',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                sound: 'audio',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                sound: 'audio',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            }
+
         ]
         const category = [
             {
@@ -85,9 +60,9 @@ block content
                 include components/filter/filter
         div.sound-block__sounds
             each item in sounds
-                div.sound-block__sound.j-example-sound
+                div.sound-block__sound
                     div.sound__play
-                        audio(id="sound__audio", preload='metadata')
+                        audio(preload='metadata').sound__audio
                             source(src=`/src/sound/${item.sound}.mp3`, type='audio/mp3')
                         div.sound__play-button.j-sound-play
                     div.sound__info

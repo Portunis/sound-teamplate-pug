@@ -4,7 +4,7 @@ import Swiper from 'swiper'
 import 'swiper/css'
 export class SoundController {
     private readonly buttons: NodeListOf<Element>;
-    private readonly audioFile: HTMLAudioElement;
+    private readonly audioFile: NodeListOf<HTMLAudioElement>;
     private readonly playButton: NodeListOf<Element>;
     private readonly pauseButton: NodeListOf<Element>;
     private currentTimeDisplay: NodeListOf<Element>;
@@ -13,7 +13,7 @@ export class SoundController {
 
     constructor (private container: HTMLSelectElement) {
       this.buttons = this.container.querySelectorAll('.j-control-button')
-      this.audioFile = document.getElementById('sound__audio') as HTMLMediaElement
+      this.audioFile = document.querySelectorAll('.sound__audio')
       this.playButton = this.container.querySelectorAll('.j-sound-play')
       this.pauseButton = this.container.querySelectorAll('.j-sound-pause')
       this.currentTimeDisplay = this.container.querySelectorAll('.sound__time')
@@ -43,10 +43,14 @@ export class SoundController {
     }
 
     initAudio () {
-      // eslint-disable-next-line no-unused-expressions
-      this.audioFile.onloadeddata
-      this.audioFile?.addEventListener('timeupdate', () => {
-        this.getTimeAudio()
+      this.audioFile?.forEach((audio) => {
+        audio.addEventListener(
+          'loadeddata',
+          () => {
+            this.getTimeAudio(audio)
+          },
+          false
+        )
       })
     }
 
@@ -63,48 +67,54 @@ export class SoundController {
     }
 
     checkEndAudio () {
-      this.audioFile.addEventListener('ended', () => {
-        this.playButton.forEach((item) => {
-          item.classList.remove('pause-active')
+      this.audioFile?.forEach((audio) => {
+        audio.addEventListener('ended', () => {
+          this.playButton.forEach((item) => {
+            item.classList.remove('pause-active')
+          })
         })
       })
     }
 
     togglePlayAudio () {
       if (this.audioFile) {
-        this.playButton.forEach((item) => {
-          item.addEventListener('click', () => {
-            if (item.classList.contains('pause-active')) {
-              item.classList.remove('pause-active')
-              this.audioFile.pause()
-            } else {
-              this.playButton.forEach((playButton) => {
-                playButton.classList.remove('pause-active')
-                this.audioFile.pause()
-              })
+        this.audioFile.forEach((audio) => {
+          this.playButton.forEach((item) => {
+            item.addEventListener('click', () => {
+              if (item.classList.contains('pause-active')) {
+                item.classList.remove('pause-active')
+                audio.pause()
+              } else {
+                this.playButton.forEach((playButton) => {
+                  playButton.classList.remove('pause-active')
+                  audio.pause()
+                })
 
-              item.classList.add('pause-active')
-              this.audioFile.play().then()
-            }
+                item.classList.add('pause-active')
+                audio.play().then()
+              }
+            })
           })
         })
       }
     }
 
-    getTimeAudio () {
-      const currentTime = this.audioFile.currentTime
-      const duration = this.audioFile.duration
+    getTimeAudio (audioFile: HTMLAudioElement) {
+      audioFile?.addEventListener('timeupdate', () => {
+        const currentTime = audioFile.currentTime
+        const duration = audioFile.duration
 
-      const currentMinutes = Math.floor(currentTime / 60)
-      const currentSeconds = Math.floor(currentTime % 60)
-      const totalMinutes = Math.floor(duration / 60)
-      const totalSeconds = Math.floor(duration % 60)
+        const currentMinutes = Math.floor(currentTime / 60)
+        const currentSeconds = Math.floor(currentTime % 60)
+        const totalMinutes = Math.floor(duration / 60)
+        const totalSeconds = Math.floor(duration % 60)
 
-      this.currentTimeDisplay.forEach((item) => {
-        item.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
-      })
-      this.totalTimeDisplay.forEach((item) => {
-        item.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
+        this.currentTimeDisplay.forEach((item) => {
+          item.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
+        })
+        this.totalTimeDisplay.forEach((item) => {
+          item.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
+        })
       })
     }
 }
