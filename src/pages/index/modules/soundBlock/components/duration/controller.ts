@@ -10,6 +10,9 @@ const useDuration = () => {
       max: 100
     }
   })
+  /**
+   * Обновляем состояние значений у range NoUiSlider
+   */
   const updateSliderValue = (slider: Element | null, handle: number | null | undefined) => {
     if (handle == null) {
       handle = 0
@@ -40,7 +43,6 @@ const useDuration = () => {
     }
     return results
   }
-
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   slider.noUiSlider.on('update', function () {

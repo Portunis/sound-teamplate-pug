@@ -18,6 +18,9 @@ export class SoundController {
       this.init()
     }
 
+    /**
+     * Инициализация всех функций
+     */
     init () {
       this.initButton()
       this.checkEndAudio()
@@ -26,6 +29,9 @@ export class SoundController {
       this.initAudio()
     }
 
+    /**
+     * Слайдер для категорий аудио
+     */
     sliderFilter () {
       new Swiper('.sound-block__filter-swiper', {
         slidesPerView: 3,
@@ -38,6 +44,9 @@ export class SoundController {
       })
     }
 
+    /**
+     * Инициализируем аудио файлы
+     */
     initAudio () {
       this.audioFile?.addEventListener(
         'loadeddata',
@@ -48,6 +57,9 @@ export class SoundController {
       )
     }
 
+    /**
+     * клик по кнопке лайк
+     */
     initButton () {
       this.buttons.forEach(function (item) {
         item.addEventListener('click', () => {
@@ -60,6 +72,9 @@ export class SoundController {
       })
     }
 
+    /**
+     * Проверка когда закончится дорожка аудио
+     */
     checkEndAudio () {
       this.audioFile.addEventListener('ended', () => {
         this.playButton.forEach((item) => {
@@ -68,6 +83,9 @@ export class SoundController {
       })
     }
 
+    /**
+     * Воспроизведение и остановка аудио файла по кнопке play
+     */
     togglePlayAudio () {
       if (this.audioFile) {
         this.playButton.forEach((item) => {
@@ -89,6 +107,10 @@ export class SoundController {
       }
     }
 
+    /**
+     * Отсчет времени аудиодорожки
+     * @param audioFile
+     */
     getTimeAudio (audioFile: HTMLAudioElement) {
       const duration = audioFile.duration
 

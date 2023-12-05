@@ -23,8 +23,12 @@ export default class ReviewsController {
     this.swiperInit(window.innerWidth)
   }
 
+  /**
+   * Инициализируем слайдер
+   * Проверяем разрешение для показа определнного количества слайдов
+   * @param widthWindow
+   */
   swiperInit (widthWindow: number) {
-    console.log('width', widthWindow >= this.tabletWidth)
     if (widthWindow >= this.desktopWidth) {
       this.slidePerView = 3
     } else if (widthWindow >= this.tabletWidth) {

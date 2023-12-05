@@ -26,6 +26,9 @@ export default class HeaderController {
     this.closeLogin()
   }
 
+  /**
+   * Проверка скролла шапки
+   */
   scrollCheck () {
     document.addEventListener('scroll', () => {
       const scrollTop = window.scrollY
@@ -39,6 +42,9 @@ export default class HeaderController {
     })
   }
 
+  /**
+   * Окрытие меню шапки
+   */
   openMenu () {
     this.buttonBurger?.addEventListener('click', () => {
       this.mobileMenu?.classList.add(ClassesEnums.OPEN)
@@ -46,6 +52,9 @@ export default class HeaderController {
     })
   }
 
+  /**
+   * Закрытие меню шапки
+   */
   closeMenu () {
     this.buttonClose.forEach((item) => {
       item.addEventListener('click', () => {
@@ -55,6 +64,9 @@ export default class HeaderController {
     })
   }
 
+  /**
+   * Закрытие окна авторизации
+   */
   closeLogin () {
     this.buttonClose.forEach((item) => {
       item.addEventListener('click', () => {
@@ -63,6 +75,9 @@ export default class HeaderController {
     })
   }
 
+  /**
+   * Открытие окна авторизации
+   */
   openLogin () {
     this.loginButton?.addEventListener('click', () => {
       this.loginForm?.classList.add(ClassesEnums.OPEN)
