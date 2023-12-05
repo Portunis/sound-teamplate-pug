@@ -82,31 +82,16 @@
 @include minMediaDesktop {
   .why-us-block {
     padding: 4rem 10rem 8.4rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10.5rem;
     align-items: flex-start;
     &__information {
-      width: 33.7rem;
       align-items: flex-start;
     }
     &__title {
-      color: $cYellow;
-      font-size: $smallSizeFont;
-      font-family: $primaryFont;
-      text-transform: uppercase;
-      font-weight: 600;
-      line-height: 1.4rem;
-      margin-bottom: 1.7rem;
-      font-feature-settings: 'salt' on, 'liga' off;
       text-align: left;
     }
     &__description {
-      font-family: $primaryFont;
       font-size: $xlSizeFont;
-      font-weight: 600;
       line-height: 4.5rem;
-      font-feature-settings: 'salt' on, 'liga' off;
       width: 33.7rem;
       margin: 0;
       text-align: left;
@@ -119,28 +104,7 @@
 
     }
   }
-  .advantages {
-    &__item {
-      width: 24.8rem;
-    }
-    &__image {
-      margin-bottom: 2.1rem;
-    }
-    &__title {
-      font-family: $interFont;
-      font-size: 1.8rem;
-      font-weight: 600;
-      line-height: 172%;
-      font-feature-settings: 'salt' on, 'liga' off;
-      margin-bottom: 0;
-    }
-    &__description {
-      font-family: $interFont;
-      font-size: $smallSizeFont;
-      font-weight: 500;
-      line-height: 172%;
-    }
-  }
+
 }
 @include minMediumMaxDesktop {
   .why-us-block {

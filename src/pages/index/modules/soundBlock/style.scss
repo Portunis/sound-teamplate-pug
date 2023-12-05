@@ -248,10 +248,8 @@
       margin-top: 2rem;
     }
     &__sound {
-      display: flex;
       align-items: center;
       gap: 4.7rem;
-      justify-content: space-between;
       border-bottom: 0.1rem solid $cGrayLight;
       padding: 0 2rem 1rem;
       &:not(:first-child) {

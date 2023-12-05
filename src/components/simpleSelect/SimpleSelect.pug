@@ -4,5 +4,5 @@ mixin SimpleSelect ( optionDefault, options)
       if optionDefault
         option.simple-select__option(value=optionDefault)=optionDefault
       each item in options
-        option.simple-select__option(value=item.value)=item.option
+        option.simple-select__option(value=item.value)=item.name
 

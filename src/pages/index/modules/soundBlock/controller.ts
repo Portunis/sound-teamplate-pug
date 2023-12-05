@@ -7,12 +7,18 @@ export class SoundController {
     private readonly audioFile: HTMLAudioElement;
     private readonly playButton: NodeListOf<Element>;
     private readonly pauseButton: NodeListOf<Element>;
+    private currentTimeDisplay: NodeListOf<Element>;
+    private totalTimeDisplay:NodeListOf<Element>
+    private timePlayElement: HTMLElement | null
 
     constructor (private container: HTMLSelectElement) {
       this.buttons = this.container.querySelectorAll('.j-control-button')
       this.audioFile = document.getElementById('sound__audio') as HTMLMediaElement
       this.playButton = this.container.querySelectorAll('.j-sound-play')
       this.pauseButton = this.container.querySelectorAll('.j-sound-pause')
+      this.currentTimeDisplay = this.container.querySelectorAll('.sound__time')
+      this.totalTimeDisplay = this.container.querySelectorAll('.j-sound-time')
+      this.timePlayElement = this.container.querySelector('.sound__time-play')
       this.init()
     }
 
@@ -21,6 +27,7 @@ export class SoundController {
       this.checkEndAudio()
       this.togglePlayAudio()
       this.sliderFilter()
+      this.initAudio()
     }
 
     sliderFilter () {
@@ -33,6 +40,16 @@ export class SoundController {
           type: 'bullets'
         }
       })
+    }
+
+    initAudio () {
+      this.audioFile?.addEventListener(
+        'loadeddata',
+        () => {
+          this.getTimeAudio()
+        },
+        false
+      )
     }
 
     initButton () {
@@ -74,5 +91,22 @@ export class SoundController {
           })
         })
       }
+    }
+
+    getTimeAudio () {
+      const currentTime = this.audioFile.currentTime
+      const duration = this.audioFile.duration
+
+      const currentMinutes = Math.floor(currentTime / 60)
+      const currentSeconds = Math.floor(currentTime % 60)
+      const totalMinutes = Math.floor(duration / 60)
+      const totalSeconds = Math.floor(duration % 60)
+
+      this.currentTimeDisplay.forEach((item) => {
+        item.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
+      })
+      this.totalTimeDisplay.forEach((item) => {
+        item.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
+      })
     }
 }

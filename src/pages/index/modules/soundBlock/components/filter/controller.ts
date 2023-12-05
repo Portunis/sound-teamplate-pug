@@ -13,12 +13,12 @@ export class FilterController {
     }
 
     init () {
-      this.initButton()
+      this.openFilter()
       this.closeFilter()
       this.container.onclick = this.handleContainerClose
     }
 
-    initButton () {
+    openFilter () {
       if (this.button) {
         this.button.forEach((item) => {
           item.addEventListener('click', () => {

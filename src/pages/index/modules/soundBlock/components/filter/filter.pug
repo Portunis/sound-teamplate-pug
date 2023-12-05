@@ -1,3 +1,31 @@
+-
+    const filterOption = [
+        {
+            value: 1,
+            name: 'Pop'
+        },
+        {
+            value: 2,
+            name: 'Classic'
+        },
+        {
+            value: 3,
+            name: 'Games'
+        },
+        {
+            value: 4,
+            name: 'Forest'
+        },
+        {
+            value: 5,
+            name: 'Snow'
+        },
+        {
+            value: 6,
+            name: 'Car'
+        },
+
+    ]
 div.filter.j-example-filter
     div.filter__header
         h3.filter__header-title Filter
@@ -7,7 +35,7 @@ div.filter.j-example-filter
             p.filter-slider__title Duration
             include ../duration/duration
         div.filter__select
-            +SimpleSelect('All Categories', [{option: '1', value: 1},{option: '2', value: 2}])
+            +SimpleSelect('All Categories', filterOption)
         +SimpleCheckbox('Only free sounds ')
         +SimpleCheckbox('Only my favorite sounds')
         div.filter__button
