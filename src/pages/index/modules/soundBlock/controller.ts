@@ -4,14 +4,16 @@ import Swiper from 'swiper'
 import 'swiper/css'
 export class SoundController {
     private readonly buttons: NodeListOf<Element>;
-    private readonly audioFile: HTMLAudioElement;
+    private readonly audioFile: NodeListOf<Element>;
     private readonly playButton: NodeListOf<Element>;
     private currentTimeDisplay: NodeListOf<Element>;
     private totalTimeDisplay:NodeListOf<Element>
+    private playlist: NodeListOf<Element>
 
     constructor (private container: HTMLSelectElement) {
+      this.playlist = this.container.querySelectorAll('.j-sound-playlist')
       this.buttons = this.container.querySelectorAll('.j-control-button')
-      this.audioFile = this.container.querySelector('.sound__audio') as HTMLMediaElement
+      this.audioFile = this.container.querySelectorAll('.j-sound-item')
       this.playButton = this.container.querySelectorAll('.j-sound-play')
       this.currentTimeDisplay = this.container.querySelectorAll('.sound__time')
       this.totalTimeDisplay = this.container.querySelectorAll('.j-sound-time')
@@ -23,7 +25,6 @@ export class SoundController {
      */
     init () {
       this.initButton()
-      this.checkEndAudio()
       this.togglePlayAudio()
       this.sliderFilter()
       this.initAudio()
@@ -48,13 +49,20 @@ export class SoundController {
      * Инициализируем аудио файлы
      */
     initAudio () {
-      this.audioFile?.addEventListener(
-        'loadeddata',
-        () => {
-          this.getTimeAudio(this.audioFile)
-        },
-        false
-      )
+      this.audioFile.forEach((audio) => {
+        const audioTrack = audio.querySelector('.sound__audio') as HTMLAudioElement
+        const totalTimeTrack: Element | null = audio.querySelector('.sound__time')
+        const currentTimeTrack:Element | null = audio.querySelector('.j-sound-time')
+        audioTrack.addEventListener(
+          'loadeddata',
+          () => {
+            if (totalTimeTrack && currentTimeTrack) {
+              this.getTimeAudio(audioTrack, totalTimeTrack, currentTimeTrack)
+            }
+          },
+          false
+        )
+      })
     }
 
     /**
@@ -75,10 +83,23 @@ export class SoundController {
     /**
      * Проверка когда закончится дорожка аудио
      */
-    checkEndAudio () {
-      this.audioFile.addEventListener('ended', () => {
+    checkEndAudio (audio: HTMLAudioElement) {
+      audio.addEventListener('ended', () => {
         this.playButton.forEach((item) => {
           item.classList.remove(ClassesEnums.PLAY_AUDIO)
+        })
+      })
+    }
+
+    /**
+     * Остановка всех ауидофайлов
+     */
+    stopAllSound () {
+      this.playlist.forEach((item) => {
+        const audioStop = item.querySelectorAll('.j-sound-item')
+        audioStop.forEach((item) => {
+          const stop: HTMLAudioElement = item.querySelector('.sound__audio') as HTMLAudioElement
+          stop.pause()
         })
       })
     }
@@ -90,17 +111,20 @@ export class SoundController {
       if (this.audioFile) {
         this.playButton.forEach((item) => {
           item.addEventListener('click', () => {
+            this.stopAllSound()
+            const audio: HTMLAudioElement = item.querySelector('.sound__audio') as HTMLAudioElement
+            this.checkEndAudio(audio)
             if (item.classList.contains(ClassesEnums.PLAY_AUDIO)) {
               item.classList.remove(ClassesEnums.PLAY_AUDIO)
-              this.audioFile.pause()
+              audio.pause()
             } else {
               this.playButton.forEach((playButton) => {
                 playButton.classList.remove(ClassesEnums.PLAY_AUDIO)
-                this.audioFile.pause()
+                audio.pause()
               })
 
               item.classList.add(ClassesEnums.PLAY_AUDIO)
-              this.audioFile.play().then()
+              audio.play().then()
             }
           })
         })
@@ -110,27 +134,26 @@ export class SoundController {
     /**
      * Отсчет времени аудиодорожки
      * @param audioFile
+     * @param totalTimeTrack
+     * @param currentTimeTrack
      */
-    getTimeAudio (audioFile: HTMLAudioElement) {
+    getTimeAudio (audioFile: HTMLAudioElement, totalTimeTrack: Element, currentTimeTrack: Element) {
       const duration = audioFile.duration
 
       const totalMinutes = Math.floor(duration / 60)
       const totalSeconds = Math.floor(duration % 60)
 
-      this.totalTimeDisplay.forEach((item) => {
-        item.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
-      })
+      totalTimeTrack.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
+
       audioFile?.addEventListener('timeupdate', () => {
         const currentTime = audioFile.currentTime
 
         const currentMinutes = Math.floor(currentTime / 60)
         const currentSeconds = Math.floor(currentTime % 60)
-        this.currentTimeDisplay.forEach((item) => {
-          item.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
-        })
-        this.totalTimeDisplay.forEach((item) => {
-          item.textContent = ''
-        })
+
+        currentTimeTrack.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
+
+        currentTimeTrack.textContent = ''
       })
     }
 }

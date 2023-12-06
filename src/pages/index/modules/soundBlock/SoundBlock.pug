@@ -20,7 +20,7 @@ block content
             },
             {
                 id: 3,
-                sound: 'audio2',
+                sound: 'audio',
                 name: 'Sound Name',
                 time: '00:12',
                 description: 'Confused excited crowd slight panic and distress',
@@ -36,7 +36,7 @@ block content
             },
             {
                 id: 5,
-                sound: 'audio2',
+                sound: 'audio',
                 name: 'Sound Name',
                 time: '00:12',
                 description: 'Confused excited crowd slight panic and distress',
@@ -92,7 +92,7 @@ block content
                 include components/filter/filter
         div.sound-block__sounds.j-sound-playlist
             each item in sounds
-                div.sound-block__sound
+                div.sound-block__sound.j-sound-item
                     div.sound__play
                         div.sound__play-button.j-sound-play
                             audio(preload='metadata').sound__audio
