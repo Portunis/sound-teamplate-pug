@@ -33,7 +33,9 @@ const useDuration = () => {
       if (children.length === 1) {
         val = parseInt(values)
       } else {
-        val = parseInt(values[i])
+        const currentMinutes = Math.floor(values[i] / 60)
+        const currentSeconds = Math.floor(values[i] % 60)
+        val = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
       }
 
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
