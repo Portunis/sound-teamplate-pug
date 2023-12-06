@@ -1,1 +1,80 @@
+-
+    var menu = [
+        {
+            title: 'Product',
+            submenu: [
+                {
+                    name: 'Browse sounds',
+                    url: '#'
+                },
+                {
+                    name: 'Pricing',
+                    url: '#'
+                },
+                {
+                    name: 'FAQ',
+                    url: '#'
+                },
+                {
+                    name: 'Affiliate',
+                    url: '#'
+                },
+            ]
+        },
+        {
+            title: 'Company',
+            submenu: [
+                {
+                    name: 'Blog',
+                    url: '#'
+                },
+                {
+                    name: 'About us',
+                    url: '#'
+                },
+                {
+                    name: 'Help',
+                    url: '#'
+                },
+                {
+                    name: 'Career',
+                    url: '#'
+                },
+            ]
+        },
+        {
+            title: 'Social Media',
+            submenu: [
+                {
+                    name: 'Twitter',
+                    url: '#'
+                },
+                {
+                    name: 'Instagram',
+                    url: '#'
+                },
+                {
+                    name: 'YouTube',
+                    url: '#'
+                },
+                {
+                    name: 'Facebook',
+                    url: '#'
+                },
+            ]
+        },
+    ]
 footer.footer
+    div.container
+        div.footer__wrapper
+            div.footer__info
+                img.info__image(src='/src/images/pictures/logo-nav.svg' alt='logo')
+                p.info__text WavesCo is a platform for providing premium sound effects for Youtube videos, movies and many more.
+                p.info__text WavesCo &copy;2021, All rights reserved
+            .footer__navigation
+                .footer__menu
+                    each item in menu
+                        .footer-menu__item
+                            h3.footer-menu__title #{item.title}
+                            each submenu in item.submenu
+                                a.footer-menu__url(href=submenu.url) #{submenu.name}

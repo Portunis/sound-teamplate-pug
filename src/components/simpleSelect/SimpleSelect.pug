@@ -1,0 +1,8 @@
+mixin SimpleSelect ( optionDefault, options)
+  div.form-select
+    select.simple-select
+      if optionDefault
+        option.simple-select__option(value=optionDefault)=optionDefault
+      each item in options
+        option.simple-select__option(value=item.value)=item.name
+

@@ -1,0 +1,77 @@
+.login {
+  position: relative;
+  padding: 0 2.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+  z-index: 999;
+  &__header {
+    display: none;
+  }
+  &__title {
+    margin-bottom: 0;
+    font-family: $primaryFont;
+    font-size: $xlSizeFont;
+    font-weight: 600;
+    line-height: 45px; /* 160.714% */
+    letter-spacing: -0.56px;
+  }
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    cursor: pointer;
+  }
+  &__text {
+    color: $cGray;
+    font-family: $interFont;
+    font-size: $regularSizeFont;
+    font-weight: 500;
+    line-height: 180%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  &__form {
+    width: 100%;
+  }
+  &__sign {
+    padding: 0;
+    margin: 0;
+    color: $cBlue;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.16px;
+  }
+  &__reset-password {
+    color: $cGray;
+
+  }
+}
+.checkbox.simple-checkbox input:checked ~ .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
+.checkbox.simple-checkbox:hover input ~ .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
+.checkbox.simple-checkbox:hover input:checked ~ .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
+.checkbox.simple-checkbox .checkbox__checkmark.checkbox--bg {
+  background-color: $cGrayLight;
+}
+@include minMediaTablet {
+  .login {
+    width: 40rem;
+    &__header {
+      position: absolute;
+      right: 1.6rem;
+      top: 1.6rem;
+      display: block;
+      cursor: pointer;
+    }
+    &__title {
+      margin-top: 4rem;
+    }
+  }
+}

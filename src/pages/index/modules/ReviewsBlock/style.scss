@@ -1,0 +1,130 @@
+@import "components/index";
+
+.reviews-block {
+  &__title {
+    font-size: $smallSizeFont;
+    color: $cYellow;
+    text-align: center;
+    font-weight: 600;
+    line-height: 14px; /* 100% */
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  &__subtitle {
+    color: $cBlueDark;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 160%; /* 38.4px */
+    letter-spacing: -0.48px;
+    text-align: center;
+    margin: 0 auto 5rem;
+    width: 26.1rem;
+  }
+  &__wrapper {
+    padding: 5rem 1.6rem;
+  }
+  &__slide {
+    border-radius: 0.8rem;
+    padding: 2rem 2rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 0.1rem solid $cGrayLight;
+  }
+  &__swiper {
+    overflow: hidden;
+  }
+}
+.slide {
+ &__image {
+   width: 7rem;
+   height: 7rem;
+   border-radius: 50%;
+ }
+  &__author {
+    text-align: center;
+  }
+  &__text {
+    font-size: $smallSizeFont;
+    font-family: $interFont;
+    font-weight: 500;
+    line-height: 172%;
+    text-align: center;
+    width: 25.5rem;
+  }
+  &__username {
+    font-family: $interFont;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 172%;
+    color: $cBlueDark;
+    margin-bottom: 0;
+  }
+  &__editor {
+    font-family: $interFont;
+    font-size: $smallSizeFont;
+    font-weight: 500;
+    line-height: 172%;
+    color: $cGray;
+    margin-bottom: 0;
+  }
+}
+@include minMediaTablet {
+  .reviews-block {
+    &__subtitle {
+      font-size: 2.4rem;
+      line-height: 160%; /* 38.4px */
+      letter-spacing: -0.48px;
+      width: 100%;
+    }
+  }
+}
+@include  minMediaDesktop {
+  .reviews-block {
+    &__title {
+      font-size: $smallSizeFont;
+      color: $cYellow;
+      text-align: center;
+      font-weight: 600;
+      line-height: 14px;
+      margin-bottom: 2rem;
+    }
+    &__subtitle {
+      color: $cBlueDark;
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+    &__wrapper {
+      padding: 5rem 13.5rem 14rem;
+    }
+  }
+  .slide {
+    &__image {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+    }
+    &__author {
+      text-align: center;
+    }
+    &__text {
+      font-size: $smallSizeFont;
+      line-height: 172%;
+      text-align: center;
+      width: 25.5rem;
+    }
+    &__username {
+      font-size: 1.8rem;
+      line-height: 172%;
+      color: $cBlueDark;
+      margin-bottom: 0;
+    }
+    &__editor {
+      font-size: $smallSizeFont;
+      line-height: 172%;
+      color: $cGray;
+      margin-bottom: 0;
+    }
+  }
+}

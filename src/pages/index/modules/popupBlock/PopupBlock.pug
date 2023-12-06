@@ -1,8 +1,6 @@
-section.popup-block.j-popup-block
-    h2.popup-block__title This is title
+div.popup-block.j-popup-block
     .popup-block__actions
         .popup-block__button
-            +SimpleButton("Popup click", false, 'j-example-popup-button')
-    include components/examplePopup/ExamplePopup
-    include components/examplePopupTwo/ExamplePopupTwo
+            +SimpleButton("Login", 'j-example-popup-button popup-block__button-login', false,false, false)
+    include components/loginPopup/LoginPopup
  

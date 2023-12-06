@@ -1,0 +1,20 @@
+mixin Auth(buttonClass, cClass)
+    div.login(class=cClass)
+        div.login__header.j-popup-close.j-close-menu
+            include ../../images/icon/icon-close.svg
+        h3.login__title Login
+        div.login__social
+            img(src='/src/images/icon/google-icon.svg', alt='google-icon')
+            img(src='/src/images/icon/facebook-icon.svg', alt='facebook-icon')
+            img(src='/src/images/icon/twitter-icon.svg', alt='twitter-icon')
+        div.login__form
+            p.login__text or use your email
+            form.login__form
+                div.form__input
+                    +SimpleInput('Email','Email', 'text', false,false, 'error', 'Incorrect E-Mail Address')
+                    +SimpleInput('Password','Password','password')
+                div.form__checkbox
+                    +SimpleCheckbox('Remember Me', 'checkbox--bg')
+        +SimpleButton('Login', buttonClass)
+        a.login__sign Or Sign Up
+        a.login__reset-password Forgot password?

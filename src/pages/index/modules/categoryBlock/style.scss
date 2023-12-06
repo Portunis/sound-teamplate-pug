@@ -1,0 +1,95 @@
+@import "components/index";
+
+.category-block {
+  padding: 3rem 1.6rem;
+  &__title {
+    font-feature-settings: 'salt' on, 'liga' off;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -0.56px;
+    font-size: $mediumSizeFont;
+    font-family: $primaryFont;
+    margin-bottom: 2.2rem;
+  }
+  &__images-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1.6rem;
+  }
+  &__subtext {
+    color: $cBlue;
+    font-size: $smallSizeFont;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.14px;
+    text-decoration-line: underline;
+    margin-top: 2rem;
+    cursor: pointer;
+  }
+}
+.images-list {
+  &__item {
+    position: relative;
+  }
+}
+.item {
+  &__image {
+    height: 7rem;
+    width: 15.7rem;
+    border-radius: 0.8rem;
+  }
+  &__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $cWhite;
+    margin-bottom: 0;
+    width: 11.9rem;
+    text-align: center;
+  }
+}
+@include minMediaTablet {
+ .category-block {
+   padding: 0.6rem 6.7rem;
+   &__images-list {
+     grid-template-columns: repeat(4, 1fr);
+     grid-column-gap: 1.6rem;
+     grid-row-gap: 1.2rem;
+   }
+ }
+}
+@include minMediaDesktop {
+  .category-block {
+    padding: 0.6rem 10rem 6rem;
+    &__title {
+      line-height: 45px;
+      letter-spacing: -0.56px;
+      font-size: $xlSizeFont;
+      margin-bottom: 2.2rem;
+    }
+    &__images-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 1.6rem;
+    }
+  }
+  .item {
+    &__image {
+      height: 11.7rem;
+    }
+  }
+}
+@include minMediumMaxDesktop {
+  .category-block {
+    &__images-list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 2rem;
+      grid-row-gap: 1.6rem;
+    }
+  }
+}

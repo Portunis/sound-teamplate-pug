@@ -1,0 +1,17 @@
+extends constants
+include components/index
+block content
+    div.main-block
+        img.main-block__image(src='/src/images/pictures/main-img.png', alt='main-img')
+        div.main-block__information
+           div.information__text
+                p.information__title Free download sound effects without copyright
+                p.information__subtitle Download free copyright sound effect for your YouTube video and any use.
+           div.information__wrapper
+               div.information__form
+                   form.information__form-input
+                       +SimpleInput(false,'Search sound effects', 'text', 'search-icon')
+                   span.information__form-span Try keyword: happy, funny, natural, horror, jumpscare and more
+               p.information__subtext 650.654 Available Sounds. Library Updated Weekly.
+                a.information__url See popular sounds
+
