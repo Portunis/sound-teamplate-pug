@@ -7,6 +7,7 @@ export default class HeaderController {
   private buttonBurger: Element | null;
   private loginButton: Element | null;
   private loginForm: Element | null;
+  private backgroundDisplay: Element | null;
   private readonly scrollHeight: number;
   constructor (private container: HTMLSelectElement) {
     this.buttonClose = container.querySelectorAll('.j-close-menu')
@@ -14,6 +15,7 @@ export default class HeaderController {
     this.buttonBurger = container.querySelector('.j-open-menu')
     this.loginButton = container.querySelector('.j-open')
     this.loginForm = container.querySelector('.j-login-block')
+    this.backgroundDisplay = container.querySelector('.header__navigation-mobile-background')
     this.scrollHeight = 20
     this.init()
   }
@@ -48,6 +50,7 @@ export default class HeaderController {
   openMenu () {
     this.buttonBurger?.addEventListener('click', () => {
       this.mobileMenu?.classList.add(ClassesEnums.OPEN)
+      this.backgroundDisplay?.classList.add(ClassesEnums.SHOW)
       BodyOverflow.block(this.container)
     })
   }
@@ -59,6 +62,7 @@ export default class HeaderController {
     this.buttonClose.forEach((item) => {
       item.addEventListener('click', () => {
         this.mobileMenu?.classList.remove(ClassesEnums.OPEN)
+        this.backgroundDisplay?.classList.remove(ClassesEnums.SHOW)
         BodyOverflow.unBlock(this.container)
       })
     })

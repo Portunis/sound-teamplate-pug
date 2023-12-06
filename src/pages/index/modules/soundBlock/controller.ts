@@ -45,10 +45,8 @@ export class SoundController {
      * Инициализируем аудио файлы
      */
     initAudio () {
-      console.log('init audio 1')
       this.audioFile.forEach((audio) => {
         const audioTrack = audio.querySelector('.sound__audio') as HTMLAudioElement
-        console.log('init audio', audioTrack)
         const totalTimeTrack: Element | null = audio.querySelector('.sound__time')
         audioTrack.addEventListener(
           'loadeddata',

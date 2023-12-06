@@ -8,6 +8,9 @@
   border-bottom: 0.1rem solid $cWhite;
   top:0;
   transition: ease-in-out 0.1s;
+  &__navigation-mobile-background{
+    display: none;
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -130,11 +133,6 @@
 }
 .header__navigation-mobile._open{
   top: 0;
-  .header {
-    &__navigation-mobile-background {
-    opacity: 1
-    }
-  }
 }
 .header__mobile-auth._open {
   overflow-y: scroll;
@@ -153,18 +151,26 @@
   }
   .header {
     &__navigation-mobile-background {
-      top: 0;
+      position: fixed;
       left: 0;
       right: 0;
+      top: 0;
       bottom: 0;
+      width: 100vw;
       height: 100vh;
-      width: 100%;
-      background: rgba(2, 13, 55, 0.50);
-      position: fixed;
-      opacity: 0;
-      transition: ease-in-out .7s;
+      background: transparentize(black, 0.7);
       display: flex;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .3s linear, visibility 0s linear .3s;
+      padding: calc($headerHeight + 3.2rem) 3.2rem 3.2rem ;
+      overflow-y: auto;
 
+    }
+    &__navigation-mobile-background._show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s linear;
     }
     &__wrapper {
       position: relative;

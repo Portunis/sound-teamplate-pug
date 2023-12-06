@@ -3,11 +3,11 @@ import 'nouislider/dist/nouislider.css'
 const useDuration = () => {
   const slider: Element | null = document.getElementById('j-duration')
   noUiSlider.create(slider as never, {
-    start: [2, 100],
+    start: [25, 145],
     connect: true,
     range: {
       min: 0,
-      max: 100
+      max: 360
     }
   })
   /**
