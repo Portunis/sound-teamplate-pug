@@ -28,10 +28,10 @@ const useDuration = () => {
     let i = 0
 
     const results = []
-    let val
+    let val = ''
     while (i < children.length) {
       if (children.length === 1) {
-        val = parseInt(values)
+        val = values
       } else {
         const currentMinutes = Math.floor(values[i] / 60)
         const currentSeconds = Math.floor(values[i] % 60)
