@@ -5,11 +5,11 @@ mixin SimpleInput ( label, text,type, iconName, jClass, error,errorText)
     div.simple-input__container
       if iconName
         img.simple-input__icon(src=`/src/images/icon/${iconName}.png`, alt='icon-input')
-        input.simple-input__input.simple-input--icon(placeholder=text, class=error, type=type)
+        input.simple-input__input.simple-input--icon(placeholder=text, class=error, type=type, autocomplete="off")
         if error && errorText
           p.simple-input__error-text #{errorText}
       else
-        input.simple-input__input.simple-input--default(placeholder=text, class=error, type=type)
+        input.simple-input__input.simple-input--default(placeholder=text, class=error, type=type, autocomplete="off")
         if error && errorText
           p.simple-input__error-text #{errorText}
 

@@ -15,7 +15,6 @@ export class FilterController {
     init () {
       this.openFilter()
       this.closeFilter()
-      this.container.onclick = this.handleContainerClose
     }
 
     openFilter () {
@@ -25,13 +24,6 @@ export class FilterController {
             this.popup?.classList.add(ClassesEnums.OPEN)
           })
         })
-      }
-    }
-
-    handleContainerClose = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      if (target !== this.container) {
-        this.closeFilter()
       }
     }
 
