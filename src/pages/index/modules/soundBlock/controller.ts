@@ -6,8 +6,6 @@ export class SoundController {
     private readonly buttons: NodeListOf<Element>;
     private readonly audioFile: NodeListOf<Element>;
     private readonly playButton: NodeListOf<Element>;
-    private currentTimeDisplay: NodeListOf<Element>;
-    private totalTimeDisplay:NodeListOf<Element>
     private playlist: NodeListOf<Element>
 
     constructor (private container: HTMLSelectElement) {
@@ -15,8 +13,6 @@ export class SoundController {
       this.buttons = this.container.querySelectorAll('.j-control-button')
       this.audioFile = this.container.querySelectorAll('.j-sound-item')
       this.playButton = this.container.querySelectorAll('.j-sound-play')
-      this.currentTimeDisplay = this.container.querySelectorAll('.sound__time')
-      this.totalTimeDisplay = this.container.querySelectorAll('.j-sound-time')
       this.init()
     }
 
@@ -52,12 +48,11 @@ export class SoundController {
       this.audioFile.forEach((audio) => {
         const audioTrack = audio.querySelector('.sound__audio') as HTMLAudioElement
         const totalTimeTrack: Element | null = audio.querySelector('.sound__time')
-        const currentTimeTrack:Element | null = audio.querySelector('.j-sound-time')
         audioTrack.addEventListener(
           'loadeddata',
           () => {
-            if (totalTimeTrack && currentTimeTrack) {
-              this.getTimeAudio(audioTrack, totalTimeTrack, currentTimeTrack)
+            if (totalTimeTrack) {
+              this.getTimeAudio(audioTrack, totalTimeTrack)
             }
           },
           false
@@ -109,13 +104,19 @@ export class SoundController {
      */
     togglePlayAudio () {
       if (this.audioFile) {
-        this.playButton.forEach((item) => {
-          item.addEventListener('click', () => {
+        this.audioFile.forEach((trackSound) => {
+          const buttonPlay: Element | null = trackSound.querySelector('.j-sound-play')
+          const timeUpdateTrack: Element | null = trackSound.querySelector('.j-sound-time')
+          const totalTimeTrack: Element | null = trackSound.querySelector('.sound__time')
+          buttonPlay?.addEventListener('click', () => {
             this.stopAllSound()
-            const audio: HTMLAudioElement = item.querySelector('.sound__audio') as HTMLAudioElement
+            const audio: HTMLAudioElement = trackSound.querySelector('.sound__audio') as HTMLAudioElement
             this.checkEndAudio(audio)
-            if (item.classList.contains(ClassesEnums.PLAY_AUDIO)) {
-              item.classList.remove(ClassesEnums.PLAY_AUDIO)
+            if (timeUpdateTrack && totalTimeTrack) {
+              this.updateTimeAudio(audio, timeUpdateTrack, totalTimeTrack)
+            }
+            if (buttonPlay.classList.contains(ClassesEnums.PLAY_AUDIO)) {
+              buttonPlay.classList.remove(ClassesEnums.PLAY_AUDIO)
               audio.pause()
             } else {
               this.playButton.forEach((playButton) => {
@@ -123,7 +124,7 @@ export class SoundController {
                 audio.pause()
               })
 
-              item.classList.add(ClassesEnums.PLAY_AUDIO)
+              buttonPlay.classList.add(ClassesEnums.PLAY_AUDIO)
               audio.play().then()
             }
           })
@@ -135,25 +136,24 @@ export class SoundController {
      * Отсчет времени аудиодорожки
      * @param audioFile
      * @param totalTimeTrack
-     * @param currentTimeTrack
      */
-    getTimeAudio (audioFile: HTMLAudioElement, totalTimeTrack: Element, currentTimeTrack: Element) {
+    getTimeAudio (audioFile: HTMLAudioElement, totalTimeTrack: Element) {
       const duration = audioFile.duration
 
       const totalMinutes = Math.floor(duration / 60)
       const totalSeconds = Math.floor(duration % 60)
 
       totalTimeTrack.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
+    }
 
+    updateTimeAudio (audioFile: HTMLAudioElement, currentTimeTrack: Element, totalTimeTrack: Element) {
       audioFile?.addEventListener('timeupdate', () => {
         const currentTime = audioFile.currentTime
 
         const currentMinutes = Math.floor(currentTime / 60)
         const currentSeconds = Math.floor(currentTime % 60)
-
+        totalTimeTrack.textContent = ''
         currentTimeTrack.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
-
-        currentTimeTrack.textContent = ''
       })
     }
 }
