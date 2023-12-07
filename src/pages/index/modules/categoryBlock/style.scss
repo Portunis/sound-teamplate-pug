@@ -6,7 +6,7 @@
     font-feature-settings: 'salt' on, 'liga' off;
     font-style: normal;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 3rem;
     letter-spacing: -0.56px;
     font-size: $mediumSizeFont;
     font-family: $primaryFont;
@@ -22,7 +22,7 @@
     color: $cBlue;
     font-size: $smallSizeFont;
     font-weight: 600;
-    line-height: 24px;
+    line-height: 2.4rem;
     letter-spacing: -0.14px;
     text-decoration-line: underline;
     margin-top: 2rem;
@@ -65,7 +65,7 @@
   .category-block {
     padding: 0.6rem 10rem 6rem;
     &__title {
-      line-height: 45px;
+      line-height: 4.5rem;
       letter-spacing: -0.56px;
       font-size: $xlSizeFont;
       margin-bottom: 2.2rem;
