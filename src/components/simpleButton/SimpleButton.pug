@@ -3,7 +3,7 @@ mixin SimpleButton ( text, jClass,iconLeft, iconRight, link, isVisibleText )
     a(href=link)
       button.simple-btn=text
   else
-    button.simple-btn(class=jClass)
+    button.simple-btn(class=jClass, type='button')
       if iconRight
         img(src=`/src/images/icon/${iconRight}.svg`, alt='setting-icon')
       if isVisibleText || text
