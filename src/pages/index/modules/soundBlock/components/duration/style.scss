@@ -7,16 +7,16 @@
 
 /// Height of the slider's handle
 /// @type String
-$control-height: 40px;
+$control-height: 4rem;
 /// Width of the slider's handle
 /// @type String
-$control-width: 80px;
+$control-width: 8rem;
 /// Color of the slider's handle
 /// @type Color
 $control-color: rgb(94,55,142);
 /// Size of the slider handle's text
 /// @type String
-$control-font-size: 18px;
+$control-font-size: 1.8rem;
 /// Font Weight of the slider handle's text
 /// @type String
 $control-font-weight: 100;
@@ -25,16 +25,16 @@ $control-font-weight: 100;
 $fill-color: darken($cBlue, 10%);
 /// Height of the slider's gutter
 /// @type String
-$gutter-height: 2px;
+$gutter-height: 0.2rem;
 
 
 /// noUiSlider Gutter
 .noUi-background {
   height: 0.4rem!important;
   &.noUi-vertical {
-    height: 4px;
+    height: 0.4rem;
     width: $gutter-height;
-    margin: 0 auto 30px;
+    margin: 0 auto 3rem;
   }
 }
 .noUi-base {
@@ -53,7 +53,7 @@ $gutter-height: 2px;
     box-shadow: none;
     color: #FFFFFF;
     display: table;
-    font-size: 15px;
+    font-size: 1.5rem;
     height: 0.8rem;
     width: 0.8rem;
     .noUi-horizontal & {
@@ -65,7 +65,7 @@ $gutter-height: 2px;
     }
     .noUi-vertical & {
       cursor: ns-resize;
-      margin-left: 1px;
+      margin-left: 0.1rem;
 
     }
 
