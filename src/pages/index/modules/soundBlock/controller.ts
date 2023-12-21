@@ -1,4 +1,5 @@
 import { ClassesEnums } from '../../../../utils/enums/classesEnums'
+import { EventEnums } from '../../../../utils/enums/eventEnums'
 
 export class SoundController {
     private readonly buttons: NodeListOf<Element>;
@@ -47,7 +48,7 @@ export class SoundController {
      */
     initButton () {
       this.buttons.forEach(function (item) {
-        item.addEventListener('click', () => {
+        item.addEventListener(EventEnums.CLICK, () => {
           if (item.classList.contains(ClassesEnums.SELECTED)) {
             item.classList.remove(ClassesEnums.SELECTED)
           } else {
@@ -89,7 +90,7 @@ export class SoundController {
         const buttonPlay: Element | null = trackSound.querySelector('.j-sound-play')
         const timeUpdateTrack: Element | null = trackSound.querySelector('.j-sound-time')
         const totalTimeTrack: Element | null = trackSound.querySelector('.j-sound-time-total')
-        buttonPlay?.addEventListener('click', () => { this.clickButtonPlay(buttonPlay, trackSound, timeUpdateTrack, totalTimeTrack) })
+        buttonPlay?.addEventListener(EventEnums.CLICK, () => { this.clickButtonPlay(buttonPlay, trackSound, timeUpdateTrack, totalTimeTrack) })
       })
     }
 

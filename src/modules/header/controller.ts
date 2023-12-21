@@ -1,5 +1,6 @@
 import { ClassesEnums } from '../../utils/enums/classesEnums'
 import { BodyOverflow } from '../../helpers/bodyOverflow'
+import { EventEnums } from '../../utils/enums/eventEnums'
 
 export default class HeaderController {
   private buttonClose: NodeListOf<Element>;
@@ -36,9 +37,9 @@ export default class HeaderController {
     const header = document.querySelector('.j-header-block')
 
     const scrollPosition = () => window.scrollY || document.documentElement.scrollTop
-    const containHide = () => header?.classList.contains('hide')
+    const containHide = () => header?.classList.contains(ClassesEnums.HIDE)
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener(EventEnums.SCROLL, () => {
       if (window.scrollY < defaultOffset) {
         header?.classList.remove(ClassesEnums.SCROLL)
         header?.classList.remove(ClassesEnums.HIDE)
@@ -57,7 +58,7 @@ export default class HeaderController {
   }
 
   widthCheck () {
-    window.addEventListener('resize', () => {
+    window.addEventListener(EventEnums.RESIZE, () => {
       const widthWindow = window.innerWidth
       const widthTablet = 768
       if (widthWindow > widthTablet) {
@@ -73,7 +74,7 @@ export default class HeaderController {
    * Окрытие меню шапки
    */
   openMenu () {
-    this.buttonBurger?.addEventListener('click', () => {
+    this.buttonBurger?.addEventListener(EventEnums.CLICK, () => {
       this.mobileMenu?.classList.add(ClassesEnums.OPEN)
       this.backgroundDisplay?.classList.add(ClassesEnums.SHOW)
       BodyOverflow.block(this.container)
@@ -85,7 +86,7 @@ export default class HeaderController {
    */
   closeMenu () {
     this.buttonClose.forEach((item) => {
-      item.addEventListener('click', () => {
+      item.addEventListener(EventEnums.CLICK, () => {
         this.mobileMenu?.classList.remove(ClassesEnums.OPEN)
         this.backgroundDisplay?.classList.remove(ClassesEnums.SHOW)
         BodyOverflow.unBlock(this.container)
@@ -98,7 +99,7 @@ export default class HeaderController {
    */
   closeLogin () {
     this.buttonClose.forEach((item) => {
-      item.addEventListener('click', () => {
+      item.addEventListener(EventEnums.CLICK, () => {
         this.loginForm?.classList.remove(ClassesEnums.OPEN)
       })
     })
@@ -108,7 +109,7 @@ export default class HeaderController {
    * Открытие окна авторизации
    */
   openLogin () {
-    this.loginButton?.addEventListener('click', () => {
+    this.loginButton?.addEventListener(EventEnums.CLICK, () => {
       this.loginForm?.classList.add(ClassesEnums.OPEN)
     })
   }

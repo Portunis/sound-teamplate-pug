@@ -1,4 +1,5 @@
 import { ClassesEnums } from '../../../../../../utils/enums/classesEnums'
+import { EventEnums } from '../../../../../../utils/enums/eventEnums'
 
 export class FilterController {
     private readonly button: NodeListOf<Element>;
@@ -20,7 +21,7 @@ export class FilterController {
     openFilter () {
       if (this.button) {
         this.button.forEach((item) => {
-          item.addEventListener('click', () => {
+          item.addEventListener(EventEnums.CLICK, () => {
             this.popup?.classList.add(ClassesEnums.OPEN)
           })
         })
@@ -30,7 +31,7 @@ export class FilterController {
     closeFilter () {
       if (this.closeButton) {
         this.closeButton.forEach((item) => {
-          item.addEventListener('click', () => {
+          item.addEventListener(EventEnums.CLICK, () => {
             this.popup?.classList.remove(ClassesEnums.OPEN)
           })
         })
