@@ -1,5 +1,3 @@
-@import "components/index";
-
 .tariff-block {
   background: $cBlue;
   &__wrapper {
@@ -34,27 +32,9 @@
     margin-top: 2.9rem;
     margin-bottom: 3.9rem;
   }
-  &__card {
-    border-radius: 0.8rem;
-    padding: 2.6rem 3.4rem 4rem;
-    width: 33.4rem;
-    font-family: $primaryFont;
-    color: $cWhite;
-    font-feature-settings: 'salt' on, 'liga' off;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0.4em;
-  }
-  &__card--border {
-    border: 0.1rem solid $cWhite;
-  }
-  &__card--filled {
-    background: #1B4BFF;
-  }
   &__button--border {
     font-feature-settings: 'salt' on, 'liga' off;
-    border: 0.2rem solid $cWhite;
+    border: 2px solid $cWhite;
     background: none;
     color: $cWhite;
     border-radius: 0.8rem;
@@ -72,19 +52,31 @@
   }
 }
 .card {
+  border-radius: 8px;
+  padding: 2.6rem 3.4rem 4rem;
+  width: 33.4rem;
+  font-family: $primaryFont;
+  color: $cWhite;
+  font-feature-settings: 'salt' on, 'liga' off;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4em;
   &__title {
-    font-size: $xlSizeFont;
+    font-size: $mediumSizeFont;
     font-weight: 600;
     line-height: 4.5rem;
     margin-bottom: 1.3rem;
   }
   &__description {
     font-family: $interFont;
-    font-size: 1.8rem;
+    font-size: $regularSizeFont;
     font-weight: 500;
     line-height: 172%;
     margin-bottom: 2.5rem;
     width: 25.6rem;
+    max-height: 8rem;
+    overflow: hidden;
   }
   &__tariff {
     font-feature-settings: 'salt' on, 'liga' off;
@@ -95,6 +87,12 @@
     letter-spacing: -1px;
     margin-bottom: 1.7rem;
   }
+  &--border {
+    border: 1px solid $cWhite;
+  }
+  &--filled {
+    background: #1B4BFF;
+  }
 }
 @include minMediaTablet {
   .tariff-block {
@@ -104,11 +102,9 @@
     &__cards {
       grid-template-columns: repeat(2, 1fr);
     }
-    &__card {
-      width: 28rem;
-    }
   }
   .card {
+    width: 28rem;
     &__title {
       font-size: 2.4rem;
     }
@@ -140,16 +136,16 @@
       margin-top: 2.9rem;
       margin-bottom: 3.9rem;
     }
-    &__card {
-      border-radius: 0.8rem;
-      padding: 2.6rem 3.4rem 4rem;
-      width: 33.4rem;
-      gap: 0.4em;
+  }
+  .card {
+    border-radius: 8px;
+    padding: 2.6rem 3.4rem 4rem;
+    width: 33.4rem;
+    gap: 0.4em;
+    &--border {
+      border: 1px solid $cWhite;
     }
-    &__card--border {
-      border: 0.1rem solid $cWhite;
-    }
-    &__card--filled {
+    &--filled {
       background: #1B4BFF;
     }
   }

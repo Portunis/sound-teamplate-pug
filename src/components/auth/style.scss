@@ -48,6 +48,9 @@
 
   }
 }
+.close-icon {
+  cursor: pointer;
+}
 .checkbox.simple-checkbox input:checked ~ .checkbox__checkmark.checkbox--bg {
   background-color: $cGrayLight;
 }

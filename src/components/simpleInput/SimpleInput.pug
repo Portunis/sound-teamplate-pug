@@ -1,16 +1,18 @@
-mixin SimpleInput ( label, text,type, iconName, jClass, error,errorText)
+mixin SimpleInput (props)
+  -
+      const {label, placeholder, valueText,type, iconName, jClass, error,errorText} = props || {}
   div.simple-input
     if label
       label.simple-input__label=label
     div.simple-input__container
       if iconName
         img.simple-input__icon(src=`/src/images/icon/${iconName}.png`, alt='icon-input')
-        input.simple-input__input.simple-input--icon(placeholder=text, class=error, type=type, autocomplete="off")
+        input.simple-input__input.simple-input--icon(placeholder=placeholder, class=error, type=type, value=valueText, autocomplete="off")
         if error && errorText
-          p.simple-input__error-text #{errorText}
+          p.simple-input__error-text=errorText
       else
-        input.simple-input__input.simple-input--default(placeholder=text, class=error, type=type, autocomplete="off")
+        input.simple-input__input.simple-input--default(placeholder=placeholder, class=error, type=type, value=valueText, autocomplete="off")
         if error && errorText
-          p.simple-input__error-text #{errorText}
+          p.simple-input__error-text=errorText
 
 

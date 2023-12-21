@@ -1,39 +1,13 @@
 extends constants
-include components/index
-
 
 block content
-    -
-        var images = [
-            {
-                image: 'dudeperfect1.png'
-            },
-            {
-                image: 'Pewdiepie-logo1.png'
-            },
-            {
-                image: 'MrBeast1.png'
-            },
-            {
-                image: 'wbcomp.png'
-            },
-            {
-                image: 'netflix1.png'
-            },
-            {
-                image: 'pixar-removebg-preview1.png'
-            },
-            {
-                image: 'channels4_profile1.png'
-            },
-        ]
     div.trusted-block
         div.container
             div.trusted-block__wrapper
                 h3.trusted-block__title Trusted by top Youtuber and Production House
                 div.trusted-block__images
-                    each item in images
-                        img.trusted-block__image(src=`/src/images/trusted/${item.image}`, alt='image')
+                    each item in imageTrusted
+                        img.trusted-block__image(src=`/src/images/trusted/${item.img.src}`, alt='image')
 
 
 

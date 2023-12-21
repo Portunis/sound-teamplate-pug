@@ -1,5 +1,4 @@
-#j-duration {
-
+.slider-container {
   margin-bottom: 4.2rem;
   position: relative;
 }
@@ -109,4 +108,10 @@ $gutter-height: 0.2rem;
   border-radius: 0.2rem !important;
   background: $cWhite !important;
   border: none !important;
+}
+#j-duration .noUi-handle-lower {
+  right: 0;
+}
+#j-duration .noUi-handle-upper {
+  right: -8px;
 }

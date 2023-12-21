@@ -1,111 +1,36 @@
-include components/index
-block content
-    -
-        const sounds = [
-            {
-                id: 1,
-                sound: 'Barroom_Ballet_Silent_Film_Light',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                id: 2,
-                sound: 'bensound-funkyelement',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                id: 3,
-                sound: 'Here_Come_The_Raindrops',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                id: 4,
-                sound: 'nastorajyvaushaya-muzyka-3',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                id: 5,
-                sound: 'To_the_Top',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
-            {
-                id: 6,
-                sound: 'audio2',
-                name: 'Sound Name',
-                time: '00:12',
-                description: 'Confused excited crowd slight panic and distress',
-                author: 'Shocking, jumpscare',
-            },
+extends constants
 
-        ]
-        const category = [
-            {
-                name: 'All',
-                active: 'active'
-            },
-            {
-                name: 'Jumpscare',
-                active: ''
-            },
-            {
-                name: 'Mellow',
-                active: ''
-            },
-            {
-                name: 'Happiness',
-                active: ''
-            },
-            {
-                name: 'Ambience',
-                active: ''
-            },
-            {
-                name: 'Zonk',
-                active: ''
-            },
-        ]
+block content
     div.sound-block.container.j-sound-block
         h3.sound-block__title Best sound effects for youtube videos
         div.sound-block__sort
             div.sound-block__sort-names
                 each item in category
-                    p.sort-name(class=item.active) #{item.name}
+                    p.sort-name(class=`sort-name--${item.active}`)=item.name
             div.sound-block__filter.j-filter-block
                 div.sound-block-filter__button--desktop
-                    +SimpleButton('Filter','sound-block__button j-filter-button','setting-icon',false,false)
+                    +SimpleButton({text:'Filter', jClass:'sound-block__button j-filter-button', iconRight:'setting-icon'})
                 div.sound-block-filter__button--mobile
-                    +SimpleButton('','sound-block__button j-filter-button','setting-icon',false,false)
+                    +SimpleButton({jClass: 'sound-block__button j-filter-button', iconLeft: 'setting-icon'})
                 include components/filter/filter
         div.sound-block__sounds.j-sound-playlist
             each item in sounds
-                div.sound-block__sound.j-sound-item
+                div.sound.j-sound-item
                     div.sound__play
                         div.sound__play-button.j-sound-play
-                            audio(preload='metadata').sound__audio
+                            audio(preload='metadata').sound__audio.j-sound-file
                                 source(src=`/src/sound/${item.sound}.mp3`, type='audio/mp3')
                     div.sound__info
-                        p.sound__name #{item.name}
-                        p.sound__time 00:00
+                        p.sound__name=item.name
+                        p.sound__time.j-sound-time-total
                         p.sound__time.sound__time-play.j-sound-time
-                    p.sound__description #{item.description}
-                    div.sound__author #{item.author}
+                    p.sound__description=item.description
+                    div.sound__author=item.author
                     div.sound__controls
                         div.sound__controls-icon.sound__controls-icon-like.j-like-sound.j-control-button
                             include ../../../../images/icon/soud-controls/like.svg
-                        img.sound__controls-icon(src='/src/images/icon/soud-controls/content-loading.svg', alt='content-loafing')
-                        img.sound__controls-icon(src='/src/images/icon/soud-controls/dots.svg', alt='dots')
-        p.sound-block__all-sound See all sound effects
+                        div.sound__controls-icon
+                            include ../../../../images/icon/soud-controls/content-loading.svg
+                        div.sound__controls-icon
+                            include ../../../../images/icon/soud-controls/dots.svg
+        a.sound-block__all-sound See all sound effects

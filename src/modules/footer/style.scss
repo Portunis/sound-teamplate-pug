@@ -8,22 +8,13 @@
     justify-content: space-between;
     flex-direction: column;
   }
-  &__menu {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-shrink: 0;
-    gap: 6.6rem;
-  }
-  &__info {
-    margin-bottom: 3.4rem;
-    width: 29.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
 }
 .info {
+  margin-bottom: 3.4rem;
+  width: 29.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
   &__image {
     width: 17rem;
     height: 2.5rem;
@@ -43,6 +34,11 @@
 }
 
   .footer-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 6.6rem;
     &__title {
       font-feature-settings: 'salt' on, 'liga' off;
       color: $cWhite;
@@ -67,6 +63,7 @@
       &:hover {
         color: $cWhite;
         cursor: pointer;
+        transition: ease-in-out .3s;
       }
     }
     &__item {
@@ -78,9 +75,9 @@
 @include minMediaTablet {
   .footer {
     padding: 4rem 6.7rem;
-    &__menu {
+  }
+  .footer-menu {
       gap: 15.2rem;
-    }
   }
 }
 @include minMediaDesktop {

@@ -1,59 +1,22 @@
--
-    var reviews = [
-        {
-            image: 'user-one',
-            text: 'The sounds from WavesCo is great and it really helps our team to save time and production costs.',
-            username: 'Anne Joyce',
-            editor: 'Video editor at Dude Perfect'
-        },
-        {
-            image: 'user-two',
-            text: 'WavesCo was a great choice for our team for film production, the quality is amazingly great.',
-            username: 'Edward Sann',
-            editor: 'Head of Video editor at Netflix'
-        },
-        {
-            image: 'user-three',
-            text: 'Perfect way to get best quality sound effects for youtube videos. Thanks to WavesCo team.',
-            username: 'Ronn D.',
-            editor: 'Video Editor at PewDiePie'
-        },
-        {
-            image: 'user-one',
-            text: 'The sounds from WavesCo is great and it really helps our team to save time and production costs.',
-            username: 'Anne Joyce',
-            editor: 'Video editor at Dude Perfect'
-        },
-        {
-            image: 'user-two',
-            text: 'WavesCo was a great choice for our team for film production, the quality is amazingly great.',
-            username: 'Edward Sann',
-            editor: 'Head of Video editor at Netflix'
-        },
-        {
-            image: 'user-three',
-            text: 'Perfect way to get best quality sound effects for youtube videos. Thanks to WavesCo team.',
-            username: 'Ronn D.',
-            editor: 'Video Editor at PewDiePie'
-        },
-    ]
-div.reviews-block.j-swiper-block
-    div.container
-        div.reviews-block__wrapper
-            h3.reviews-block__title TESTIMONIALS
-            p.reviews-block__subtitle Hear good experiences from our customers
-            div.reviews-block__swiper
-                div.swiper.reviews-block__my-swiper.j-swiper
-                    div.swiper-wrapper
-                        each item in reviews
-                            div.swiper-slide
-                                div.reviews-block__slide
-                                    img(src='/src/images/icon/double-quotes.svg', alt='icon')
-                                    p.slide__text #{item.text}
-                                    img.slide__image(src=`/src/images/reviews/${item.image}.jpg`, alt=item.image)
-                                    div.slide__author
-                                        p.slide__username #{item.username}
-                                        p.slide__editor #{item.editor}
-                    div.swiper-pagination
+extends constants
+block content
+    div.reviews-block.j-swiper-block
+        div.container
+            div.reviews-block__wrapper
+                h3.reviews-block__title TESTIMONIALS
+                p.reviews-block__subtitle Hear good experiences from our customers
+                div.reviews-block__swiper
+                    div.swiper.reviews-block__my-swiper.j-swiper
+                        div.swiper-wrapper
+                            each item in reviews
+                                div.swiper-slide
+                                    div.slide
+                                        img(src='/src/images/icon/double-quotes.svg', alt='icon')
+                                        p.slide__text=item.text
+                                        img.slide__image(src=`/src/images/reviews/${item.image}.jpg`, alt=item.image)
+                                        div.slide__author
+                                            p.slide__username=item.username
+                                            p.slide__editor=item.editor
+                        div.swiper-pagination
 
 

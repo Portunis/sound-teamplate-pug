@@ -1,7 +1,5 @@
 import { ClassesEnums } from '../../../../utils/enums/classesEnums'
-import Swiper from 'swiper'
-// import Swiper styles
-import 'swiper/css'
+
 export class SoundController {
     private readonly buttons: NodeListOf<Element>;
     private readonly audioFile: NodeListOf<Element>;
@@ -22,23 +20,7 @@ export class SoundController {
     init () {
       this.initButton()
       this.togglePlayAudio()
-      this.sliderFilter()
       this.initAudio()
-    }
-
-    /**
-     * Слайдер для категорий аудио
-     */
-    sliderFilter () {
-      new Swiper('.sound-block__filter-swiper', {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          type: 'bullets'
-        }
-      })
     }
 
     /**
@@ -46,8 +28,8 @@ export class SoundController {
      */
     initAudio () {
       this.audioFile.forEach((audio) => {
-        const audioTrack = audio.querySelector('.sound__audio') as HTMLAudioElement
-        const totalTimeTrack: Element | null = audio.querySelector('.sound__time')
+        const audioTrack = audio.querySelector('.j-sound-file') as HTMLAudioElement
+        const totalTimeTrack: Element | null = audio.querySelector('.j-sound-time-total')
         audioTrack.addEventListener(
           'loadeddata',
           () => {
@@ -93,7 +75,7 @@ export class SoundController {
       this.playlist.forEach((item) => {
         const audioStop = item.querySelectorAll('.j-sound-item')
         audioStop.forEach((item) => {
-          const stop: HTMLAudioElement = item.querySelector('.sound__audio') as HTMLAudioElement
+          const stop: HTMLAudioElement = item.querySelector('.j-sound-file') as HTMLAudioElement
           stop.pause()
         })
       })
@@ -103,32 +85,32 @@ export class SoundController {
      * Воспроизведение и остановка аудио файла по кнопке play
      */
     togglePlayAudio () {
-      if (this.audioFile) {
-        this.audioFile.forEach((trackSound) => {
-          const buttonPlay: Element | null = trackSound.querySelector('.j-sound-play')
-          const timeUpdateTrack: Element | null = trackSound.querySelector('.j-sound-time')
-          const totalTimeTrack: Element | null = trackSound.querySelector('.sound__time')
-          buttonPlay?.addEventListener('click', () => {
-            this.stopAllSound()
-            const audio: HTMLAudioElement = trackSound.querySelector('.sound__audio') as HTMLAudioElement
-            this.checkEndAudio(audio)
-            if (timeUpdateTrack && totalTimeTrack) {
-              this.updateTimeAudio(audio, timeUpdateTrack, totalTimeTrack)
-            }
-            if (buttonPlay.classList.contains(ClassesEnums.PLAY_AUDIO)) {
-              buttonPlay.classList.remove(ClassesEnums.PLAY_AUDIO)
-              audio.pause()
-            } else {
-              this.playButton.forEach((playButton) => {
-                playButton.classList.remove(ClassesEnums.PLAY_AUDIO)
-                audio.pause()
-              })
+      this.audioFile.forEach((trackSound) => {
+        const buttonPlay: Element | null = trackSound.querySelector('.j-sound-play')
+        const timeUpdateTrack: Element | null = trackSound.querySelector('.j-sound-time')
+        const totalTimeTrack: Element | null = trackSound.querySelector('.j-sound-time-total')
+        buttonPlay?.addEventListener('click', () => { this.clickButtonPlay(buttonPlay, trackSound, timeUpdateTrack, totalTimeTrack) })
+      })
+    }
 
-              buttonPlay.classList.add(ClassesEnums.PLAY_AUDIO)
-              audio.play().then()
-            }
-          })
+    clickButtonPlay (buttonPlay: Element, trackSound: Element, timeUpdateTrack: Element | null, totalTimeTrack: Element | null) {
+      this.stopAllSound()
+      const audio: HTMLAudioElement = trackSound.querySelector('.j-sound-file') as HTMLAudioElement
+      this.checkEndAudio(audio)
+      if (timeUpdateTrack && totalTimeTrack) {
+        this.updateTimeAudio(audio, timeUpdateTrack, totalTimeTrack)
+      }
+      if (buttonPlay.classList.contains(ClassesEnums.PLAY_AUDIO)) {
+        buttonPlay.classList.remove(ClassesEnums.PLAY_AUDIO)
+        audio.pause()
+      } else {
+        this.playButton.forEach((playButton) => {
+          playButton.classList.remove(ClassesEnums.PLAY_AUDIO)
+          audio.pause()
         })
+
+        buttonPlay.classList.add(ClassesEnums.PLAY_AUDIO)
+        audio.play().then()
       }
     }
 
@@ -139,9 +121,10 @@ export class SoundController {
      */
     getTimeAudio (audioFile: HTMLAudioElement, totalTimeTrack: Element) {
       const duration = audioFile.duration
+      const oneMinuteInSeconds = 60
 
-      const totalMinutes = Math.floor(duration / 60)
-      const totalSeconds = Math.floor(duration % 60)
+      const totalMinutes = Math.floor(duration / oneMinuteInSeconds)
+      const totalSeconds = Math.floor(duration % oneMinuteInSeconds)
 
       totalTimeTrack.textContent = `${totalMinutes}:${totalSeconds < 10 ? '0' : ''}${totalSeconds}`
     }
@@ -149,9 +132,10 @@ export class SoundController {
     updateTimeAudio (audioFile: HTMLAudioElement, currentTimeTrack: Element, totalTimeTrack: Element) {
       audioFile?.addEventListener('timeupdate', () => {
         const currentTime = audioFile.currentTime
+        const oneMinuteInSecond = 60
 
-        const currentMinutes = Math.floor(currentTime / 60)
-        const currentSeconds = Math.floor(currentTime % 60)
+        const currentMinutes = Math.floor(currentTime / oneMinuteInSecond)
+        const currentSeconds = Math.floor(currentTime % oneMinuteInSecond)
         totalTimeTrack.textContent = ''
         currentTimeTrack.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`
       })

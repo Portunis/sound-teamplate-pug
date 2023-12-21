@@ -1,6 +1,8 @@
-mixin Auth(buttonClass, cClass)
+mixin Auth(props)
+    -
+        const { buttonClass, cClass } = props || {}
     div.login(class=cClass)
-        div.login__header.j-popup-close.j-close-menu
+        div.login__header.close-icon.j-popup-close.j-close-menu
             include ../../images/icon/icon-close.svg
         h3.login__title Login
         div.login__social
@@ -9,12 +11,23 @@ mixin Auth(buttonClass, cClass)
             img(src='/src/images/icon/twitter-icon.svg', alt='twitter-icon')
         div.login__form
             p.login__text or use your email
-            form.login__form
+            form.form
                 div.form__input
-                    +SimpleInput('Email','Email', 'text', false,false, 'error', 'Incorrect E-Mail Address')
-                    +SimpleInput('Password','Password','password')
+                    +SimpleInput({
+                        label:'Email',
+                        placeholder:'Email',
+                        valueText:'email@mail.ru',
+                        type: 'text',
+                        iconName: '',
+                        error: 'error',
+                        errorText:'Incorrect E-Mail Address'
+                    })
+                    +SimpleInput({label:'Password', placeholder:'Password', type:'password'})
                 div.form__checkbox
                     +SimpleCheckbox('Remember Me', 'checkbox--bg')
-        +SimpleButton('Login', buttonClass)
+        +SimpleButton({
+            text: 'Login',
+            jClass: buttonClass
+        })
         a.login__sign Or Sign Up
         a.login__reset-password Forgot password?

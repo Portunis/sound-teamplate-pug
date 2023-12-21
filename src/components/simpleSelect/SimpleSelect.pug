@@ -1,4 +1,6 @@
-mixin SimpleSelect ( optionDefault, options)
+mixin SimpleSelect (props)
+  -
+      const {optionDefault, options} = props || {}
   div.form-select
     select.simple-select
       if optionDefault

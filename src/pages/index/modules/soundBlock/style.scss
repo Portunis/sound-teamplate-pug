@@ -31,18 +31,7 @@
     position: relative;
   }
   &__sounds {
-    margin-top: 2rem;
-  }
-  &__sound {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.9rem;
-    justify-content: space-between;
-    border-bottom: 0.1rem solid $cGrayLight;
-    padding: 0.8rem 0.6rem;
-    &:not(:first-child) {
-      margin-top: 1.2rem;
-    }
+    margin: 2rem 0;
   }
   &__slider {
     position: relative;
@@ -82,10 +71,23 @@
     line-height: 2.4rem;
     letter-spacing: -0.14px;
     text-decoration-line: underline;
-    cursor: pointer;
+    &:hover {
+      transition: ease-in-out .3s;
+      color: $cBlueGray;
+      cursor: pointer;
+    }
   }
 }
 .sound {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.9rem;
+  justify-content: space-between;
+  border-bottom: 1px solid $cGrayLight;
+  padding: 0.8rem 0.6rem;
+  &:not(:first-child) {
+    margin-top: 1.2rem;
+  }
   &__play {
     cursor: pointer;
   }
@@ -105,6 +107,8 @@
     letter-spacing: -0.8px;
     font-feature-settings: 'salt' on, 'liga' off;
     margin: 0;
+    max-height: 2.2rem;
+    overflow: hidden;
   }
   &__time,
   &__description {
@@ -130,6 +134,8 @@
     font-weight: 500;
     line-height: 138%; /* 22.08px */
     letter-spacing: -0.8px;
+    max-height: 4.4rem;
+    overflow: hidden;
   }
   &__controls {
     display: flex;
@@ -138,15 +144,33 @@
   }
   &__controls-icon {
     cursor: pointer;
+    transition: ease-in-out .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.6rem;
+    &:hover {
+      transition: ease-in-out .3s;
+      svg {
+        fill: $cBlue;
+        path {
+          stroke: $cBlue;
+          fill: $cBlue;
+        }
+        circle {
+          fill: $cBlue;
+        }
+        rect {
+          fill: $cBlue;
+        }
+      }
+    }
   }
   &__controls-icon-like {
     display: none;
   }
 }
-.active {
-  border-bottom: 0.1rem solid $cBlueDark;
-  padding: 0.5rem;
-}
+
 ._selected {
   svg {
     fill: $cBlue;
@@ -175,6 +199,10 @@
   cursor: pointer;
   &:nth-child(n + 4) {
     display: none;
+  }
+  &--active {
+    border-bottom: 1px solid $cBlueDark;
+    padding: 0.5rem;
   }
 }
 .sound-block-filter {
@@ -205,7 +233,7 @@
       display: block;
     }
     &__controls-icon-like {
-      display: block;
+      display: flex;
     }
   }
   .sort-name {
@@ -245,18 +273,6 @@
       margin: 1rem 0.35rem;
       width: 100%;
     }
-    &__sounds {
-      margin-top: 2rem;
-    }
-    &__sound {
-      align-items: center;
-      gap: 4.7rem;
-      border-bottom: 0.1rem solid $cGrayLight;
-      padding: 0 2rem 1rem;
-      &:not(:first-child) {
-        margin-top: 1.2rem;
-      }
-    }
     &__button {
       font-size: $regularSizeFont;
       font-weight: 500;
@@ -280,6 +296,13 @@
     }
   }
   .sound {
+    align-items: center;
+    gap: 4.7rem;
+    border-bottom: 1px solid $cGrayLight;
+    padding: 0 2rem 1rem;
+    &:not(:first-child) {
+      margin-top: 1.2rem;
+    }
     &__play-button {
       width: 3.4rem;
       height: 3.4rem;
@@ -315,12 +338,14 @@
       gap: 2rem;
     }
     &__controls-icon-like {
-      display: block;
+      display: flex;
     }
   }
-  .active {
-    border-bottom: 0.1rem solid $cBlueDark;
-    padding: 0.5rem;
+  .sort-name {
+    &--active {
+      border-bottom: 1px solid $cBlueDark;
+      padding: 0.5rem;
+    }
   }
   .pause-active {
     width: 3.4rem;

@@ -1,50 +1,29 @@
-include  ../../components/index
--
-  const navigation = [
-    {
-      name: 'Home',
-      url: '#'
-    },
-    {
-      name: 'Best for Youtube',
-      url: '#'
-    },
-    {
-      name: 'Category',
-      url: '#'
-    },
-    {
-      name: 'Upgrade',
-      url: '#'
-    },
-    {
-      name: 'FAQ',
-      url: '#'
-    },
-  ]
-header.header.j-header-block
-  div.header__navigation-mobile-background
-  div.container
-    div.header__wrapper
-      img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
-      div.header__navigation
-        nav.header__menu
-          each item in navigation
-            a.menu__item(href=item.url) #{item.name}
-        .header__button
-          include ../../pages/index/modules/popupBlock/PopupBlock
-      img.header__menu-burger.j-open-menu(src='/src/images/icon/burger.svg', alt='menu')
-      div.header__navigation-mobile
-        div.header__wrapper.header__wrapper-mobile
+extends constants
+
+block content
+    header.header.j-header-block
+      div.header__navigation-mobile-background.j-mobile-navigation-background
+      div.container
+        div.header__wrapper
           img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
-          div.j-close-menu
-            include ../../images/icon/icon-close.svg
-        div.header__line-mobile
-        nav.header__menu-mobile
-          each item in navigation
-            a.menu-mobile__item.j-close-menu(href=item.url) #{item.name}
-          +SimpleButton('Login', 'j-open header__button-mobile')
-        div.header__mobile-auth.j-login-block
-          div.j-close-menu.mobile-auth__header
-            include ../../images/icon/icon-close.svg
-          +Auth('button--large','login-tablet')
+          div.header__navigation
+            nav.header-menu
+              each item in navigation
+                a.header-menu__item(href=item.url)=item.name
+            .header__button
+              include ../../pages/index/modules/popupBlock/PopupBlock
+          img.header__menu-burger.j-open-menu(src='/src/images/icon/burger.svg', alt='menu')
+          div.header__navigation-mobile.j-mobile-menu
+            div.header__wrapper.header__wrapper-mobile
+              img.header__logo(src='/src/images/pictures/logo-nav.svg' alt='logo')
+              div.j-close-menu
+                include ../../images/icon/icon-close.svg
+            div.header__line-mobile
+            nav.menu-mobile
+              each item in navigation
+                a.menu-mobile__item.j-close-menu(href=item.url)=item.name
+              +SimpleButton({ text: 'Login', jClass:'j-open header__button-mobile'})
+            div.mobile-auth.j-login-block
+              div.j-close-menu.mobile-auth__header
+                include ../../images/icon/icon-close.svg
+              +Auth({buttonClass: 'button--large', cClass:'login-tablet'})

@@ -20,8 +20,9 @@ $mediaMediumDesktop: '(min-width: #{ $mediumDesktopBreakpoint}';
 $mediaWideDesktop: '(min-width: #{ $wideDesktopBreakpoint })';
 
 // ----------COLORS
-$cWhite: #ffffff;
+$cWhite: rgb(255, 255, 255);
 $cRed: #ff2400;
+$cPurple: #FFE5E5;
 $cBlue: #0432DF;
 $cBlueLight: #CDD6F9;
 $cBlueDark: #020D37;
@@ -29,6 +30,7 @@ $cYellow: #F59E00;
 $cGray: #ACAFB8;
 $cDark: #4C526A;
 $cGrayLight: #EEE;
+$cBlueGray: #0029C2;
 
 
 // ----------SIZES

@@ -14,14 +14,21 @@
   &__input {
     width: 100%;
     box-sizing: border-box;
-    border-radius: 0.8rem;
+    border-radius: 8px;
     color: black;
     background: $cGrayLight;
     font-size: $regularSizeFont;
     margin-bottom: 1rem;
+    border: 1px solid transparent;
     &::placeholder {
       color: $cGray;
       font-size: $regularSizeFont;
+    }
+    &:hover {
+      border: 1px solid $cDark;
+    }
+    &:focus {
+      border: 1px solid $cBlue;
     }
   }
   &__icon {
@@ -43,7 +50,8 @@
 }
 .error {
   border: 0.1rem solid $cRed;
-  color: black;
+  color: $cRed;
+  background: $cPurple;
   &::placeholder {
     color: $cRed;
   }

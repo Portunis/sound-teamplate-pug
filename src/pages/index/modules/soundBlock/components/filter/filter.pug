@@ -1,42 +1,16 @@
--
-    const filterOption = [
-        {
-            value: 1,
-            name: 'Pop'
-        },
-        {
-            value: 2,
-            name: 'Classic'
-        },
-        {
-            value: 3,
-            name: 'Games'
-        },
-        {
-            value: 4,
-            name: 'Forest'
-        },
-        {
-            value: 5,
-            name: 'Snow'
-        },
-        {
-            value: 6,
-            name: 'Car'
-        },
-
-    ]
-div.filter.j-example-filter
-    div.filter__header
-        h3.filter__header-title Filter
-        img.filter__close.j-filter-close(src='/src/images/icon/icon-close.svg', alt='icon-close')
-    div.filter__wrapper
-        div.filter__slider
-            p.filter-slider__title Duration
-            include ../duration/duration
-        div.filter__select
-            +SimpleSelect('All Categories', filterOption)
-        +SimpleCheckbox('Only free sounds ')
-        +SimpleCheckbox('Only my favorite sounds')
-        div.filter__button
-            +SimpleButton('Apply', 'filter__button-custom j-filter-close')
+extends constants
+block content
+    form.filter.j-example-filter
+        div.filter__header
+            h3.filter__header-title Filter
+            img.filter__close.j-filter-close(src='/src/images/icon/icon-close.svg', alt='icon-close')
+        div.filter__wrapper
+            div.filter__slider
+                p.filter-slider__title Duration
+                include ../duration/duration
+            div.filter__select
+                +SimpleSelect({optionDefault:'All Categories', options: filterOption})
+            +SimpleCheckbox('Only free sounds')
+            +SimpleCheckbox('Only my favorite sounds')
+            div.filter__button
+                +SimpleButton({text:'Apply', jClass:'filter__button-custom j-filter-close'})

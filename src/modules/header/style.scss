@@ -5,9 +5,9 @@
   width: 100vw;
   left: 0;
   z-index: 10;
-  border-bottom: 0.1rem solid $cWhite;
+  border-bottom: 1px solid rgba(255,255,255, 0.2);
   top:0;
-  transition: ease-in-out 0.1s;
+  transition: top .3s;
   &__navigation-mobile-background{
     display: none;
   }
@@ -21,12 +21,6 @@
     display: none;
     align-items: center;
     gap: 5.2rem;
-  }
-  &__menu {
-    display: flex;
-    align-items: center;
-    gap: 3.9rem;
-    color: $cWhite;
   }
   &__menu-burger {
     display: block;
@@ -50,13 +44,6 @@
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
   }
-  &__menu-mobile {
-    padding: 2.4rem 1.6rem 0;
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    position: relative;
-  }
   &__button-mobile {
     display: flex;
     padding: 1rem 2rem;
@@ -73,17 +60,17 @@
     height: 0.2rem;
     background: $cDark;
   }
-  &__mobile-auth {
-    position: fixed;
-    top: -200%;
-    transition: top .7s;
-    width: 100vw;
-    height: 100vh;
-    background: $cWhite;
-    z-index: 999;
-  }
+
 }
-.menu {
+.hide {
+  position: absolute;
+  top: -20rem;
+}
+.header-menu {
+  display: flex;
+  align-items: center;
+  gap: 3.9rem;
+  color: $cWhite;
   &__item {
     font-feature-settings: 'salt' on, 'liga' off;
     font-family: $primaryFont;
@@ -107,6 +94,11 @@
   }
 }
 .menu-mobile {
+  padding: 2.4rem 1.6rem 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  position: relative;
   &__item {
     font-feature-settings: 'salt' on, 'liga' off;
     font-family: $primaryFont;
@@ -120,6 +112,13 @@
   }
 }
 .mobile-auth {
+  position: fixed;
+  top: -200%;
+  transition: top .7s;
+  width: 100vw;
+  height: 100vh;
+  background: $cWhite;
+  z-index: 999;
   &__header {
     margin: 1rem 1.6rem;
     display: flex;
@@ -130,11 +129,12 @@
   background: $cBlueDark;
   border-bottom: 0;
   top: 0;
+  transition: top .3s;
 }
 .header__navigation-mobile._open{
   top: 0;
 }
-.header__mobile-auth._open {
+.mobile-auth._open {
   overflow-y: scroll;
   top: 0;
 }
@@ -142,9 +142,14 @@
   .login-tablet {
     background: $cWhite;
     border-radius: 2.4rem;
-    margin: 25% auto;
   }
   .mobile-auth {
+    top: -500%;
+    margin: 0 auto;
+    background: #030B26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__header {
       display: none;
     }
@@ -180,26 +185,22 @@
     &__wrapper-mobile {
       margin: 1rem 6rem;
     }
-    &__mobile-auth {
-      top: -300%;
-      margin: 0 auto;
-      background: #030B26;
-    }
-    &__menu-mobile {
-      margin-left: 6.8rem;
-    }
     &__navigation-mobile {
       height: auto;
       padding-bottom: 4rem;
     }
   }
   .menu-mobile {
+    margin: 1rem 6rem;
     &__item {
       font-size: $smallSizeFont;
     }
   }
 }
 @include minMediaDesktop {
+  .header {
+    position: fixed;
+  }
   .menu {
     &__item {
       font-feature-settings: 'salt' on, 'liga' off;

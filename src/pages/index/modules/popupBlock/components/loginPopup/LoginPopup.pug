@@ -2,5 +2,8 @@ extends ../../../../../../components/popup/Popup
 block variables
     -
         var JClass= 'j-example-popup'
+        const props = {
+            buttonClass: 'popup-block__button-login'
+        }
 block content
-   +Auth('popup-block__button-login')
+   +Auth(props)

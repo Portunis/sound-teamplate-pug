@@ -1,14 +1,23 @@
-mixin SimpleButton ( text, jClass,iconLeft, iconRight, link, isVisibleText )
+mixin SimpleButton (props)
+  -
+      const {
+        text,
+        jClass,
+        iconLeft,
+        iconRight,
+        link,
+        isVisibleText
+      } = props || {}
   if link
     a(href=link)
       button.simple-btn=text
   else
     button.simple-btn(class=jClass, type='button')
-      if iconRight
-        img(src=`/src/images/icon/${iconRight}.svg`, alt='setting-icon')
-      if isVisibleText || text
-        =text
       if iconLeft
         img(src=`/src/images/icon/${iconLeft}.svg`, alt='setting-icon')
+      if isVisibleText || text
+        =text
+      if iconRight
+        img(src=`/src/images/icon/${iconRight}.svg`, alt='setting-icon')
 
 

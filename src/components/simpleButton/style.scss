@@ -1,10 +1,10 @@
-.simple-btn {
+ .simple-btn {
   width: 100%;
   padding: 1rem 2rem;
   color: $cWhite;
   font-style: normal;
   background: $cBlue;
-  border-radius: 0.8rem;
+  border-radius: 8px;
   position: relative;
   display: flex;
   align-items: center;
@@ -20,8 +20,10 @@
   }
   @media (hover: hover) {
     &:hover {
-      background-color: $cBlueLight;
-      transition: background-color .15s ease;
+      background-color: $cBlueGray;
+      transition: ease-in-out .2s ;
+      box-shadow: 0 10px 12px 0 rgba(4, 50, 223, 0.12);
+      color: $cWhite;
     }
   }
 }
