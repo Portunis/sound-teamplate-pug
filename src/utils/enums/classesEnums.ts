@@ -3,5 +3,6 @@ export enum ClassesEnums {
     SELECTED = '_selected',
     SCROLL = '_scroll',
     SHOW = '_show',
+    HIDE = 'hide',
     PLAY_AUDIO = 'pause-active'
 }

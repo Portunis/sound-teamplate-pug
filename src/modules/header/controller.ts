@@ -8,7 +8,6 @@ export default class HeaderController {
   private loginButton: Element | null;
   private loginForm: Element | null;
   private backgroundDisplay: Element | null;
-  private readonly scrollHeight: number;
   constructor (private container: HTMLSelectElement) {
     this.buttonClose = container.querySelectorAll('.j-close-menu')
     this.mobileMenu = container.querySelector('.j-mobile-menu')
@@ -16,7 +15,6 @@ export default class HeaderController {
     this.loginButton = container.querySelector('.j-open')
     this.loginForm = container.querySelector('.j-login-block')
     this.backgroundDisplay = container.querySelector('.j-mobile-navigation-background')
-    this.scrollHeight = 20
     this.init()
   }
 
@@ -42,17 +40,16 @@ export default class HeaderController {
 
     window.addEventListener('scroll', () => {
       if (window.scrollY < defaultOffset) {
-        header?.classList.remove('_scroll')
-        header?.classList.remove('hide')
+        header?.classList.remove(ClassesEnums.SCROLL)
+        header?.classList.remove(ClassesEnums.HIDE)
         return
       }
       if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
-        // scroll down
-        header?.classList.add('hide')
-        header?.classList.remove('_scroll')
+        header?.classList.add(ClassesEnums.HIDE)
+        header?.classList.remove(ClassesEnums.SCROLL)
       } else if (scrollPosition() < lastScroll && containHide()) {
-        header?.classList.add('_scroll')
-        header?.classList.remove('hide')
+        header?.classList.add(ClassesEnums.SCROLL)
+        header?.classList.remove(ClassesEnums.HIDE)
       }
 
       lastScroll = scrollPosition()
@@ -62,8 +59,8 @@ export default class HeaderController {
   widthCheck () {
     window.addEventListener('resize', () => {
       const widthWindow = window.innerWidth
-      const width = 768
-      if (widthWindow > width) {
+      const widthTablet = 768
+      if (widthWindow > widthTablet) {
         this.mobileMenu?.classList.remove(ClassesEnums.OPEN)
         this.backgroundDisplay?.classList.remove(ClassesEnums.SHOW)
         BodyOverflow.unBlock(this.container)
