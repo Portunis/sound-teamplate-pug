@@ -19,22 +19,18 @@ export class FilterController {
     }
 
     openFilter () {
-      if (this.button) {
-        this.button.forEach((item) => {
-          item.addEventListener(EventEnums.CLICK, () => {
-            this.popup?.classList.add(ClassesEnums.OPEN)
-          })
+      this.button.forEach((item) => {
+        item.addEventListener(EventEnums.CLICK, () => {
+          this.popup?.classList.add(ClassesEnums.OPEN)
         })
-      }
+      })
     }
 
     closeFilter () {
-      if (this.closeButton) {
-        this.closeButton.forEach((item) => {
-          item.addEventListener(EventEnums.CLICK, () => {
-            this.popup?.classList.remove(ClassesEnums.OPEN)
-          })
+      this.closeButton.forEach((item) => {
+        item.addEventListener(EventEnums.CLICK, () => {
+          this.popup?.classList.remove(ClassesEnums.OPEN)
         })
-      }
+      })
     }
 }

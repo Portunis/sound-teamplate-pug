@@ -58,16 +58,18 @@ export default class HeaderController {
   }
 
   widthCheck () {
-    window.addEventListener(EventEnums.RESIZE, () => {
-      const widthWindow = window.innerWidth
-      const widthTablet = 768
-      if (widthWindow > widthTablet) {
-        this.mobileMenu?.classList.remove(ClassesEnums.OPEN)
-        this.backgroundDisplay?.classList.remove(ClassesEnums.SHOW)
-        BodyOverflow.unBlock(this.container)
-        this.loginForm?.classList.remove(ClassesEnums.OPEN)
-      }
-    })
+    window.addEventListener(EventEnums.RESIZE, () => this.hideMobileMenu())
+  }
+
+  hideMobileMenu () {
+    const widthWindow = window.innerWidth
+    const widthTablet = 768
+    if (widthWindow > widthTablet) {
+      this.mobileMenu?.classList.remove(ClassesEnums.OPEN)
+      this.backgroundDisplay?.classList.remove(ClassesEnums.SHOW)
+      BodyOverflow.unBlock(this.container)
+      this.loginForm?.classList.remove(ClassesEnums.OPEN)
+    }
   }
 
   /**

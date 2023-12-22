@@ -2,14 +2,14 @@ import { ClassesEnums } from '../../../../utils/enums/classesEnums'
 import { EventEnums } from '../../../../utils/enums/eventEnums'
 
 export class SoundController {
-    private readonly buttons: NodeListOf<Element>;
+    private readonly controlButtons: NodeListOf<Element>;
     private readonly audioFile: NodeListOf<Element>;
     private readonly playButton: NodeListOf<Element>;
     private playlist: NodeListOf<Element>
 
     constructor (private container: HTMLSelectElement) {
       this.playlist = this.container.querySelectorAll('.j-sound-playlist')
-      this.buttons = this.container.querySelectorAll('.j-control-button')
+      this.controlButtons = this.container.querySelectorAll('.j-control-button')
       this.audioFile = this.container.querySelectorAll('.j-sound-item')
       this.playButton = this.container.querySelectorAll('.j-sound-play')
       this.init()
@@ -32,7 +32,7 @@ export class SoundController {
         const audioTrack = audio.querySelector('.j-sound-file') as HTMLAudioElement
         const totalTimeTrack: Element | null = audio.querySelector('.j-sound-time-total')
         audioTrack.addEventListener(
-          'loadeddata',
+          EventEnums.LOADED_DATA,
           () => {
             if (totalTimeTrack) {
               this.getTimeAudio(audioTrack, totalTimeTrack)
@@ -47,22 +47,24 @@ export class SoundController {
      * клик по кнопке лайк
      */
     initButton () {
-      this.buttons.forEach(function (item) {
-        item.addEventListener(EventEnums.CLICK, () => {
-          if (item.classList.contains(ClassesEnums.SELECTED)) {
-            item.classList.remove(ClassesEnums.SELECTED)
-          } else {
-            item.classList.add(ClassesEnums.SELECTED)
-          }
-        })
+      this.controlButtons.forEach((item) => {
+        item.addEventListener(EventEnums.CLICK, () => this.selectFavoriteAudio(item))
       })
+    }
+
+    selectFavoriteAudio (item: Element) {
+      if (item.classList.contains(ClassesEnums.SELECTED)) {
+        item.classList.remove(ClassesEnums.SELECTED)
+      } else {
+        item.classList.add(ClassesEnums.SELECTED)
+      }
     }
 
     /**
      * Проверка когда закончится дорожка аудио
      */
     checkEndAudio (audio: HTMLAudioElement) {
-      audio.addEventListener('ended', () => {
+      audio.addEventListener(EventEnums.ENDED, () => {
         this.playButton.forEach((item) => {
           item.classList.remove(ClassesEnums.PLAY_AUDIO)
         })
@@ -90,7 +92,7 @@ export class SoundController {
         const buttonPlay: Element | null = trackSound.querySelector('.j-sound-play')
         const timeUpdateTrack: Element | null = trackSound.querySelector('.j-sound-time')
         const totalTimeTrack: Element | null = trackSound.querySelector('.j-sound-time-total')
-        buttonPlay?.addEventListener(EventEnums.CLICK, () => { this.clickButtonPlay(buttonPlay, trackSound, timeUpdateTrack, totalTimeTrack) })
+        buttonPlay?.addEventListener(EventEnums.CLICK, () => this.clickButtonPlay(buttonPlay, trackSound, timeUpdateTrack, totalTimeTrack))
       })
     }
 
@@ -131,7 +133,7 @@ export class SoundController {
     }
 
     updateTimeAudio (audioFile: HTMLAudioElement, currentTimeTrack: Element, totalTimeTrack: Element) {
-      audioFile?.addEventListener('timeupdate', () => {
+      audioFile?.addEventListener(EventEnums.TIME_UPDATE, () => {
         const currentTime = audioFile.currentTime
         const oneMinuteInSecond = 60
 
