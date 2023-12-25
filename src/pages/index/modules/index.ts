@@ -2,10 +2,11 @@ import MainExamplesController from './mainExample/controller'
 import { PopupBlockController } from './popupBlock/controller'
 import { FilterController } from './soundBlock/components/filter/controller'
 import { SoundController } from './soundBlock/controller'
-import CheckboxController from '../../../components/simpleCheckbox/controller'
+import { CheckboxController } from '../../../components/simpleCheckbox/controller'
 import HeaderController from '../../../modules/header/controller'
 import ReviewsController from './ReviewsBlock/controller'
-import useDuration from './soundBlock/components/duration/controller';
+import useDuration from './soundBlock/components/duration/controller'
+import { SelectController } from '../../../components/customSelect/controller';
 
 (() => {
   useDuration()
@@ -34,5 +35,8 @@ import useDuration from './soundBlock/components/duration/controller';
     })
   document.querySelectorAll('.j-checkbox-block').forEach(block => {
     new CheckboxController(block as HTMLSelectElement)
+  })
+  document.querySelectorAll('.j-select-block').forEach(block => {
+    new SelectController(block as HTMLSelectElement)
   })
 })()

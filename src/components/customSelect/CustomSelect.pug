@@ -1,6 +1,10 @@
-mixin SimpleSelect ( optionDefault, options)
-  div.form-select
-      input.form-select__header(disabled=true)
-      div.form-select__options
-
-
+mixin CustomSelect(props)
+    -
+        const {optionDefault, options} = props || {}
+    .select-dropdown.j-select-block
+        button.select-dropdown__button.j-select-button(type='button', data-value='')
+            span=optionDefault
+        ul.select-dropdown__list.j-select-dropdown
+            li.select-dropdown__list-item.j-select-option(data-value=optionDefault)=optionDefault
+            each item in options
+                li.select-dropdown__list-item.j-select-option(data-value=item.value)=item.name

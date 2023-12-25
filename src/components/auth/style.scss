@@ -51,17 +51,35 @@
 .close-icon {
   cursor: pointer;
 }
-.checkbox.simple-checkbox input:checked ~ .checkbox__checkmark.checkbox--bg {
-  background-color: $cGrayLight;
-}
-.checkbox.simple-checkbox:hover input ~ .checkbox__checkmark.checkbox--bg {
-  background-color: $cGrayLight;
-}
-.checkbox.simple-checkbox:hover input:checked ~ .checkbox__checkmark.checkbox--bg {
-  background-color: $cGrayLight;
-}
-.checkbox.simple-checkbox .checkbox__checkmark.checkbox--bg {
-  background-color: $cGrayLight;
+.simple-checkbox {
+  input {
+    &:checked {
+      ~ {
+        .checkbox__checkmark.checkbox--bg {
+          background-color: $cGrayLight;
+        }
+      }
+    }
+  }
+  &:hover {
+    input {
+      ~ {
+        .checkbox__checkmark.checkbox--bg {
+          background-color: $cGrayLight;
+        }
+      }
+      &:checked {
+        ~ {
+          .checkbox__checkmark.checkbox--bg {
+            background-color: $cGrayLight;
+          }
+        }
+      }
+    }
+  }
+  .checkbox__checkmark.checkbox--bg {
+    background-color: $cGrayLight;
+  }
 }
 @include minMediaTablet {
   .login {
