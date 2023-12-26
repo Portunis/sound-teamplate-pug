@@ -21,6 +21,8 @@
     line-height: 1.4rem;
     margin-bottom: 1.7rem;
     font-feature-settings: 'salt' on, 'liga' off;
+    overflow: hidden;
+    max-height: 9.8rem;
   }
   &__description {
     font-family: $primaryFont;
@@ -54,6 +56,8 @@
     line-height: 172%;
     font-feature-settings: 'salt' on, 'liga' off;
     margin-bottom: 0;
+    overflow: hidden;
+    max-height: 10rem;
   }
   &__description {
     font-family: $interFont;
