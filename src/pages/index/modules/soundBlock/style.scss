@@ -144,13 +144,24 @@
   }
   &__controls-icon {
     cursor: pointer;
-    transition: ease-in-out .3s;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 3.6rem;
-    &:hover {
+    transition: ease-in-out .3s;
+    svg {
       transition: ease-in-out .3s;
+      path {
+        transition: ease-in-out .3s;
+      }
+      circle {
+        transition: ease-in-out .3s;
+      }
+      rect {
+        transition: ease-in-out .3s;
+      }
+    }
+    &:hover {
       svg {
         fill: $cBlue;
         path {

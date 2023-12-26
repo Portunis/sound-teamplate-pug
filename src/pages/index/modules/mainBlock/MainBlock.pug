@@ -2,7 +2,7 @@ extends constants
 include components/index
 block content
     div.main-block
-        img.main-block__image(src='/src/images/pictures/main-img.png', alt='main-img')
+        img.main-block__image(src='/src/images/pictures/main-img.webp', alt='main-img')
         div.information
            div.information__text
                 p.information__title Free download sound effects without copyright
@@ -13,5 +13,5 @@ block content
                        +SimpleInput({placeholder:'Search sound effects',type:'text', iconName:'search-icon'})
                    span.information__form-span Try keyword: happy, funny, natural, horror, jumpscare and more
                p.information__subtext 650.654 Available Sounds. Library Updated Weekly.
-                a.information__url See popular sounds
+                a.information__url(href='/mock-address/change-me') See popular sounds
 

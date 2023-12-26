@@ -42,9 +42,17 @@
     font-weight: 600;
     line-height: 2.4rem; /* 150% */
     letter-spacing: -0.16px;
+    transition:  .3s;
+    &:hover {
+      color: $cBlueGray;
+    }
   }
   &__reset-password {
     color: $cGray;
+    transition:  .3s;
+    &:hover {
+      color: $cBlueGray;
+    }
 
   }
 }

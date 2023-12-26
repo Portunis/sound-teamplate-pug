@@ -94,6 +94,8 @@
   }
 }
 .menu-mobile {
+  height: 100%;
+  top: -100%;
   padding: 2.4rem 1.6rem 0;
   display: flex;
   flex-direction: column;
@@ -133,6 +135,9 @@
 }
 .header__navigation-mobile._open{
   top: 0;
+  .menu-mobile {
+    top: 0;
+  }
 }
 .mobile-auth._open {
   overflow-y: scroll;

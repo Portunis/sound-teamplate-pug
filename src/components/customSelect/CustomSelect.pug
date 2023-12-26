@@ -2,7 +2,7 @@ mixin CustomSelect(props)
     -
         const {optionDefault, options} = props || {}
     .select-dropdown.j-select-block
-        button.select-dropdown__button.j-select-button(type='button', data-value='')
+        div.select-dropdown__button.j-select-button(data-value='')
             span=optionDefault
         ul.select-dropdown__list.j-select-dropdown
             li.select-dropdown__list-item.j-select-option(data-value=optionDefault)=optionDefault

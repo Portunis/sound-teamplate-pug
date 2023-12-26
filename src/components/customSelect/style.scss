@@ -7,7 +7,7 @@
     cursor: pointer;
     border-radius: 8px;
     padding: 1rem 2rem;
-    border: 0.1rem solid $cGray;
+    border: 1px solid $cGray;
     width: 100%;
     font-size: $smallSizeFont;
     font-family: $interFont;
@@ -35,7 +35,8 @@
 
   &__list {
     border-radius: 0 0 8px 8px;
-    border: 0.1rem solid $cGray;
+    border: 1px solid $cGray;
+    border-top: 0;
     position: absolute;
     display: block;
     left: 0;

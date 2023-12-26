@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  transition: ease-in-out .2s ;
   &__text {
     font-style: normal;
     font-weight: 500;
@@ -21,7 +22,6 @@
   @media (hover: hover) {
     &:hover {
       background-color: $cBlueGray;
-      transition: ease-in-out .2s ;
       box-shadow: 0 10px 12px 0 rgba(4, 50, 223, 0.12);
       color: $cWhite;
     }
