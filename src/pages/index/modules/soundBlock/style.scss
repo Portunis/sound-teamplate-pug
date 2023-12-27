@@ -143,6 +143,7 @@
     gap: 2rem;
   }
   &__controls-icon {
+    margin: 0;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -187,6 +188,16 @@
     fill: $cBlue;
     path {
       stroke: $cBlue;
+      fill: $cBlue;
+    }
+  }
+  &:hover {
+    svg {
+      fill: $cBlue;
+      path {
+        stroke: $cBlueGray;
+        fill: $cBlueGray;
+      }
     }
   }
 }
