@@ -70,7 +70,7 @@
 }
 @include  minMediaTablet {
   .why-us-block {
-    padding: 4rem 1.6rem;
+    padding: 3.4rem 1.6rem 4.6rem;
     &__description {
       font-weight: 600;
       line-height: 160%; /* 38.4px */
@@ -83,6 +83,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 11rem;
+    grid-row-gap: 5rem;
   }
 }
 @include minMediaDesktop {

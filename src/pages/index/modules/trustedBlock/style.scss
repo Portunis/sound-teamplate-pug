@@ -28,10 +28,14 @@
 @include minMediaTablet {
   .trusted-block {
     &__wrapper {
-      padding: 5rem 6.7rem;
+      padding: 4rem 6.7rem;
     }
     &__title {
       width: 100%;
+      font-family: $primaryFont;
+      font-size: $mediumSizeFont;
+      letter-spacing: -0.04rem;
+      margin-bottom: 3rem;
     }
   }
 }

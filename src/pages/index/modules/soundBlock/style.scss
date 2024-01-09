@@ -2,6 +2,7 @@
 .sound-block {
   padding: 6rem 1.6rem;
   &__title {
+    font-feature-settings: 'salt' on, 'liga' off;
     padding: 0;
     font-size: $mediumSizeFont;
     font-family: $primaryFont;
@@ -237,7 +238,14 @@
 }
 @include minMediaTablet {
  .sound-block {
-   padding: 9.9rem 6.7rem;
+   padding: 4.6rem 6.1rem;
+   &__title {
+     font-size: 2.4rem;
+     font-weight: 600;
+     line-height: 160%; /* 38.4px */
+     letter-spacing: -0.048rem;
+     margin-bottom: 1.4rem;
+   }
    &__button {
      padding: 0.2rem 0.6rem 0.2rem 1.2rem;
    }
@@ -251,8 +259,19 @@
    }
  }
   .sound {
+    padding: 0 2rem 0.8rem;
+    align-items: center;
+    gap: 2.1rem;
+    &:not(:first-child) {
+      padding: 0.8rem 2rem 0.8rem;
+      margin-top: 0;
+    }
+    &__name {
+      width: 15.9rem;
+    }
     &__author {
       display: block;
+      width: 20.4rem;
     }
     &__controls-icon-like {
       display: flex;
@@ -260,7 +279,7 @@
   }
   .sort-name {
     margin-bottom: 0;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 138%;
     letter-spacing: -0.7px;
     font-size: $smallSizeFont;
@@ -279,13 +298,13 @@
 }
 @include minMediaDesktop {
   .sound-block {
-    padding: 9.9rem 10rem;
+    padding: 5rem 10rem;
     &__title {
       padding: 0;
       font-size: $xlSizeFont;
       font-weight: 600;
-      line-height: 4.5rem; /* 160.714% */
-      letter-spacing: -0.56px;
+      line-height: 160%; /* 38.4px */
+      letter-spacing: -0.048rem;
       margin-bottom: 1.4rem;
     }
     &__sort {

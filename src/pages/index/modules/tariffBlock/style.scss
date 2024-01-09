@@ -106,21 +106,36 @@
 }
 @include minMediaTablet {
   .tariff-block {
+    padding: 2.1rem 1.6rem;
+    &__wrapper {
+      padding: 4.3rem 1.6rem 2.8rem;
+    }
     &__title {
+      font-size: $xlSizeFont;
       width: 100%;
+      font-weight: 600;
+      line-height: 4.5rem; /* 160.714% */
+      letter-spacing: -0.056rem;
     }
     &__cards {
       grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 4rem;
+    }
+    &__text {
+      margin-top: 1.6rem;
     }
   }
   .card {
     width: 28rem;
+    height: 31rem;
+    padding: 4.2rem 3.1rem 4rem;
     &__title {
       font-size: 2.4rem;
     }
     &__description {
       font-size: $regularSizeFont;
       width: 22.6rem;
+      min-height: 6.5rem;
     }
     &__tariff {
       font-size: 1.8rem;

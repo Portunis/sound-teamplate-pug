@@ -77,11 +77,16 @@
 }
 @include minMediaTablet {
   .reviews-block {
+    padding: 1.7rem 1.6rem 1.7rem;
     &__subtitle {
       font-size: 2.4rem;
       line-height: 160%; /* 38.4px */
       letter-spacing: -0.48px;
       width: 100%;
+      margin-bottom: 5rem;
+    }
+    &__swiper {
+      padding: 0 3.3rem;
     }
   }
 }

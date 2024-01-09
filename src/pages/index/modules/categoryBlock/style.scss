@@ -57,16 +57,24 @@
 }
 @include minMediaTablet {
  .category-block {
-   padding: 0.6rem 6.7rem;
+   padding: 4.6rem 6.3rem;
+   &__title {
+     font-size: 2.4rem;
+     font-weight: 600;
+     line-height: 160%; /* 38.4px */
+     letter-spacing: -0.048rem;
+   }
  }
   .images-list {
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 1.6rem;
-    grid-row-gap: 1.2rem;
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 0.5rem;
+    margin-bottom: 0.9rem;
   }
   .item-list {
     &__image {
-      width: 14.7rem;
+      width: 15rem;
+      height: 9rem;
     }
   }
 }
