@@ -22,7 +22,7 @@
     @content
   }
 };
-@mixin minMediaMaxDesktop {
+@mixin minMediaMaxFullDesktop {
   @media (min-width: $wideDesktopBreakpoint + px) {
     @content
   }

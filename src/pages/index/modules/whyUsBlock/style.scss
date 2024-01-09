@@ -88,8 +88,9 @@
 }
 @include minMediaDesktop {
   .why-us-block {
-    padding: 4rem 10rem 8.4rem;
+    padding: 6rem 10rem 8.4rem;
     align-items: flex-start;
+    gap: 10.5rem;
     &__information {
       align-items: flex-start;
     }
@@ -109,6 +110,9 @@
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 3.5rem;
     grid-column-gap: 11rem;
+    &__image {
+      margin-bottom: 2.1rem;
+    }
 
   }
 

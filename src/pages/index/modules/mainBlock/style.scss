@@ -4,7 +4,7 @@
   &__image {
     width: 100vw;
     z-index: 1;
-    height: 62rem;
+    min-height: 62rem;
     position: absolute;
   }
 }
@@ -102,7 +102,14 @@
   }
 }
 @include minMediaTablet {
+  .main-block {
+    min-height: 66.7rem;
+    &__image {
+      min-height: 66.7rem;
+    }
+  }
     .information {
+      padding-top: 16.9rem;
       &__title {
         font-size: $xxlSizeFont;
         font-weight: 700;
@@ -113,6 +120,14 @@
       &__form-input {
         input {
           padding: 1.6rem 2rem 1.6rem 5.4rem;
+          font-family: $interFont;
+          font-size: $regularSizeFont;
+          font-weight: 500;
+          line-height: 180%; /* 28.8px */
+          &::placeholder {
+            font-weight: 500;
+            line-height: 180%; /* 28.8px */
+          }
         }
       }
       &__subtitle {
@@ -124,6 +139,7 @@
       }
       &__form {
         width: 60rem;
+        padding: 0;
       }
       &__subtext {
         font-size: $smallSizeFont;
@@ -133,12 +149,18 @@
     }
 }
 @include minMediaDesktop {
+  .main-block {
+    min-height: 65rem;
+    &__image {
+      min-height: 65rem;
+    }
+  }
   .information {
+    padding-top: 17.9rem;
     &__title {
       font-size: $xxlSizeFont;
       font-weight: 700;
       line-height: 146.5%;
-      margin-bottom: 1.6rem;
       width: 100%;
     }
     &__subtitle {
@@ -150,7 +172,7 @@
     }
     &__form {
       width: 60rem;
-      margin-top: 5.1rem;
+      margin-top: 3.3rem;
     }
     &__form-input {
       position: relative;
@@ -185,5 +207,21 @@
       top: 1.2rem;
       left: 1.6rem;
     }
+  }
+}
+@include minMediaMaxFullDesktop  {
+  .main-block {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__image {
+      min-height: 100dvh;
+    }
+
+  }
+  .information {
+    padding-top: 0;
+    height: auto;
   }
 }

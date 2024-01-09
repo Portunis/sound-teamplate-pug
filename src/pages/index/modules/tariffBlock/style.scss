@@ -145,7 +145,7 @@
 @include minMediaDesktop {
   .tariff-block {
     &__wrapper {
-      padding: 6.5rem 0;
+      padding: 5rem 0 4rem;
     }
     &__title {
       font-size: $xxlSizeFont;
@@ -153,6 +153,8 @@
       line-height: 146.5%;
       margin-bottom: 1.5rem;
       width: 100%;
+
+
     }
     &__cards {
       grid-template-columns: repeat(2,1fr);
@@ -161,12 +163,41 @@
       margin-top: 2.9rem;
       margin-bottom: 3.9rem;
     }
+    &__text {
+      margin-top: 0.6rem;
+    }
+    &__button--border,&__button--filled {
+      width: 14.3rem;
+    }
   }
   .card {
     border-radius: 8px;
-    padding: 2.6rem 3.4rem 4rem;
+    padding: 2.7rem 3.4rem 4rem;
     width: 33.4rem;
     gap: 0.4em;
+    min-height: 34.5rem;
+    &__title {
+      font-size: $xlSizeFont;
+      font-weight: 600;
+      line-height: 45px; /* 160.714% */
+      letter-spacing: -0.056rem;
+    }
+    &__description {
+      font-family: $interFont;
+      font-size: 1.8rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 172%; /* 30.96px */
+      letter-spacing: -0.09rem;
+      min-height: 9rem;
+    }
+    &__tariff {
+font-family: $interFont;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 170%; /* 34px */
+      letter-spacing: -0.1rem;
+    }
     &--border {
       border: 1px solid $cWhite;
     }
