@@ -6,11 +6,12 @@
     padding: 3rem 1.6rem;
   }
   &__title {
+    font-family: $interFont;
     font-size: 1.8rem;
     color: $cBlueDark;
     font-weight: 600;
     line-height: 172%; /* 30.96px */
-    letter-spacing: -0.9px;
+    letter-spacing: -0.09rem;
     text-align: center;
     font-feature-settings: 'salt' on, 'liga' off;
     width: 28.8rem;
@@ -21,7 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 3.4rem;
+    gap: 2.4rem;
   }
 }
 @include minMediaTablet {

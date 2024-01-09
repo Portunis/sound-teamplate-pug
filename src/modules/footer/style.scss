@@ -14,7 +14,10 @@
   width: 29.8rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.7rem;
+  a{
+    margin: 0;
+  }
   &__image {
     width: 17rem;
     height: 2.5rem;
@@ -23,13 +26,14 @@
 
     color: $cGray;
     font-family: $interFont;
-    font-size: $regularSizeFont;
+    font-size: $smallSizeFont;
     font-style: normal;
     font-weight: 400;
-    line-height: 180%; /* 28.8px */
-    letter-spacing: -0.8px;
-    width: 27.8rem;
+    width: 25.8rem;
     margin-bottom: 0;
+
+    line-height: 172%; /* 24.08px */
+    letter-spacing: -0.07rem;
   }
 }
 
@@ -39,26 +43,27 @@
     flex-wrap: wrap;
     flex-shrink: 0;
     gap: 6.6rem;
+    row-gap: 2rem;
     &__title {
       font-feature-settings: 'salt' on, 'liga' off;
       color: $cWhite;
       font-family: $interFont;
-      font-size: 1.8rem;
+      font-size: $regularSizeFont;
       font-style: normal;
       font-weight: 600;
-      line-height: 172%; /* 30.96px */
-      letter-spacing: -0.9px;
+      line-height: 138%; /* 22.08px */
+      letter-spacing: -0.09rem;
       margin-bottom: 0;
     }
     &__url {
       font-feature-settings: 'salt' on, 'liga' off;
       color: $cGray;
       font-family: $interFont;
-      font-size: $regularSizeFont;
+      font-size: $smallSizeFont;
       font-style: normal;
       font-weight: 400;
-      line-height: 180%; /* 28.8px */
-      letter-spacing: -0.8px;
+      line-height: 172%; /* 24.08px */
+      letter-spacing: -0.07rem;
       margin-bottom: 0;
       &:hover {
         color: $cWhite;
@@ -69,7 +74,7 @@
     &__item {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem
+      gap: 1rem
     }
   }
 @include minMediaTablet {

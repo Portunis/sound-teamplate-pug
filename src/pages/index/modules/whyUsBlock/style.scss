@@ -3,7 +3,7 @@
 .why-us-block {
   padding: 4rem 1.6rem;
   display: flex;
-  gap: 10.5rem;
+  gap: 4.5rem;
   flex-direction: column;
   align-items: center;
   &__information {
@@ -42,16 +42,16 @@
 .advantages {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
   &__item {
     width: 24.8rem;
   }
   &__image {
-    margin-bottom: 2.1rem;
+    margin-bottom: 1.1rem;
   }
   &__title {
     font-family: $interFont;
-    font-size: 1.8rem;
+    font-size: $regularSizeFont;
     font-weight: 600;
     line-height: 172%;
     font-feature-settings: 'salt' on, 'liga' off;

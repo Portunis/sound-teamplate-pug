@@ -1,6 +1,6 @@
 @import "components/index";
 .sound-block {
-  padding: 5rem 1.6rem;
+  padding: 6rem 1.6rem;
   &__title {
     padding: 0;
     font-size: $mediumSizeFont;
@@ -62,14 +62,15 @@
     display: none;
   }
   &__all-sound {
+    font-family: $interFont;
     margin-top: 2rem;
     color: $cBlue;
     font-feature-settings: 'salt' on, 'liga' off;
-    font-size: $regularSizeFont;
+    font-size: $smallSizeFont;
     font-style: normal;
-    font-weight: 600;
-    line-height: 2.4rem;
-    letter-spacing: -0.14px;
+    font-weight: 500;
+    line-height: 1.9rem;
+    letter-spacing: -0.07rem;
     text-decoration-line: underline;
     &:hover {
       transition: ease-in-out .3s;
@@ -81,12 +82,11 @@
 .sound {
   display: flex;
   align-items: flex-start;
-  gap: 1.9rem;
-  justify-content: space-between;
+  gap: 1rem;
   border-bottom: 1px solid $cGrayLight;
   padding: 0.8rem 0.6rem;
   &:not(:first-child) {
-    margin-top: 1.2rem;
+    margin-top: 0.4rem;
   }
   &__play {
     cursor: pointer;
@@ -98,10 +98,10 @@
     background-repeat: no-repeat;
   }
   &__name {
-    width: 12.9rem;
+    width: 13.9rem;
     color: $cBlueDark;
     font-family: $interFont;
-    font-size: $regularSizeFont;
+    font-size: $smallSizeFont;
     font-weight: 500;
     line-height: 138%; /* 22.08px */
     letter-spacing: -0.8px;

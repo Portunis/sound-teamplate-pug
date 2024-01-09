@@ -4,25 +4,27 @@
   &__image {
     width: 100vw;
     z-index: 1;
-    height: 100vh;
+    height: 62rem;
     position: absolute;
   }
 }
 .information {
+  padding-top: 12.5rem;
   position: relative;
   z-index: 2;
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: 62rem;
   width: 100vw;
   font-family: $primaryFont;
+  gap: 2rem;
   &__wrapper {
     align-items: center;
     display: flex;
     flex-direction: column;
     gap:5rem;
+    padding-top: 1rem;
   }
   &__text {
     display: flex;
@@ -42,6 +44,7 @@
     margin-bottom: 0;
   }
   &__subtitle {
+    font-family: $interFont;
     font-feature-settings: 'salt' on, 'liga' off;
     font-size: $regularSizeFont;
     color: $cGray;
@@ -61,6 +64,7 @@
   &__form {
     width: 32.1rem;
     margin-top: 3.3rem;
+    padding: 0 2rem 0 1.5rem;
   }
   &__form-input {
     position: relative;
@@ -79,6 +83,7 @@
     }
   }
   &__form-span {
+    font-family: $interFont;
     font-size: $smallSizeFont;
     color: $cWhite;
     font-weight: 400;
@@ -86,9 +91,11 @@
     letter-spacing: -0.7px;
   }
   &__subtext {
+    font-family: $interFont;
+    font-feature-settings: 'salt' on, 'liga' off;
     font-size: $smallSizeFont;
     color: $cWhite;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 172%;
     width: 28.9rem;
     text-align: center;

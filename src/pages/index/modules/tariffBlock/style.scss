@@ -1,7 +1,7 @@
 .tariff-block {
   background: $cBlue;
   &__wrapper {
-    padding: 6.5rem 1.6rem;
+    padding: 4.3rem 1.6rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,49 +12,55 @@
     font-weight: 600;
     line-height: 160%; /* 38.4px */
     letter-spacing: -0.48px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     text-align: center;
     width: 29.1rem;
   }
   &__subtitle,&__text {
     color: $cWhite;
     font-family: $interFont;
-    font-size: 1.8rem;
+    font-size: $regularSizeFont;
     font-weight: 500;
     line-height: 189%;
     margin-bottom: 1.3rem;
+  }
+  &__text {
+    font-weight: 500;
+    line-height: 180%; /* 28.8px */
   }
   &__cards {
     display: grid;
     grid-template-columns: repeat(1,1fr);
     align-items: stretch;
-    gap: 4rem;
+    gap: 1.5rem;
     margin-top: 2.9rem;
-    margin-bottom: 3.9rem;
+    margin-bottom: 2.2rem;
+  }
+
+  &__button--border,&__button--filled {
+    display: block;
+    font-family: $primaryFont;
+    width: 12.3rem;
+    font-size: $smallSizeFont;
+    font-feature-settings: 'salt' on, 'liga' off;
+    line-height: 2.4rem; /* 171.429% */
+    letter-spacing: -0.014rem;
   }
   &__button--border {
-    font-feature-settings: 'salt' on, 'liga' off;
     border: 2px solid $cWhite;
     background: none;
     color: $cWhite;
-    border-radius: 0.8rem;
-    font-size: $regularSizeFont;
-    width: 13.8rem;
-    padding: 1.4rem 2.4rem;
   }
   &__button--filled {
     font-feature-settings: 'salt' on, 'liga' off;
-    width: 13.8rem;
-    font-size: $regularSizeFont;
     background: $cWhite;
     color: $cBlue;
-    padding: 1.4rem 2.4rem;
   }
 }
 .card {
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 2.6rem 3.4rem 4rem;
-  width: 33.4rem;
+  width: 28.7rem;
   font-family: $primaryFont;
   color: $cWhite;
   font-feature-settings: 'salt' on, 'liga' off;
@@ -65,18 +71,21 @@
   &__title {
     font-size: $mediumSizeFont;
     font-weight: 600;
-    line-height: 4.5rem;
     margin-bottom: 1.3rem;
+    font-style: normal;
+    line-height: 3rem; /* 150% */
+    letter-spacing: -0.04rem;
   }
   &__description {
+    width: 21.6rem;
     font-family: $interFont;
     font-size: $regularSizeFont;
     font-weight: 500;
-    line-height: 172%;
     margin-bottom: 2.5rem;
-    width: 25.6rem;
     max-height: 8rem;
     overflow: hidden;
+    line-height: 138%; /* 22.08px */
+    letter-spacing: -0.08rem;
   }
   &__tariff {
     font-feature-settings: 'salt' on, 'liga' off;
@@ -92,6 +101,7 @@
   }
   &--filled {
     background: #1B4BFF;
+    padding: 2.6rem 3.4rem 2.3rem;
   }
 }
 @include minMediaTablet {
