@@ -29,8 +29,16 @@
   }
   &__swiper {
     overflow: hidden;
+    .swiper-pagination {
+      position: relative;
+      margin-top: 3rem;
+    }
+    .swiper-pagination-bullet-active{
+      background: $cGray;
+    }
   }
 }
+
 .slide {
   border-radius: 0.8rem;
   padding: 2rem 2rem 3rem 2rem;

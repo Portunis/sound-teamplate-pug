@@ -2,47 +2,43 @@
 // import Swiper JS
 import Swiper from 'swiper'
 // import Swiper styles
-import 'swiper/css'
-import { WidthEnums } from '../../../../utils/enums/widthEnums'
+import 'swiper/scss'
+import 'swiper/scss/pagination'
+import { Pagination } from 'swiper/modules'
 export default class ReviewsController {
   private readonly swiper: Element | null;
-  private readonly mobileWidth: number;
-  private readonly tabletWidth: number;
-  private readonly desktopWidth: number;
-  private slidePerView: number;
   constructor (private container: HTMLSelectElement) {
     this.swiper = container.querySelector('.j-swiper')
-    this.mobileWidth = WidthEnums.MOBILE
-    this.tabletWidth = WidthEnums.TABLET
-    this.desktopWidth = WidthEnums.DESKTOP
-    this.slidePerView = 1
     this.init()
   }
 
   init () {
-    this.swiperInit(window.innerWidth)
+    this.swiperInit()
   }
 
   /**
    * Инициализируем слайдер
    * Проверяем разрешение для показа определнного количества слайдов
-   * @param widthWindow
    */
-  swiperInit (widthWindow: number) {
-    if (widthWindow >= this.desktopWidth) {
-      this.slidePerView = 3
-    } else if (widthWindow >= this.tabletWidth) {
-      this.slidePerView = 2
-    } else {
-      this.slidePerView = 1
-    }
+  swiperInit () {
     new Swiper(this.swiper as HTMLElement, {
-      slidesPerView: this.slidePerView,
-      spaceBetween: 30,
+      modules: [Pagination],
       pagination: {
         el: '.swiper-pagination',
-        clickable: true,
-        type: 'bullets'
+        type: 'bullets',
+        clickable: true
+      },
+      spaceBetween: 30,
+      breakpoints: {
+        1244: {
+          slidesPerView: 3
+        },
+        768: {
+          slidesPerView: 2
+        },
+        640: {
+          slidesPerView: 1
+        }
       }
     })
   }
