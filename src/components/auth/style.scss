@@ -1,10 +1,10 @@
 .login {
   position: relative;
-  padding: 0 2.4rem;
+  padding: 0 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: 1.9rem;
   z-index: 999;
   &__header {
     display: none;
@@ -50,6 +50,8 @@
   &__reset-password {
     color: $cGray;
     transition:  .3s;
+    font-weight: 500;
+    line-height: 180%; /* 28.8px */
     &:hover {
       color: $cBlueGray;
     }
@@ -58,6 +60,14 @@
 }
 .close-icon {
   cursor: pointer;
+}
+.checkbox {
+  &__body {
+    font-size: $regularSizeFont;
+    font-family: $interFont;
+    font-weight: 500;
+    line-height: 180%; /* 28.8px */
+  }
 }
 .simple-checkbox {
   input {
@@ -91,7 +101,8 @@
 }
 @include minMediaTablet {
   .login {
-    width: 40rem;
+    width: 48rem;
+    padding: 0 4rem 4rem;
     &__header {
       position: absolute;
       right: 1.6rem;
