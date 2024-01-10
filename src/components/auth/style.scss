@@ -58,17 +58,22 @@
 
   }
 }
+.form {
+  &__checkbox {
+    .checkbox {
+      &__body {
+        font-size: $regularSizeFont;
+        font-family: $interFont;
+        font-weight: 500;
+        line-height: 180%; /* 28.8px */
+      }
+    }
+  }
+}
 .close-icon {
   cursor: pointer;
 }
-.checkbox {
-  &__body {
-    font-size: $regularSizeFont;
-    font-family: $interFont;
-    font-weight: 500;
-    line-height: 180%; /* 28.8px */
-  }
-}
+
 .simple-checkbox {
   input {
     &:checked {
